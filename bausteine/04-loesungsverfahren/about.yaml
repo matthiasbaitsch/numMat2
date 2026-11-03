@@ -1,0 +1,11 @@
+teil: Anfangswertprobleme
+titel: Lösungsverfahren
+
+inhalt:
+  - Anfangswertprobleme erster Ordnung
+  - Explizites Euler-Verfahren
+  - Halbschrittverfahren
+  - Runge-Kutta-Verfahren vierter Ordnung
+
+# Zu diesem Thema gibt es noch keine Videos
+videos: []

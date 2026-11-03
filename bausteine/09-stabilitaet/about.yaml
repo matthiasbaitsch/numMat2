@@ -1,0 +1,18 @@
+teil: Wärmeleitung
+titel: Stabilität
+
+inhalt:
+  - Stabilität numerischer Verfahren
+  - Stabilität für eine unbekannte Funktion (Testgleichung)
+  - Implizites Euler-Verfahren
+
+videos:
+  - titel: NM W 04.1 Stability of numerical methods
+    dauer: "21:26"
+    link: https://youtu.be/qE5dD33rnng
+  - titel: NM W 04.2 Stability for an unknown function
+    dauer: "4:31"
+    link: https://youtu.be/GVVRb69HaQY
+  - titel: NM W 04.3 Implicit Euler Method
+    dauer: "11:34"
+    link: https://youtu.be/iBA___PEqh8

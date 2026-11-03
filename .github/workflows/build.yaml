@@ -22,8 +22,11 @@ jobs:
       - name: Install fonts
         run: sudo apt-get update && sudo apt-get install -y fonts-roboto-unhinted
 
+      # TinyTeX for the PDF of the script (tinh-notes-pdf)
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       # Julia only for the scripts (learning path, templates)
       - name: Cache Julia packages

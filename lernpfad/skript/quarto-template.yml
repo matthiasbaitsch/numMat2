@@ -1,0 +1,36 @@
+# Vorlage für lernpfad/skript/c/_quarto.yml: Das Lernpfad-Skript setzt für den Platzhalter unter chapters die
+# Kapitel ein (Teile aus dem Feld teil in about.yaml). Eigenes Quarto-Projekt (Book), findet Extension und Brand über Symlinks in c/
+project:
+  type: book
+  output-dir: ../../../__output/lernpfad/skript
+
+lang: de
+engine: jupyter
+jupyter: python3
+
+execute:
+  echo: false
+  freeze: auto
+
+fig-align: center
+fig-format: svg
+
+book:
+  title: Numerische Mathematik
+  subtitle: Skript
+  author: Matthias Baitsch
+  output-file: skript-numerische-mathematik
+  date: today
+  chapters:
+    - index.qmd
+${chapters}
+    - literatur.qmd
+
+# Kopiert das Lernpfad-Skript aus bausteine/ nach c/
+bibliography: bibliographie.bib
+csl: style.csl
+
+# PDF mit Typst (tinh-notes-typst, Layout vorerst orange-book)
+format:
+  tinh-notes-html: default
+  tinh-notes-typst: default

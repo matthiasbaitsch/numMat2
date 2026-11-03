@@ -24,7 +24,7 @@ numerische-mathematik/
 
 - Ordner `folien` und `aufgaben` für PDF-Dokumente
 - Projektordner für Jupyter-Notebooks
-- Ordner für Notebooks aus der Python-Einführung
+- Ordner für Notebooks aus der [Python-Einführung](https://github.com/matthiasbaitsch/qs-numerik)
 - Weitere Ordner nach Ihrem Bedarf
 
 ## Einrichten

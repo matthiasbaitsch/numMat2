@@ -1,0 +1,43 @@
+teil: Anfangswertprobleme
+titel: Systeme von Differentialgleichungen
+
+inhalt:
+  - Systeme von Differentialgleichungen
+  - Ausbreitung von Infektionskrankheiten mit dem SEIR-Modell
+  - Bewegung von Massepunktsystemen
+
+# Die Videos mit Matlab zeigen die Umsetzung mit Matlab statt Python
+videos:
+  - titel: NM A 3 1 Systeme von Differentialgleichungen
+    dauer: "36:24"
+    link: https://youtu.be/rVHcWawacw8
+  - titel: NM A 3 2 Übungsblatt
+    dauer: "6:47"
+    link: https://youtu.be/xO9mO3_tSZY
+  - titel: NM A 4.1.1 Simulation Infektionskrankheiten
+    dauer: "11:00"
+    link: https://youtu.be/FP68Lc3nPow
+  - titel: NM A 4.1.2 Grundgedanke SEIR
+    dauer: "11:14"
+    link: https://youtu.be/BShr-Ld95Fg
+  - titel: NM A 4.1.3 Inkubation und Genesung
+    dauer: "10:42"
+    link: https://youtu.be/aSNlwRU8USA
+  - titel: NM A 4.1.4 Übertragung
+    dauer: "14:20"
+    link: https://youtu.be/aYwtCswozQk
+  - titel: NM A 4.2.1 Bewegung von Massepunktsystemen
+    dauer: "4:22"
+    link: https://youtu.be/iTjZ5fEkarg
+  - titel: NM A 4.2.2 Single-mass oscillator
+    dauer: "11:32"
+    link: https://youtu.be/50AGhwmHQSY
+  - titel: NM A 4.2.3 Einmassenschwinger Matlab
+    dauer: "19:30"
+    link: https://youtu.be/lNHR2w9Cx94
+  - titel: NM A 4.2.4 Doppelpendel
+    dauer: "3:30"
+    link: https://youtu.be/GbGrE7j1Lp4
+  - titel: NM A 4.2.5 Doppelpendel Matlab
+    dauer: "20:13"
+    link: https://youtu.be/NbNOUCNahDw

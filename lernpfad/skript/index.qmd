@@ -1,0 +1,3 @@
+# Vorwort {.unnumbered}
+
+Dieses Skript begleitet die Vorlesung Numerische Mathematik in den Bachelorstudiengängen Bauingenieurwesen und Bau- und Umweltingenieurwesen an der Hochschule Bochum. Es ist nach Themen gegliedert: Im ersten Teil wird die Berechnung von Stabtragwerken mit der Methode der finiten Elemente entwickelt, im zweiten Teil die numerische Lösung von Anfangswertproblemen, und im dritten Teil werden beide Ideen bei der Simulation der Wärmeleitung zusammengeführt.

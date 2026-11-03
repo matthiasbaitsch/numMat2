@@ -1,0 +1,32 @@
+teil: Anfangswertprobleme
+titel: Genauigkeit und Startwerte
+
+inhalt:
+  - Eigenschaften von Anfangswertproblemen und numerischen Verfahren
+  - Genauigkeit und Konvergenz, doppelt logarithmische Darstellung
+  - Stabilität als Phänomen (Van der Pol)
+  - Abhängigkeit von Startwerten
+
+# Die Videos mit Matlab zeigen die Umsetzung mit Matlab statt Python
+videos:
+  - titel: NM A 5.1 Eigenschaften von Anfangswertproblemen und numerischen Verfahren
+    dauer: "9:55"
+    link: https://youtu.be/4aNyfAodOKk
+  - titel: NM A 5.2.1 Genauigkeit und Konvergenz
+    dauer: "5:59"
+    link: https://youtu.be/PYVoR5GbVEk
+  - titel: NM A 5.2.2 Fehler in Matlab
+    dauer: "20:22"
+    link: https://youtu.be/ppCaMh7vuiY
+  - titel: NM A 5.2.3 Monomfunktion in doppelt logarithmischer Skala
+    dauer: "9:15"
+    link: https://youtu.be/AlYpe7uCSH8
+  - titel: NM A 5.2.4 Exponent der Fehlerfunktion in Matlab
+    dauer: "5:04"
+    link: https://youtu.be/j3HD4HtnZYE
+  - titel: NM A 5.2.5 Konvergenzaussagen
+    dauer: "6:19"
+    link: https://youtu.be/0tbsDZi7Nig
+  - titel: NM A 5.3 Abhängigkeit von Startwerten
+    dauer: "35:32"
+    link: https://youtu.be/e4Shv4AbOTg

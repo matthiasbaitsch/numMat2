@@ -1,0 +1,30 @@
+teil: Wärmeleitung
+titel: Grundlagen
+
+inhalt:
+  - Physikalische Grundlagen, Energieerhaltung und Wärmeleitungsgesetz
+  - Mathematische Modellbildung in 1D
+  - Finite-Volumen-Methode in 1D
+
+videos:
+  - titel: NM W 01 Vorbemerkungen zur Wärmeleitung
+    dauer: "4:35"
+    link: https://youtu.be/IPbytwqIIBg
+  - titel: NM W 02.1 Physikalische Grundlagen
+    dauer: "14:55"
+    link: https://youtu.be/LYCWCyOKo24
+  - titel: NM W 02.2 Energieerhaltung
+    dauer: "6:52"
+    link: https://youtu.be/opsZLY2yHKo
+  - titel: NM W 02.3 Wärmeleitungsgesetz
+    dauer: "13:45"
+    link: https://youtu.be/D1Ep_nUTHPg
+  - titel: NM W 03.1 Wärmeleitung 1D
+    dauer: "7:17"
+    link: https://youtu.be/j_VMYJz1tdw
+  - titel: NM W 03.2 Mathematische Modellbildung
+    dauer: "15:59"
+    link: https://youtu.be/ntd-mj1SXso
+  - titel: NM W 03.3 Finite Volume Method 1D
+    dauer: "37:34"
+    link: https://youtu.be/aKmgqcXdlro

@@ -286,6 +286,41 @@ function make_assignments(blocks_folder::String, target_folder::String)
     end
 end
 
+# Script as Quarto book: one chapter per building block with skript/skript.qmd, parts from the field teil. Own
+# Quarto project, _quarto.yml from quarto-template.yml next to target_folder (placeholder ${chapters}), finds
+# extension and brand only through symlinks
+function make_script(blocks_folder::String, target_folder::String)
+    script_folder = dirname(target_folder)
+    parts = Pair{String,Vector{String}}[]
+
+    for bb = building_blocks(blocks_folder)
+        source_folder = joinpath(bb.folder, "skript")
+        if isfile(joinpath(source_folder, "skript.qmd"))
+            chapter = slug(bb) * ".qmd"
+            cp(joinpath(source_folder, "skript.qmd"), joinpath(target_folder, chapter))
+            copy_resources(source_folder, target_folder)
+            (isempty(parts) || parts[end].first != bb.part) && push!(parts, bb.part => String[])
+            push!(parts[end].second, chapter)
+        end
+    end
+
+    chapters = join(
+        [
+            "    - part: \"$part\"\n      chapters:\n" * join(["        - $c\n" for c = cs])
+            for (part, cs) = parts
+        ]
+    )
+    template = read(joinpath(script_folder, "quarto-template.yml"), String)
+    write(joinpath(target_folder, "_quarto.yml"), substitute_text(template, Dict("chapters" => rstrip(chapters))))
+    for f = ("index.qmd", "literatur.qmd")
+        cp(joinpath(script_folder, f), joinpath(target_folder, f))
+    end
+
+    for f = ("_extensions", "_brand")
+        symlink(joinpath("..", "..", "..", f), joinpath(target_folder, f))
+    end
+end
+
 function make_course(course_folder::String, target_folder::String)
     for course_slides_folder = filter(f -> isdir(f) && f != target_folder, readdir(course_folder, join=true))
         name = basename(course_slides_folder)
@@ -301,6 +336,7 @@ function make_learning_path(source::String, target::String)
     components = [
         (make_slides, building_blocks_folder, "folien"),
         (make_assignments, building_blocks_folder, "aufgaben"),
+        (make_script, building_blocks_folder, "skript"),
         (make_course, joinpath(learning_path_folder, "veranstaltung"), "veranstaltung"),
     ]
 

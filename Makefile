@@ -1,4 +1,4 @@
-render: render-aufgaben render-folien render-veranstaltung
+render: render-aufgaben render-folien render-veranstaltung render-skript
 
 # Executed {python} cells run in the Python environment of the root folder (copy of the template, see copy-templates)
 QUARTO = uv run --group render quarto
@@ -14,6 +14,10 @@ render-folien: prepare-render
 
 render-veranstaltung: prepare-render
 	$(QUARTO) render lernpfad/veranstaltung/c
+
+# Book with its own _quarto.yml in c/ (generated from lernpfad/skript/quarto-template.yml)
+render-skript: prepare-render
+	$(QUARTO) render lernpfad/skript/c
 
 # Update extension tinh (_extensions/) and brand of Hochschule Bochum (_brand/)
 update-extension:
