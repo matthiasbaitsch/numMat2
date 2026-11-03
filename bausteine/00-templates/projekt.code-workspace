@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"chat.disableAIFeatures": true,
+		"files.exclude": {
+			".vscode": true,
+			".venv": true,
+			"*.code-workspace": true,
+			"uv.lock": true
+		}
+	}
+}

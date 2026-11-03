@@ -1,0 +1,39 @@
+---
+title: Ordner für die Vorlesung einrichten
+subtitle: Numerische Mathematik
+format:
+   tinh-slides-revealjs: default
+---
+
+## Sinnvolle Ordnerstruktur für die Vorlesung
+
+Die Zip-Datei enthält eine Ordnerstruktur für das Modul:
+
+```
+numerische-mathematik/
+├── folien/                          Folien als PDF, eigene Notizen
+├── aufgaben/                        Aufgabenblätter
+├── projekt-folien/                  Notebooks zu den Vorlesungen
+├── projekt-aufgaben/                Notebooks zu den Übungen
+├── python-und-jupyter-notebooks/    Aus der Einführung, hierher verschieben
+└── ...                              Eigene Ordner
+```
+
+::: {.panel-tabset}
+## Organisation
+
+- Ordner `folien` und `aufgaben` für PDF-Dokumente
+- Projektordner für Jupyter-Notebooks
+- Ordner für Notebooks aus der Python-Einführung
+- Weitere Ordner nach Ihrem Bedarf
+
+## Einrichten
+
+1. [Ordnerstruktur herunterladen ⬇](numerische-mathematik.zip){download="numerische-mathematik.zip"}
+1. In Ordner für das Studium entpacken
+1. Workspace in `projekt-folien` mit Doppelklick öffnen
+1. Terminal öffnen (Menü *Terminal* → *New Terminal*) und `uv sync` ausführen
+1. Dasselbe für `projekt-aufgaben`
+
+   → Beim ersten Mal dauert das ein bis zwei Minuten
+:::

@@ -1,0 +1,24 @@
+lang: de
+engine: jupyter
+jupyter: python3
+
+execute:
+  echo: false
+  daemon: 3600
+  freeze: auto
+
+fig-align: center
+fig-format: svg
+
+author:
+  - Matthias Baitsch
+
+resources:
+  - "**/*.zip"
+
+crossref:
+    exr-title: "Aufgabe"
+    exr-prefix: "Aufgabe"
+
+project:
+  output-dir: __output

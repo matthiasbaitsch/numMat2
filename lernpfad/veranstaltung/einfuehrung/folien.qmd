@@ -1,0 +1,51 @@
+---
+title: Einführung
+subtitle: Numerische Mathematik
+format:
+   tinh-slides-typst: default
+---
+
+```{python}
+#| include: false
+import sys; from pathlib import Path; exec(open(Path(sys.prefix).parent / "_setup.py").read())
+
+x = np.linspace(-0.5, 2.5, 200)
+```
+
+# Was ist numerische Mathematik?
+
+## Gleichungen mit einer Unbekannten
+
+:::: {.columns}
+::: {.column width="50%"}
+$$
+    (x - 1)^2 = 1
+$$
+:::
+::: {.column width="50%"}
+```{python}
+plt.figure(figsize=(4, 2.5))
+plt.plot(x, (x - 1)**2)
+plt.plot(x, np.ones_like(x))
+plt.scatter([0, 2], [1, 1], color="tomato", zorder=3)
+plt.show()
+```
+:::
+::::
+
+:::: {.columns}
+::: {.column width="50%"}
+$$
+    \sin x = \frac{x}{2}
+$$
+:::
+::: {.column width="50%"}
+```{python}
+plt.figure(figsize=(4, 2.5))
+plt.plot(x, np.sin(x))
+plt.plot(x, x / 2)
+plt.scatter([0, 1.8955], [0, 0.9477], color="tomato", zorder=3)
+plt.show()
+```
+:::
+::::
