@@ -1,0 +1,130 @@
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+## Programmierung der Stabendkräfte
+
+Daten des Fachwerkstabs aus der Aufgabe zu den Stabendkräften (Kräfte in kN, Längen in m)
+
+```{python}
+EA = 42000
+x1 = np.array([1.0, 0.0])
+x2 = np.array([4.0, 4.0])
+
+u1 = np.array([0.1, 0.05])
+u2 = np.array([0.14, 0.09])
+v1 = np.array([-1.0, 0.0])
+v2 = np.array([1.0, -4.0])
+```
+
+Funktionen aus `src/truss.py` laden. Mit `autoreload` werden Änderungen in der Datei übernommen, ohne den Kernel neu zu starten.
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+```
+
+### Verschiebungen $\mathbf{u}$
+
+::: {.tinh-solution}
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, u1, u2))
+print("K =\n", truss_ke(EA, x1, x2))
+print("N lin =", truss_n(EA, x1, x2, u1, u2))
+print("P lin =", truss_p_lin(EA, x1, x2, u1, u2))
+```
+:::
+::: {.tinh-scaffold}
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, u1, u2))
+# ...
+```
+:::
+
+### Verschiebungen $\mathbf{v}$
+
+::: {.tinh-solution}
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, v1, v2))
+print("N lin =", truss_n(EA, x1, x2, v1, v2))
+print("P lin =", truss_p_lin(EA, x1, x2, v1, v2))
+```
+:::
+
+## Erzeugung und Darstellung von Stabtragwerken
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
+```
+
+### Stabtragwerk erzeugen
+
+::: {.tinh-solution}
+```{python}
+s1 = simple_example()
+s2 = girder(40, 2, 7, 11)
+print(s1.nodes)
+```
+:::
+
+### Hilfsfunktion für die Größe des Systems
+
+::: {.tinh-solution}
+```{python}
+print(struct_size(s1), struct_size(s2))
+```
+:::
+
+### Stabtragwerk graphisch darstellen
+
+::: {.tinh-solution}
+```{python}
+draw_system(s1)
+```
+
+```{python}
+draw_system(s2)
+```
+:::
+
+### Anwendungsbeispiel
+
+::: {.tinh-solution}
+Ein Fachwerkträger mit parallelen Gurten und Diagonalen in wechselnder Richtung, erzeugt mit wenigen Anweisungen.
+
+```{python}
+from objdict import ObjDict
+
+
+def parallel_girder(n=8, a=3.0, h=2.5, f=20.0):
+    s = ObjDict()
+    s.EA = 60000
+
+    # Knoten: unten 0, ..., n, oben n + 1, ..., 2n + 1
+    x = np.arange(n + 1) * a
+    s.nodes = np.array([np.concatenate([x, x]), np.concatenate([0 * x, 0 * x + h])])
+
+    # Untergurt, Obergurt, Pfosten, Diagonalen
+    bottom = [(i, i + 1) for i in range(n)]
+    top = [(n + 1 + i, n + 2 + i) for i in range(n)]
+    posts = [(i, n + 1 + i) for i in range(n + 1)]
+    diagonals = [(i, n + 2 + i) if i < n // 2 else (i + 1, n + 1 + i) for i in range(n)]
+    s.elements = np.array(bottom + top + posts + diagonals).T
+
+    # Lasten am Obergurt, Auflager links fest, rechts verschieblich
+    s.forces = np.zeros((2, 2 * n + 2))
+    s.forces[1, n + 1:] = -f
+    s.supports = np.full((2, 2 * n + 2), False)
+    s.supports[:, 0] = True
+    s.supports[1, n] = True
+    return s
+
+
+draw_system(parallel_girder())
+```
+:::

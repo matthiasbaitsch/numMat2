@@ -44,9 +44,10 @@ function slug(bb::BuildingBlock)
     return lpad(bb.number, 2, '0') * "-" * strip(replace(s, r"[^a-z0-9]+" => "-"), '-')
 end
 
-# Placeholders ${slug} and, if there is an assignments notebook for the students, ${notebook} in the sources
+# Placeholders ${slug}, ${site} (published learning path, e.g. for ${site}/aufgaben/c/x.zip) and, if there is an
+# assignments notebook for the students, ${notebook} in the sources
 function make_dict(bb::BuildingBlock)
-    dict = Dict("slug" => slug(bb))
+    dict = Dict("slug" => slug(bb), "site" => SITE_URL)
     isnothing(bb.target) || (dict["notebook"] = "$SITE_URL/aufgaben/c/$(slug(bb))-aufgaben.zip")
     return dict
 end
@@ -153,8 +154,8 @@ end
 # of the extension tinh (solution and scaffold, title cell), code is not executed. The source with header is
 # rendered in target_folder (in a folder starting with _ Quarto does not find the extension) and then moved to
 # target_folder/_qmd for checking (Quarto does not render folders starting with _). Returns the path of the .ipynb
-# in the output folder. author: [] keeps the author from _quarto.yml out of the title cell. The kernel is set
-# explicitly, otherwise tinh-notebook uses the name of the language (python), Jupyter's kernel is python3
+# in the output folder. author: [] keeps the author from _quarto.yml out of the title cell. No jupyter: in the
+# header, Quarto would start a kernel despite engine: markdown (tinh-notebook sets the kernel python3)
 function render_notebook(
     source::String, title::String, subtitle::String, target::Symbol, target_folder::String, name::String
 )
@@ -165,11 +166,6 @@ function render_notebook(
         author: []
         engine: markdown
         tinh-target: $target
-        jupyter:
-          kernelspec:
-            name: python3
-            language: python
-            display_name: Python 3
         ---
 
         """

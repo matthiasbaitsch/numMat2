@@ -7,6 +7,9 @@ inhalt:
   - Formulierung für kleine Verformungen, Elementsteifigkeitsmatrix
   - Erzeugung und Darstellung von Stabtragwerken
 
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold
+
 videos:
   - titel: NM S 02 Fachwerke
     dauer: "8:33"

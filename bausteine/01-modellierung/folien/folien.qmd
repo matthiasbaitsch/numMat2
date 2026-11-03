@@ -1,0 +1,11 @@
+# Vom Bauwerk zum Modell: Modellierung von Stabtragwerken
+
+```{=typst}
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 2)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 3)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 4)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 5)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 6)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 7)
+#notiz("notizen/NM S 01 Modellierung von Stabtragwerken.pdf", 8)
+```

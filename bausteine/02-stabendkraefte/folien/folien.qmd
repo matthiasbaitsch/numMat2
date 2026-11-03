@@ -1,0 +1,30 @@
+# Gleichgewicht an jedem Knoten: Direkte Steifigkeitsmethode
+
+```{=typst}
+#notiz("notizen/NM S 02 Fachwerke.pdf", 2)
+#notiz("notizen/NM S 02 Fachwerke.pdf", 3)
+#notiz("notizen/NM S 02 Fachwerke.pdf", 4)
+#notiz("notizen/NM S 02 Fachwerke.pdf", 5)
+```
+
+# Kräfte am Stabende: Stabendkräfte
+
+```{=typst}
+#notiz("notizen/NM S 03 Stabendkraefte.pdf", 2)
+#notiz("notizen/NM S 03 Stabendkraefte.pdf", 3)
+```
+
+# Ohne Vereinfachung: Geometrisch exakte Formulierung
+
+```{=typst}
+#notiz("notizen/NM S 04 Geometrisch exakte Formulierung.pdf", 2)
+#notiz("notizen/NM S 04 Geometrisch exakte Formulierung.pdf", 3)
+```
+
+# Linearisieren: Formulierung für kleine Verformungen
+
+```{=typst}
+#notiz("notizen/NM S 05 Formulierung fuer kleine Verformungen.pdf", 2)
+#notiz("notizen/NM S 05 Formulierung fuer kleine Verformungen.pdf", 3)
+#notiz("notizen/NM S 05 Formulierung fuer kleine Verformungen.pdf", 4)
+```

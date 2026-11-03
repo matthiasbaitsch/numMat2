@@ -1,0 +1,43 @@
+::: {#exr-programmierung}
+## Programmierung der Stabendkräfte
+
+Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es. Legen Sie dort einen Ordner `src` mit einer Datei `truss.py` an und implementieren Sie darin die folgenden Funktionen:
+
+1. Vektor der Stabendkräfte nach der geometrisch exakten Formulierung:
+
+    ```{.python}
+    truss_p(EA, x1, x2, u1, u2)
+    ```
+
+1. Elementsteifigkeitsmatrix:
+
+    ```{.python}
+    truss_ke(EA, x1, x2)
+    ```
+
+1. Normalkraft nach der Formulierung für kleine Verformungen:
+
+    ```{.python}
+    truss_n(EA, x1, x2, u1, u2)
+    ```
+
+1. Vektor der Stabendkräfte nach der Formulierung für kleine Verformungen:
+
+    ```{.python}
+    truss_p_lin(EA, x1, x2, u1, u2)
+    ```
+
+Vergleichen Sie die Ergebnisse im Notebook mit Ihrer Handrechnung aus der vorigen Aufgabe.
+
+::: {.callout-tip title="Tipps für Python"}
+- Den Betrag eines Vektors berechnen Sie mit `np.linalg.norm`.
+- Zwei Vektoren hängen Sie mit `np.concatenate((a, b))` aneinander.
+- Das Produkt $\mathbf{a}\mathbf{b}\mtran$ zweier Spaltenvektoren berechnen Sie mit `np.outer(a, b)`, das Skalarprodukt mit `np.dot(a, b)`, Matrix mal Vektor mit `K @ u`.
+- Alle Funktionen lassen sich mit ein paar Zeilen Code umsetzen.
+- Sie brauchen keine trigonometrischen Funktionen!
+:::
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::

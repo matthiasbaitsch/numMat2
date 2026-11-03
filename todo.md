@@ -3,7 +3,7 @@
 ## Grundgerüst
 
 - [X]  Rendern mit Python testen
-- [ ]  Notebook-Erzeugung mit Python prüfen (Kernel `python3` im `.ipynb`, Gerüst `# ...`)
+- [X]  Notebook-Erzeugung mit Python prüfen (Kernel `python3` im `.ipynb`, Gerüst `# ...`)
 - [ ]  GitHub-Repo `numMat2` anlegen, Pages aktivieren
 - [ ]  Einführung ausbauen (Material: `../../numMat/02-folien/00-einfuehrung`), Video „NM 01 Begrüßung“
   (https://youtu.be/MbV3t8TYWRU, 16:50) einbinden
@@ -26,8 +26,8 @@
 
 Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 
-- [ ]  01 Modellierung: ~~Skript~~ · Folien
-- [ ]  02 Stabendkräfte: ~~Skript~~ · Folien · Aufgaben
+- [X]  01 Modellierung: ~~Skript~~ · ~~Folien~~
+- [X]  02 Stabendkräfte: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [ ]  03 Berechnung: ~~Skript~~ · Folien · Aufgaben
 - [ ]  04 Lösungsverfahren: ~~Skript~~ · Folien · Aufgaben
 - [ ]  05 Massepunkte: ~~Skript~~ · Folien · Aufgaben
@@ -50,6 +50,3 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 ## Extension `tinh`
 
 - [ ]  Schlichteres Book-Layout für `tinh-notes-typst` (todo in quarto-tinh), danach `make update-extension`
-
-- [ ]  `notebook.lua` und `solution-scaffold.lua`: Kernel für Python (`python3` statt `python`) in der Extension
-  setzen, dann den `jupyter`-Eintrag im Kopf in `render_notebook` (`skripte/make-learning-path.jl`) entfernen
