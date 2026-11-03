@@ -4,14 +4,10 @@
 
 Wir alle kennen unzählige Beispiele von Konstruktionen, die aus stabartigen Bauteilen zusammengesetzt sind, @fig-stabtragwerke zeigt eine kleine Auswahl. Der Begriff stabartig besagt dabei, dass ein Bauteil in eine Richtung lang und in die beiden anderen Richtungen vergleichsweise dünn ist. Stabartige Bauteile sind nicht notwendigerweise gerade, wie an dem Beispiel der Emscherbrücke zu sehen ist.
 
-::: {#fig-stabtragwerke layout="[[52, 48], [30, 70]]"}
-![](bilder/dz-bank-dach.jpg)
+::: {#fig-stabtragwerke}
+![](bilder/dz-bank-dach.jpg){width="44%"} ![](bilder/hoersaal-h9.png){width="54%"}
 
-![](bilder/hoersaal-h9.png)
-
-![](bilder/eiffel-schuchow.jpg)
-
-![](bilder/bruecke-emscher.jpg)
+![](bilder/eiffel-schuchow.jpg){width="34%"} ![](bilder/bruecke-emscher.jpg){width="64%"}
 
 Beispiele für Stabtragwerke (im Uhrzeigersinn): Glasdach der DZ Bank in Berlin, Hörsaal H9 HS Bochum, Brücke über die Emscher, Eiffelturm und Radioturm von Schuchow
 :::
@@ -28,20 +24,20 @@ Um Stabtragwerke effizient berechnen zu können, erfasst man mittels geeigneter 
 
 Die Annahmen über die Art und Weise, wie sich ein solches vereinfachtes System verhält, werden als [mechanisches Modell]{.neuerbegriff} bezeichnet. Es gibt nun zwei verschiedene mechanische Modelle von Stabtragwerken: *Fachwerke* und *Balkentragwerke*. Der Unterschied zwischen beiden Modellen liegt in der Annahme darüber, wie sich das Tragwerk verformt und welche Schnittgrößen daraus resultieren.
 
-**Fachwerke.** In einem [Fachwerk]{.neuerbegriff} (@fig-mechanische-modelle oben) sind Stäbe durch ein reibungsfreies Momentengelenk miteinander verbunden, Kräfte greifen immer an Knotenpunkten an und es gibt keine Streckenlasten. In Fachwerken gibt es keine gekrümmten Stäbe. Wenn alle Stäbe gelenkig miteinander verbunden sind, dann kann man sich sofort überlegen, wie sich ein solches System prinzipiell verformt: Alle Stäbe bleiben auch im verformten Zustand gerade! Es tritt zwar eine Änderung der Länge auf und die Stabachse kann sich drehen, es gibt jedoch keine Krümmung. Damit ist auch klar, dass in Fachwerkstäben nur Normalkräfte auftreten, Querkraft und Biegemoment sind demgegenüber auf der gesamten Länge des Stabes immer gleich null.
+#### Fachwerke
 
-**Balkentragwerke.** In einem [Balkentragwerk]{.neuerbegriff} (@fig-mechanische-modelle unten) können Stäbe biegesteif miteinander verbunden sein und Kräfte können auch zwischen zwei Knotenpunkten angreifen. Darüber hinaus können Balkentragwerke auch durch Streckenlasten beansprucht sein. In einem Balkentragwerk tritt in den einzelnen Stäben neben einer Änderung der Länge auch eine Krümmung auf, die Stabachse bleibt also nicht gerade. Demzufolge gibt es in einem Balkentragwerk neben Normalkräften auch Querkräfte und Biegemomente.
+In einem [Fachwerk]{.neuerbegriff} (@fig-mechanische-modelle oben) sind Stäbe durch ein reibungsfreies Momentengelenk miteinander verbunden, Kräfte greifen immer an Knotenpunkten an und es gibt keine Streckenlasten. In Fachwerken gibt es keine gekrümmten Stäbe. Wenn alle Stäbe gelenkig miteinander verbunden sind, dann kann man sich sofort überlegen, wie sich ein solches System prinzipiell verformt: Alle Stäbe bleiben auch im verformten Zustand gerade! Es tritt zwar eine Änderung der Länge auf und die Stabachse kann sich drehen, es gibt jedoch keine Krümmung. Damit ist auch klar, dass in Fachwerkstäben nur Normalkräfte auftreten, Querkraft und Biegemoment sind demgegenüber auf der gesamten Länge des Stabes immer gleich null.
+
+#### Balkentragwerke
+
+In einem [Balkentragwerk]{.neuerbegriff} (@fig-mechanische-modelle unten) können Stäbe biegesteif miteinander verbunden sein und Kräfte können auch zwischen zwei Knotenpunkten angreifen. Darüber hinaus können Balkentragwerke auch durch Streckenlasten beansprucht sein. In einem Balkentragwerk tritt in den einzelnen Stäben neben einer Änderung der Länge auch eine Krümmung auf, die Stabachse bleibt also nicht gerade. Demzufolge gibt es in einem Balkentragwerk neben Normalkräften auch Querkräfte und Biegemomente.
 
 ![Fachwerke und Balkentragwerke](bilder/mechanische-modelle.svg){#fig-mechanische-modelle width="80%"}
 
 Wenn Sie sich nun Fachwerkstrukturen, die Sie bisher gesehen haben, in Erinnerung rufen, dann werden Sie feststellen, dass die Knotenpunkte so gut wie nie als Gelenke ausgebildet sind (@fig-knotenpunkte-fachwerke). Anschlüsse sind genietet, geschraubt oder geschweißt, und selbst wenn ein Gelenk eingebaut ist, dann ist dies nie frei von Reibung. In der Realität gibt es also keine Tragwerke, auf die unsere Definition von Fachwerken zutrifft. Das ist der Grund, warum wir an dieser Stelle von einem mechanischen Modell sprechen. Ein Modell ist ein vereinfachtes Abbild der Realität [@stachowiak1973] und blendet immer Aspekte aus, deren Effekte für den jeweiligen Anwendungsfall vernachlässigbar sind. Wann macht es also Sinn, ein Tragwerk als Fachwerk zu berechnen? Es macht dann Sinn, wenn der Einfluss der Biegemomente gegenüber den Normalkräften vernachlässigbar ist, das System die Lasten also im Wesentlichen über Normalkräfte abträgt.
 
-::: {#fig-knotenpunkte-fachwerke layout-ncol="3"}
-![](bilder/knoten-muengsten.jpg)
-
-![](bilder/knoten-naumburg.jpg)
-
-![](bilder/knoten-heathrow.jpg)
+::: {#fig-knotenpunkte-fachwerke}
+![](bilder/knoten-muengsten.jpg){width="26%"} ![](bilder/knoten-naumburg.jpg){width="35%"} ![](bilder/knoten-heathrow.jpg){width="35%"}
 
 Knotenpunkte von Fachwerken. Müngstener Brücke, Straßenbrücke bei Naumburg und Terminal Flughafen Heathrow
 :::
@@ -52,26 +48,38 @@ Selbstverständlich stellt auch die Modellierung eines Systems als Balkentragwer
 
 Zur Berechnung von Schnittgrößen und Spannungen gibt es zwei grundlegend verschiedene Ansätze.
 
-**Kräfte zuerst.** Hier werden die Schnittgrößen mithilfe des Schnittprinzips und der Gleichgewichtsbedingungen ermittelt. Sind zusätzlich noch Verformungen von Interesse, dann lassen sich diese in einer Nachlaufrechnung durch Anwendung des Prinzips der virtuellen Kräfte berechnen.
+#### Kräfte zuerst
 
-- $+$ Gut geeignet für die Handrechnung (einfache Systeme).
+Hier werden die Schnittgrößen mithilfe des Schnittprinzips und der Gleichgewichtsbedingungen ermittelt. Sind zusätzlich noch Verformungen von Interesse, dann lassen sich diese in einer Nachlaufrechnung durch Anwendung des Prinzips der virtuellen Kräfte berechnen.
 
-- $+$ Anschaulich und intuitiv nachvollziehbar.
+*Vorteile:*
 
-- $-$ Sehr aufwändig für statisch unbestimmte Systeme (Kraftgrößenverfahren).
+- Gut geeignet für die Handrechnung (einfache Systeme).
 
-- $-$ Schwer zu formalisieren.
+- Anschaulich und intuitiv nachvollziehbar.
+
+*Nachteile:*
+
+- Sehr aufwändig für statisch unbestimmte Systeme (Kraftgrößenverfahren).
+
+- Schwer zu formalisieren.
 
 Die letzten beiden Punkte sind der Grund, warum sich diese Methode nur sehr schlecht für die Umsetzung in einem Computerprogramm eignet.
 
-**Verschiebungen zuerst.** Die Alternative besteht darin, zunächst die Verschiebungen zu ermitteln und in einem zweiten Schritt die zugehörigen Schnittgrößen zu berechnen.
+#### Verschiebungen zuerst
 
-- $+$ Funktioniert für statisch bestimmte und statisch unbestimmte Systeme.
+Die Alternative besteht darin, zunächst die Verschiebungen zu ermitteln und in einem zweiten Schritt die zugehörigen Schnittgrößen zu berechnen.
 
-- $+$ Einfach zu formalisieren und gut zu programmieren.
+*Vorteile:*
 
-- $-$ Schlecht geeignet für die Handrechnung.
+- Funktioniert für statisch bestimmte und statisch unbestimmte Systeme.
 
-- $-$ Wenig intuitiv.
+- Einfach zu formalisieren und gut zu programmieren.
+
+*Nachteile:*
+
+- Schlecht geeignet für die Handrechnung.
+
+- Wenig intuitiv.
 
 Wir werden uns nun mit diesem verschiebungsbasierten Verfahren befassen.

@@ -16,13 +16,17 @@ unter `bausteine/`, das Lernpfad-Skript setzt sie zum Book in `lernpfad/skript/c
 
 ## Allgemeine Entscheidungen
 
-- Wie in Mathematik B: Text neben Bild untereinander, Absätze mit `\paragraph` als fetter Anfang, Abbildungen mit
-  mehreren Bildern als Quarto-Abbildung mit Unterbildern (`layout`).
+- Wie in Mathematik B: Text neben Bild untereinander, `\paragraph{Titel.}` als Überschrift `#### Titel` (ohne
+  Nummer, tinh-notes nummeriert nur bis Ebene 3).
+- Abbildungen mit mehreren Bildern: Bilder mit `width` in Prozent nebeneinander in einer Zeile (eine Zeile je
+  Bildreihe), Breiten aus den Seitenverhältnissen, so dass die Bilder einer Reihe gleich hoch sind. Nicht mit
+  `layout="[[…],[…]]"`: Quarto macht daraus bei Typst ein Gitter mit einer Spalte ohne Bildbreiten.
+- Rasterbilder in PDFs mit `pdftoppm -cropbox`, sonst kommt die ganze Seite (MediaBox) statt des Ausschnitts.
 - Makros aufgelöst: `\mmund` → `\quad\text{und}\quad`, `\mlin` → `_{\text{lin}}`; `\mmat`, `\R`, `\mtran`, `\SI`
   kommen aus der Extension tinh.
 - `\intertext`, `multline` und `align` (nicht in MathJax) als `aligned` bzw. getrennte Gleichungen.
 - Zeichnungen per `pdf2svg` aus `*-eps-converted-to.pdf` als SVG, Originale (EPS, PDF) in `skript/bilder/orig/`.
-  Rasterbilder in PDFs (`everything-is-3d`, `hoersaal-h9`) mit `pdftoppm -r 300` als PNG. Fotos mit sprechenden
+  Rasterbilder in PDFs (`everything-is-3d`, `hoersaal-h9`) mit `pdftoppm -r 300 -cropbox` als PNG. Fotos mit sprechenden
   Namen (`knoten-muengsten.jpg` statt `geruest-06302.jpg` usw.).
 - Literatur (`numerische-mathematik-skript.bib`) nach `bausteine/bibliographie.bib`, Literaturverzeichnis in
   `lernpfad/skript/literatur.qmd`.
@@ -30,7 +34,7 @@ unter `bausteine/`, das Lernpfad-Skript setzt sie zum Book in `lernpfad/skript/c
 
 ## Modellierung von Stabtragwerken
 
-- Listen mit `\pro`/`\con` als Aufzählungen mit $+$ und $-$.
+- Listen mit `\pro`/`\con` als zwei Listen „Vorteile“ und „Nachteile“.
 
 ## Fachwerke
 

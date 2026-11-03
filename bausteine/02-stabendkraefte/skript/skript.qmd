@@ -32,7 +32,9 @@ Wir bestimmen nun für einen Stab die Stabendkräfte, die von einer gegebenen Ve
 
 ![Stabendkräfte Fachwerkstab](bilder/fachwerkstab.svg){#fig-fachwerkstab}
 
-**Definitionen.** Der Fachwerkstab besitzt den E-Modul $E$ und die Querschnittsfläche $A$, die wir in der Größe $EA$ zusammenfassen. In der unverformten Ausgangslage sind die Ortsvektoren von Anfangs- und Endpunkt des Stabes durch
+#### Definitionen
+
+Der Fachwerkstab besitzt den E-Modul $E$ und die Querschnittsfläche $A$, die wir in der Größe $EA$ zusammenfassen. In der unverformten Ausgangslage sind die Ortsvektoren von Anfangs- und Endpunkt des Stabes durch
 $$
   \mathbf{x}_1 = \mmat{x_{11} \\ x_{12}}
   \quad\text{und}\quad
@@ -171,7 +173,9 @@ Wenn die Verformungen klein sind, dann sind die folgenden beiden Vereinfachungen
 
 Gerechtfertigt heißt hier, dass die Abweichungen gegenüber der genaueren nichtlinearen Lösung klein sind.
 
-**1. Linearisierung.** Dies ist wahrscheinlich der schwierigste Schritt der gesamten Herleitung. Sie alle kennen das Taylorpolynom ersten Grades zu einer Funktion $f : \R \to \R$ am Entwicklungspunkt $x_0$, nämlich
+#### 1. Linearisierung
+
+Dies ist wahrscheinlich der schwierigste Schritt der gesamten Herleitung. Sie alle kennen das Taylorpolynom ersten Grades zu einer Funktion $f : \R \to \R$ am Entwicklungspunkt $x_0$, nämlich
 $$
   T(x) = f(x_0) + f'(x_0)(x - x_0),
 $$
@@ -288,7 +292,9 @@ $$
 $$
 der Transformationsvektor des unverformten Stabes.
 
-**2. Gleichgewicht am unverformten System.** Für die Ermittlung der Stabendkräfte $\mathbf{P}_1$ und $\mathbf{P}_2$ setzen wir nun statt des Winkels $\alpha$ den Winkel $\alpha_0$ der unverformten Achse ein. Zusammen mit der linearisierten Normalkraft erhalten wir den vereinfachten Zusammenhang
+#### 2. Gleichgewicht am unverformten System
+
+Für die Ermittlung der Stabendkräfte $\mathbf{P}_1$ und $\mathbf{P}_2$ setzen wir nun statt des Winkels $\alpha$ den Winkel $\alpha_0$ der unverformten Achse ein. Zusammen mit der linearisierten Normalkraft erhalten wir den vereinfachten Zusammenhang
 $$
   \mathbf{P}_{\text{lin}}
   =

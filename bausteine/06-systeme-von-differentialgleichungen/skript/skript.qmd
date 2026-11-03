@@ -6,10 +6,8 @@ Wir betrachten nun den Fall, dass in der Aufgabenstellung mehrere unbekannte Fun
 
 Als anschauliches Einstiegsbeispiel untersuchen wir die Bewegung eines Partikels (zum Beispiel eines Schadstoffpartikels) in einem vorgegebenen Strömungsfeld, @fig-partikel zeigt Anwendungsbeispiele.
 
-::: {#fig-partikel layout="[[60, 40], [100]]"}
-![](bilder/partikel-star-ccm.jpg)
-
-![](bilder/partikel-windfinder.png)
+::: {#fig-partikel}
+![](bilder/partikel-star-ccm.jpg){width="49%"} ![](bilder/partikel-windfinder.png){width="49%"}
 
 ![](bilder/partikel-meeresstroemungen.jpg){width="60%"}
 

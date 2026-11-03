@@ -49,8 +49,7 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 
 ## Extension `tinh`
 
-- [ ]  `tinh-notes-typst`: eigenes schlichtes Book-Layout (`tinh-book.typ` mit `book`, `part`, `appendices`) statt
-  orange-book, `numbering.typ` und `orange-book.lua` weiterverwenden
+- [ ]  Schlichteres Book-Layout für `tinh-notes-typst` (todo in quarto-tinh), danach `make update-extension`
 
 - [ ]  `notebook.lua` und `solution-scaffold.lua`: Kernel für Python (`python3` statt `python`) in der Extension
   setzen, dann den `jupyter`-Eintrag im Kopf in `render_notebook` (`skripte/make-learning-path.jl`) entfernen

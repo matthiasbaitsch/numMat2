@@ -10,17 +10,25 @@ Wir betrachten das in @fig-gesamtsystem dargestellte Beispiel. Für die Ermittlu
 
 ![System, Verschiebungen und Knotenkräfte](bilder/gesamtsystem.svg){#fig-gesamtsystem}
 
-**System.** Das System besteht aus drei Stäben und ist statisch bestimmt. Knoten und Stäbe sind nummeriert, die Stäbe haben jeweils eine Richtung vom ersten zum zweiten Knoten.
+#### System
 
-**Verschiebungen.** Jeder Knoten kann sich prinzipiell in horizontaler und vertikaler Richtung verschieben. Insgesamt gibt es also, wieder prinzipiell, doppelt so viele unbekannte Verschiebungen wie Knoten. Bei dieser Betrachtung lassen wir die Auflager zunächst außer Betracht, darum kümmern wir uns später. Wir fassen die unbekannten Verschiebungen im Vektor der [Systemverschiebungen]{.neuerbegriff}
+Das System besteht aus drei Stäben und ist statisch bestimmt. Knoten und Stäbe sind nummeriert, die Stäbe haben jeweils eine Richtung vom ersten zum zweiten Knoten.
+
+#### Verschiebungen
+
+Jeder Knoten kann sich prinzipiell in horizontaler und vertikaler Richtung verschieben. Insgesamt gibt es also, wieder prinzipiell, doppelt so viele unbekannte Verschiebungen wie Knoten. Bei dieser Betrachtung lassen wir die Auflager zunächst außer Betracht, darum kümmern wir uns später. Wir fassen die unbekannten Verschiebungen im Vektor der [Systemverschiebungen]{.neuerbegriff}
 $$
   \hat{\mathbf{u}} = \mmat{\hat{u}_1 & \hat{u}_2 & \hat{u}_3 & \hat{u}_4 & \hat{u}_5 & \hat{u}_6}\mtran
 $$
 zusammen. Der Hut über einer Variablen bezeichnet dabei eine Systemgröße (im Unterschied zu Größen für einen einzelnen Stab ohne Hut). Die unbekannten Verschiebungen werden häufig auch als [Freiheitsgrade]{.neuerbegriff} bezeichnet. Bei der Nummerierung der Freiheitsgrade stützen wir uns auf die Nummerierung der Knoten, so dass der Knoten $n$ die Freiheitsgradnummern $2n - 1$ und $2n$ erhält.
 
-**Stabendkräfte.** Im vorangegangenen Kapitel haben wir die Stabendkräfte ermittelt, die für einen einzelnen Fachwerkstab zu einer vorgegebenen Verschiebung gehören. Nun benötigen wir die Kräfte, die an einem freigeschnittenen Knoten angreifen. Hierzu schneiden wir die Stabenden von Stab 2 frei und sehen, dass an den beiden Schnittufern jeweils die negativen Stabendkräfte angreifen. Beachten Sie, dass die Nummer des Stabes bei den Stabendkräften mit einem hochgestellten Index angegeben ist.
+#### Stabendkräfte
 
-**An Knoten angreifende Kräfte.** In @fig-gesamtsystem unten rechts sind die Kräfte dargestellt, die an jedem Knoten angreifen. Wichtig ist, dass wir die Kräfte als vektorielle Größen angetragen haben, bei der Addition sind also keine Vorzeichen zu beachten. Für die externen Kräfte können wir festhalten:
+Im vorangegangenen Kapitel haben wir die Stabendkräfte ermittelt, die für einen einzelnen Fachwerkstab zu einer vorgegebenen Verschiebung gehören. Nun benötigen wir die Kräfte, die an einem freigeschnittenen Knoten angreifen. Hierzu schneiden wir die Stabenden von Stab 2 frei und sehen, dass an den beiden Schnittufern jeweils die negativen Stabendkräfte angreifen. Beachten Sie, dass die Nummer des Stabes bei den Stabendkräften mit einem hochgestellten Index angegeben ist.
+
+#### An Knoten angreifende Kräfte
+
+In @fig-gesamtsystem unten rechts sind die Kräfte dargestellt, die an jedem Knoten angreifen. Wichtig ist, dass wir die Kräfte als vektorielle Größen angetragen haben, bei der Addition sind also keine Vorzeichen zu beachten. Für die externen Kräfte können wir festhalten:
 $$
   \mathbf{F}_1 = \mmat{R_{11} \\ R_{12}},
   \qquad
@@ -69,7 +77,9 @@ Sie besagt, dass die Summe der Stabendkräfte mit den äußeren Lasten im Gleich
 
 Wie diese Abhängigkeit erfasst werden kann, untersuchen wir exemplarisch am horizontalen Stab 1.
 
-**Beitrag von Stab 1.** Entsprechend den Überlegungen im vorangegangenen Kapitel erhalten wir mit
+#### Beitrag von Stab 1
+
+Entsprechend den Überlegungen im vorangegangenen Kapitel erhalten wir mit
 $$
   l_0 = 4,
   \quad
@@ -196,7 +206,9 @@ $$
   \mmat{\hat{u}_1 \\[1ex] \hat{u}_2 \\[1ex] \hat{u}_3 \\[1ex] \hat{u}_4 \\[1ex] \hat{u}_5 \\[1ex] \hat{u}_6}.
 $$
 
-**Beiträge der Stäbe 2 und 3.** Mit derselben Vorgehensweise bestimmen wir die globalen Steifigkeitsmatrizen
+#### Beiträge der Stäbe 2 und 3
+
+Mit derselben Vorgehensweise bestimmen wir die globalen Steifigkeitsmatrizen
 $$
   \hat{\mathbf{K}}^2 =
   \mmat{

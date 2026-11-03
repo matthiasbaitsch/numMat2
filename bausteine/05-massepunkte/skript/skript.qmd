@@ -170,19 +170,25 @@ In der klassischen Modellierung setzt sich der Einmassenschwinger aus drei Besta
 
 ![Einmassenschwinger](bilder/einmassenschwinger.svg){#fig-einmassenschwinger}
 
-**Massepunkt.** Der Massepunkt mit der Masse $m$ kann sich in horizontaler Richtung reibungslos hin- und herbewegen. Zum Zeitpunkt $t$ ist er um die Verschiebung $x(t)$ aus der Ruhelage ausgelenkt. Damit ist $x : \R_+ \to \R$ eine Funktion, die jedem Zeitpunkt eine Auslenkung des Massepunkts zuordnet. Für den Massepunkt gilt das 2. newtonsche Gesetz
+#### Massepunkt
+
+Der Massepunkt mit der Masse $m$ kann sich in horizontaler Richtung reibungslos hin- und herbewegen. Zum Zeitpunkt $t$ ist er um die Verschiebung $x(t)$ aus der Ruhelage ausgelenkt. Damit ist $x : \R_+ \to \R$ eine Funktion, die jedem Zeitpunkt eine Auslenkung des Massepunkts zuordnet. Für den Massepunkt gilt das 2. newtonsche Gesetz
 $$
   F_{\mathrm{res}}(t) = m \, \ddot{x}(t).
 $$
 Es besagt: Die auf den Massepunkt einwirkende resultierende Kraft ist gleich der Masse mal der Beschleunigung.
 
-**Feder.** Die Feder bewirkt bei einer Auslenkung des Massepunkts eine Rückstellkraft, die den Massepunkt zurück in die Ausgangslage zieht beziehungsweise drückt. Vereinfachend nimmt man hierbei an, dass die Kraft proportional zur Auslenkung ist,
+#### Feder
+
+Die Feder bewirkt bei einer Auslenkung des Massepunkts eine Rückstellkraft, die den Massepunkt zurück in die Ausgangslage zieht beziehungsweise drückt. Vereinfachend nimmt man hierbei an, dass die Kraft proportional zur Auslenkung ist,
 $$
   F_{\mathrm{F}}(t) = k \, x(t),
 $$
 und zwar mit der Federkonstanten $k$.
 
-**Dämpfer.** Mit dem Dämpfungselement können wir abbilden, dass Bewegung in Wirklichkeit immer irgendeine Form von Reibung (Luftwiderstand, innere Reibung des Materials, Lagerung etc.) verursacht und dadurch Bewegungsenergie in Wärme umgewandelt wird. Die einfachste Form der Dämpfung ist die viskose Dämpfung, in der die Dämpfungskraft mit der Dämpfungskonstanten $c$ proportional zur Geschwindigkeit ist:
+#### Dämpfer
+
+Mit dem Dämpfungselement können wir abbilden, dass Bewegung in Wirklichkeit immer irgendeine Form von Reibung (Luftwiderstand, innere Reibung des Materials, Lagerung etc.) verursacht und dadurch Bewegungsenergie in Wärme umgewandelt wird. Die einfachste Form der Dämpfung ist die viskose Dämpfung, in der die Dämpfungskraft mit der Dämpfungskonstanten $c$ proportional zur Geschwindigkeit ist:
 $$
   F_{\mathrm{D}}(t) = c \, \dot{x}(t).
 $$
@@ -310,16 +316,16 @@ $$
 lassen sich mithilfe der Kettenregel und der Produktregel bestimmen. Setzen wir nun diese kinematischen Beziehungen in @eq-b-5 und @eq-b-6 ein, so erhalten wir
 $$
   \begin{aligned}
-    l(\ddot{\theta}_1 \cos\theta_1-\dot{\theta}_1^2 \sin\theta_1)
-    = {}
-    & -l(
+    & l(\ddot{\theta}_1 \cos\theta_1-\dot{\theta}_1^2 \sin\theta_1)
+    \\
+    & \qquad = -l(
     2\ddot{\theta}_1   \sin\theta_1 +
     2 \dot{\theta}_1^2 \cos\theta_1 +
      \ddot{\theta}_2   \sin\theta_2 +
       \dot{\theta}_2^2 \cos\theta_2
      ) \tan\theta_1
     \\
-    & -l(
+    & \qquad \phantom{=} -l(
     \ddot{\theta}_1   \sin\theta_1 +
      \dot{\theta}_1^2 \cos\theta_1 +
     \ddot{\theta}_2   \sin\theta_2 +
@@ -331,14 +337,14 @@ $$
 $$
 $$
   \begin{aligned}
-    l(
+    & l(
     \ddot{\theta}_1   \cos\theta_1 -
      \dot{\theta}_1^2 \sin\theta_1 +
     \ddot{\theta}_2   \cos\theta_2 -
      \dot{\theta}_2^2 \sin\theta_2
     )
-    = {}
-    & -l(
+    \\
+    & \qquad = -l(
     \ddot{\theta}_1   \sin\theta_1 +
      \dot{\theta}_1^2 \cos\theta_1 +
     \ddot{\theta}_2   \sin\theta_2 +
@@ -406,6 +412,8 @@ $$
   \end{aligned}
 $$ {#eq-doppelpendel}
 
-**Anmerkung zur Herleitung.** Die Herleitung der Bewegungsgleichungen von Hand ist mühselig, langwierig und fehleranfällig. Oben wurde versucht, den Gedankengang bei der Herleitung darzulegen, die mathematischen Umformungen erfolgten jedoch in dem Computeralgebra-Programm Mathematica. In @fig-doppelpendel-mathematica ist zu sehen, dass hierzu nur wenige Schritte notwendig sind.
+#### Anmerkung zur Herleitung
+
+Die Herleitung der Bewegungsgleichungen von Hand ist mühselig, langwierig und fehleranfällig. Oben wurde versucht, den Gedankengang bei der Herleitung darzulegen, die mathematischen Umformungen erfolgten jedoch in dem Computeralgebra-Programm Mathematica. In @fig-doppelpendel-mathematica ist zu sehen, dass hierzu nur wenige Schritte notwendig sind.
 
 ![Herleitung der Bewegungsgleichung in Mathematica](bilder/doppelpendel-mathematica.png){#fig-doppelpendel-mathematica}
