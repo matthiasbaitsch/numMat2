@@ -32,9 +32,27 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 - [X]  04 Lösungsverfahren: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [X]  05 Massepunkte: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [ ]  06 Systeme von Differentialgleichungen: ~~Skript~~ (ohne Anwendungen) · Folien · Aufgaben
+  - Folien: `../../numMat/99-vor-corona/03-notizen/03-dynamik-massepunkte.pdf` Seiten 3, 4 (Einmassenschwinger als
+    System erster Ordnung, Beispiel) und 9 (Mehrmassenschwinger) als eigene Datei, z.B.
+    `NM A 3 Massepunktsysteme.pdf` (Dateinamen in `c/notizen` müssen eindeutig sein)
+  - Aufgaben: 1.0 Blatt 8 (SEIR-Modell, Zweimassenschwinger, Musterlösung in `uebungsblatt-08/`); 2.0 Blatt 6
+    Abschnitt "Erweiterung Programmcode" (Löser für Systeme)
+  - Python: `odesolve.py` aus 04 kopieren, die Löser können schon Vektoren als Anfangswert; Einmassenschwinger aus
+    `../../numMat_2.0/01-uebungsaufgaben/musterloesungen/anfangswertprobleme-julia/einmassenschwinger.qmd`
 - [ ]  07 Genauigkeit und Startwerte: Folien · Aufgaben
+  - Folien: Notiz NM A 5 Eigenschaften (`../../numMat/03-notizen-videos/NM A 5 Eigenschaften.pdf`), Seite 16 von
+    `03-dynamik-massepunkte.pdf` (Abhängigkeit von Startwerten)
+  - Aufgaben: 2.0 Blatt 6 (Genauigkeit mit Zykloide, Stabilität mit Van der Pol nur als Phänomen, Startwerte mit
+    Lorenz), 1.0 Blatt 7; Python-Lösungen in `../../numMat_2.0/01-uebungsaufgaben/musterloesungen/anfangswertprobleme-python`
+    (`01-genauigkeit.ipynb`, `02-stabilitaet.ipynb`, `03-startwerte.ipynb`)
 - [ ]  08 Wärmeleitung Grundlagen: Folien · Aufgaben
+  - Folien: NM W 01–03 (`../../numMat/03-notizen-videos/`)
+  - Aufgaben: 2.0 Blatt 7 ohne Stabilität, 1.0 Blatt 9; Python-Lösungen `instationaer-1.*.ipynb`,
+    `instationaer_ar.py`, `instationaer_hilfsfunktionen.py`
 - [ ]  09 Wärmeleitung Stabilität: Folien · Aufgaben
+  - Folien: NM W 04
+  - Aufgaben: 2.0 Blatt 7 Abschnitte "Stabilität des Lösungsverfahrens" und "Implizites Euler-Verfahren"
+  - Systematisch: Testgleichung, Schrittweitenbeschränkung, implizites Euler-Verfahren (siehe CLAUDE.md)
 
 ## Inhalte langfristig
 
