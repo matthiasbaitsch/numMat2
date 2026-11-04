@@ -1,0 +1,15 @@
+# Eine Funktion gesucht: Anfangswertprobleme
+
+```{=typst}
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 1)
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 2)
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 3)
+```
+
+# Schritt für Schritt: Numerische Lösungsverfahren
+
+```{=typst}
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 4)
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 5)
+#notiz("notizen/NM A 1 Anfangswertprobleme.pdf", 6)
+```

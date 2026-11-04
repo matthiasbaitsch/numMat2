@@ -1,0 +1,80 @@
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+## Differentialgleichung und Richtungsfeld
+
+Funktionen aus `src/odesolve.py` laden
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.odesolve import *
+```
+
+::: {.tinh-solution}
+```{python}
+F = lambda x, y: (x - y) ** 2
+plot_slope_field(F, [0, 1], [0, 1], 0.1)
+plt.show()
+```
+:::
+
+## Ein Schritt mit drei Verfahren
+
+Python als Taschenrechner für die Kontrolle der Handrechnung
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.odesolve import *
+
+F = lambda x, y: x - y
+```
+
+::: {.tinh-solution}
+```{python}
+for method in (euler, halbschritt, rungekutta):
+    x, y = method(F, [0, 0.2], 0.2, 1)
+    print(method.__name__, y[1])
+
+print("exakt", 2 * np.exp(-0.2) + 0.2 - 1)
+```
+:::
+
+## Programmierung der Lösungsverfahren
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.odesolve import *
+```
+
+Anfangswertproblem und exakte Lösung
+
+```{python}
+F = lambda x, y: np.sin(2 * np.pi * x) + y
+I = [0, 2]
+h = 0.2
+y0 = 0
+
+
+def y_exact(x):
+    return (2 * np.pi * np.exp(x) - np.sin(2 * np.pi * x) - 2 * np.pi * np.cos(2 * np.pi * x)) / (1 + 4 * np.pi**2)
+```
+
+::: {.tinh-solution}
+```{python}
+xe = np.linspace(0, 2, 200)
+plt.plot(xe, y_exact(xe), color="black", label="exakt")
+
+for method in (euler, halbschritt, rungekutta):
+    x, y = method(F, I, h, y0)
+    plt.plot(x, y, "o-", label=method.__name__)
+    print(f"{method.__name__:12} Fehler bei x = 2: {abs(y[-1] - y_exact(x[-1])):.4f}")
+
+plt.legend()
+plt.show()
+```
+:::

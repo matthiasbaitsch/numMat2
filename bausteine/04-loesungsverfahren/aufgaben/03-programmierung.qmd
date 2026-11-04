@@ -1,0 +1,37 @@
+::: {#exr-programmierung}
+## Programmierung der Lösungsverfahren
+
+Verwenden Sie das Notebook zu diesem Aufgabenblatt (Download in der ersten Aufgabe). Implementieren Sie in der Datei `src/odesolve.py` die Funktionen
+
+```{.python}
+euler(F, I, h, y0)
+halbschritt(F, I, h, y0)
+rungekutta(F, I, h, y0)
+```
+
+Parameter sind jeweils die Funktion der Differentialgleichung $F$, das Lösungsintervall $I = [x_0, x_e]$, die Schrittweite $h$ und der Anfangswert $y_0$. Die Funktionen geben zwei Arrays zurück, die die Werte $x_0, x_1, \dots, x_N$ sowie $y_0, y_1, \dots, y_N$ enthalten.
+
+Lösen Sie mit allen drei Funktionen näherungsweise das Anfangswertproblem
+$$
+  y'(x) = \sin(2 \pi x) + y(x) \quad \text{mit} \quad y(0) = 0
+$$
+für $0 \leq x \leq 2$ und $h = 0.2$. Vergleichen Sie die Näherungen mit der exakten Lösung
+$$
+  y(x) = \frac{2 \pi  e^x-\sin (2 \pi  x)-2 \pi  \cos (2 \pi  x)}{1+4 \pi ^2}.
+$$
+
+::: {.callout-tip title="Tipps für Python"}
+- Beginnen Sie mit dem Euler-Verfahren und testen Sie Ihren Code, zum Beispiel mit dem Anfangswertproblem aus der vorigen Aufgabe.
+- Die Anzahl der Schritte ist $N = (x_e - x_0) / h$, gerundet mit `round`. Die Stellen erhalten Sie mit `x0 + h * np.arange(N + 1)`.
+- Legen Sie für die Näherungen ein Array `y = np.zeros(N + 1)` an und berechnen Sie in einer Schleife `y[i + 1]` aus `y[i]`.
+- Eine Funktion übergeben Sie wie jeden anderen Wert, zum Beispiel `F = lambda x, y: x - y` oder mit `def F(x, y): ...`.
+:::
+
+::: {.tinh-solution}
+Der Code steht im Lösungs-Notebook.
+
+**Zum Vergleich**
+
+Am Ende des Intervalls ($x = 2$) beträgt der Fehler beim Euler-Verfahren etwa 0.41, beim Halbschrittverfahren 0.026 und beim Runge-Kutta-Verfahren 0.0008. Das Euler-Verfahren ist bei dieser Schrittweite unbrauchbar, das Runge-Kutta-Verfahren ist von der exakten Lösung im Plot kaum zu unterscheiden.
+:::
+:::
