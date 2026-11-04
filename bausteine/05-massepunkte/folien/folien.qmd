@@ -1,0 +1,13 @@
+# Kraft gleich Masse mal Beschleunigung: Dynamik von Massepunkten
+
+```{=typst}
+#notiz("notizen/NM A 2 Massepunkte.pdf", 1)
+#notiz("notizen/NM A 2 Massepunkte.pdf", 2)
+```
+
+# Ein Beispiel mit Nebenbedingung: Pendel
+
+```{=typst}
+#notiz("notizen/NM A 2 Massepunkte.pdf", 12)
+#notiz("notizen/NM A 2 Massepunkte.pdf", 13)
+```

@@ -1,0 +1,5 @@
+{{< pagebreak >}}
+
+## Teil 2: Umsetzung in Python
+
+Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es. In diesem Aufgabenblatt arbeiten Sie nur im Notebook.

@@ -1,0 +1,11 @@
+::: {#exr-kinetik}
+## Kinetik: Zweimassenschwinger
+
+Stellen Sie für den dargestellten Zweimassenschwinger die Differentialgleichungen auf.
+
+![](bilder/zweimassenschwinger.svg){width="60%"}
+
+::: {.tinh-solution}
+![](bilder/massepunkte-loesung-3.png){width="60%"}
+:::
+:::

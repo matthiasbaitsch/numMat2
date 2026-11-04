@@ -30,7 +30,7 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 - [X]  02 Stabendkräfte: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [X]  03 Berechnung: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [X]  04 Lösungsverfahren: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
-- [ ]  05 Massepunkte: ~~Skript~~ · Folien · Aufgaben
+- [X]  05 Massepunkte: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [ ]  06 Systeme von Differentialgleichungen: ~~Skript~~ (ohne Anwendungen) · Folien · Aufgaben
 - [ ]  07 Genauigkeit und Startwerte: Folien · Aufgaben
 - [ ]  08 Wärmeleitung Grundlagen: Folien · Aufgaben
@@ -41,8 +41,9 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 - [ ]  Skripttexte für 07–09 schreiben (bisher nur Notizen)
 - [ ]  Skript 06: Abschnitt Anwendungen schreiben (SEIR-Modell, Massepunktsysteme wie Zweimassenschwinger und
   Doppelpendel als System erster Ordnung), Material: Videos A 4, 1.0 Blatt 8
-- [ ]  Neue Notizen für 04 Lösungsverfahren: die Folien nutzen vorerst die blassen Bleistiftseiten 1–6 aus
-  `../../numMat/99-vor-corona/03-notizen/02-awps.pdf` (Hochformat, schlecht lesbar)
+- [ ]  Neue Notizen für 04 Lösungsverfahren und 05 Massepunkte: die Folien nutzen vorerst blasse Bleistiftseiten
+  aus `../../numMat/99-vor-corona/03-notizen/` (`02-awps.pdf` Seiten 1–6, `03-dynamik-massepunkte.pdf` Seiten 1, 2,
+  12, 13; Hochformat, schlecht lesbar)
 - [ ]  Videos für 04 Lösungsverfahren aufnehmen (fehlen in der Playlist)
 - [ ]  Videos mit Matlab (A 4.2.3, A 4.2.5, A 5.2.2, A 5.2.4) durch Python-Fassungen ersetzen
 - [ ]  Zusatzthemen aus der Playlist einordnen: „NM Z 01 FVM 2D“ (https://youtu.be/ter-OxxZZqU, 4:36),

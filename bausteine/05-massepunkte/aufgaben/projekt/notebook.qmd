@@ -1,0 +1,84 @@
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+## Spirale in Python
+
+Parameter der Spirale aus der Aufgabe zur Kinematik (Längen in m, Zeiten in s)
+
+::: {.tinh-solution}
+```{python}
+r0 = 10
+dr = -1.5
+T = 10
+omega = 2 * np.pi / T
+```
+:::
+
+### Bahnkurve
+
+::: {.tinh-solution}
+```{python}
+def x(t):
+    return (r0 + dr * t / T) * np.array([np.cos(omega * t), np.sin(omega * t)])
+
+
+t = np.linspace(0, 50, 1000)
+xt = x(t)
+plt.plot(xt[0], xt[1])
+plt.scatter(*x(0), color="black", zorder=3)
+plt.scatter(*x(50), color="black", zorder=3)
+plt.axis("equal")
+plt.show()
+```
+:::
+
+### Geschwindigkeit
+
+::: {.tinh-solution}
+Geschwindigkeits- und Beschleunigungsvektor aus der Lösung zur Kinematik
+
+```{python}
+def v(t):
+    return (dr / T * np.array([np.cos(omega * t), np.sin(omega * t)])
+            + omega * (r0 + dr * t / T) * np.array([-np.sin(omega * t), np.cos(omega * t)]))
+
+
+def a(t):
+    return (2 * omega * dr / T * np.array([-np.sin(omega * t), np.cos(omega * t)])
+            - omega**2 * (r0 + dr * t / T) * np.array([np.cos(omega * t), np.sin(omega * t)]))
+
+
+for ti in (0, 50):
+    print(f"t = {ti}: v = {np.round(v(ti), 3)}, a = {np.round(a(ti), 3)}")
+
+plt.plot(t, np.linalg.norm(v(t), axis=0))
+plt.xlabel("t [s]")
+plt.ylabel("v [m/s]")
+plt.show()
+```
+:::
+
+### Langspielplatte
+
+::: {.tinh-solution}
+Zeit in Minuten, Längen in m, Radius von 150 mm auf 60 mm in 20 Minuten
+
+```{python}
+T_lp = 1 / (100 / 3)               # Dauer einer Umdrehung in Minuten
+n = 20 / T_lp                      # Anzahl der Umdrehungen
+r0_lp = 0.15
+dr_lp = (0.06 - 0.15) / n          # Änderung des Radius je Umdrehung
+omega_lp = 2 * np.pi / T_lp
+
+
+def x_lp(t):
+    return (r0_lp + dr_lp * t / T_lp) * np.array([np.cos(omega_lp * t), np.sin(omega_lp * t)])
+
+
+t = np.linspace(0, 20, 1_000_000)
+length = np.sum(np.linalg.norm(np.diff(x_lp(t), axis=1), axis=0))
+print(f"{n:.0f} Umdrehungen, dr = {1000 * dr_lp:.3f} mm, Länge der Rille {length:.1f} m")
+```
+:::

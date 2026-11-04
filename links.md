@@ -127,3 +127,33 @@ https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprob
 **Lösung Notebook zu den Aufgaben (Zip)**
 
 https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-38f9f470.zip
+
+## 05 Anfangswertprobleme: Massepunkte
+
+**Folien (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/05-anfangswertprobleme-massepunkte.pdf
+
+**Aufgaben**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.html
+
+**Aufgaben (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.pdf
+
+**Notebook zu den Aufgaben (Zip)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.zip
+
+**Lösung**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.html
+
+**Lösung (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.pdf
+
+**Lösung Notebook zu den Aufgaben (Zip)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.zip

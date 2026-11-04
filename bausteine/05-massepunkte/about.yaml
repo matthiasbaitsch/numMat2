@@ -7,6 +7,9 @@ inhalt:
   - Einmassenschwinger
   - Doppelpendel
 
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold
+
 videos:
   - titel: NM A 2 1 Kinematik des Massepunktes
     dauer: "28:20"
