@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-## Differentialgleichung und Richtungsfeld
+## Programmierung der Lösungsverfahren
 
-Funktionen aus `src/odesolve.py` laden
+Entwickeln Sie die Funktionen zunächst hier im Notebook. Sobald sie in `src/odesolve.py` stehen, laden Sie sie mit der folgenden Zelle.
 
 ```{python}
 %load_ext autoreload
@@ -13,23 +13,11 @@ Funktionen aus `src/odesolve.py` laden
 from src.odesolve import *
 ```
 
-::: {.tinh-solution}
-```{python}
-F = lambda x, y: (x - y) ** 2
-plot_slope_field(F, [0, 1], [0, 1], 0.1)
-plt.show()
-```
-:::
+### Test mit einem Schritt
 
-## Ein Schritt mit drei Verfahren
-
-Python als Taschenrechner für die Kontrolle der Handrechnung
+Anfangswertproblem aus der Aufgabe "Ein Schritt mit drei Verfahren", die Ergebnisse kennen Sie von Hand.
 
 ```{python}
-%load_ext autoreload
-%autoreload 2
-from src.odesolve import *
-
 F = lambda x, y: x - y
 ```
 
@@ -43,13 +31,7 @@ print("exakt", 2 * np.exp(-0.2) + 0.2 - 1)
 ```
 :::
 
-## Programmierung der Lösungsverfahren
-
-```{python}
-%load_ext autoreload
-%autoreload 2
-from src.odesolve import *
-```
+### Vergleich mit der exakten Lösung
 
 Anfangswertproblem und exakte Lösung
 
@@ -75,6 +57,22 @@ for method in (euler, halbschritt, rungekutta):
     print(f"{method.__name__:12} Fehler bei x = 2: {abs(y[-1] - y_exact(x[-1])):.4f}")
 
 plt.legend()
+plt.show()
+```
+:::
+
+## Richtungsfeld programmieren (freiwillig)
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.odesolve import *
+```
+
+::: {.tinh-solution}
+```{python}
+F = lambda x, y: (x - y) ** 2
+plot_slope_field(F, [0, 1], [0, 1], 0.1)
 plt.show()
 ```
 :::

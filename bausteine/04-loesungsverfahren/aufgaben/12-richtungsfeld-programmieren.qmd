@@ -1,0 +1,15 @@
+::: {#exr-richtungsfeld-programmieren}
+## Richtungsfeld programmieren (freiwillig)
+
+Erstellen Sie eine Funktion `plot_slope_field(F, xrange, yrange, delta)`, um das Richtungsfeld einer Differentialgleichung darzustellen, zum Beispiel so:
+
+![](bilder/richtungsfeld.svg){width="60%"}
+
+Testen Sie die Funktion mit der Differentialgleichung aus der Aufgabe zum Richtungsfeld im ersten Teil.
+
+::: {.tinh-solution}
+Der Code steht im Lösungs-Notebook. Für die Richtung der kurzen Strecken hilft die folgende Überlegung:
+
+![](bilder/loesungsverfahren-loesung-2.png){width="60%"}
+:::
+:::

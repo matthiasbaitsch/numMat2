@@ -1,0 +1,7 @@
+{{< pagebreak >}}
+
+## Teil 2: Umsetzung in Python
+
+Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es.
+
+Entwickeln Sie den Code zunächst im Notebook. Sobald eine Funktion funktioniert, verschieben Sie sie in eine Datei im Ordner `src`, zum Beispiel `src/odesolve.py`, und importieren sie von dort. Mit `%load_ext autoreload` und `%autoreload 2` werden Änderungen in der Datei übernommen, ohne dass Sie den Kernel neu starten müssen.

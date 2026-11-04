@@ -1,7 +1,7 @@
 ::: {#exr-vorbereitung}
 ## Vorbereitung: Umsortieren, Indexvektoren und Assemblierungsmatrix
 
-In dieser Aufgabe lernen Sie ein paar nützliche Dinge für die Berechnung der Verschiebungen kennen. Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es. Kopieren Sie Ihre Dateien `truss.py` und `structures.py` aus dem vorigen Aufgabenblatt in den Ordner `src`.
+In dieser Aufgabe lernen Sie ein paar nützliche Dinge für die Berechnung der Verschiebungen kennen. Kopieren Sie Ihre Dateien `truss.py` und `structures.py` aus dem vorigen Aufgabenblatt in den Ordner `src`.
 
 ### Vektoren und Matrizen umsortieren
 

@@ -91,7 +91,7 @@ def girder(l=40, h1=2, h2=7, nn=11):
 
 ### Hilfsfunktion für die Größe des Systems
 
-Erstellen Sie in `src/truss.py` eine Funktion `struct_size(s)`, mit der ein Maß für die Abmessungen des Tragwerks ermittelt wird. Sie benötigen das später zum Beispiel für das Zeichnen der Kräfte und Auflager. Eine gute Möglichkeit besteht darin, das geometrische Mittel von Breite und Höhe des Systems zu verwenden, also
+Erstellen Sie eine Funktion `struct_size(s)` (später in `src/truss.py`), mit der ein Maß für die Abmessungen des Tragwerks ermittelt wird. Sie benötigen das später zum Beispiel für das Zeichnen der Kräfte und Auflager. Eine gute Möglichkeit besteht darin, das geometrische Mittel von Breite und Höhe des Systems zu verwenden, also
 $$
   s = \sqrt{(x_{\max} - x_{\min}) \cdot (y_{\max} - y_{\min})}.
 $$

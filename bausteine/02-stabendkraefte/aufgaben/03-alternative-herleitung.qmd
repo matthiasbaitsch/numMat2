@@ -14,7 +14,7 @@ $$
     0 & 0 & \cos\alpha_0 & \sin\alpha_0
   },
 $$
-wobei $\mathbf{k}$ eine „lokale“ Elementsteifigkeitsmatrix ist und $\mathbf{T}$ die Transformationsmatrix zwischen lokalen und globalen Koordinaten.
+wobei $\mathbf{k}$ eine "lokale" Elementsteifigkeitsmatrix ist und $\mathbf{T}$ die Transformationsmatrix zwischen lokalen und globalen Koordinaten.
 
 Zeigen Sie, dass diese Formulierung äquivalent zur Elementsteifigkeitsmatrix aus dem Skript ist.
 

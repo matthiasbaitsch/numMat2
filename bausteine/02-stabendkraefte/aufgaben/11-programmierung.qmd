@@ -1,7 +1,7 @@
 ::: {#exr-programmierung}
 ## Programmierung der Stabendkräfte
 
-Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es. Legen Sie dort einen Ordner `src` mit einer Datei `truss.py` an und implementieren Sie darin die folgenden Funktionen:
+Implementieren Sie die folgenden Funktionen und verschieben Sie sie anschließend in die Datei `src/truss.py`:
 
 1. Vektor der Stabendkräfte nach der geometrisch exakten Formulierung:
 

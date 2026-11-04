@@ -1,7 +1,7 @@
 ::: {#exr-programmierung}
 ## Programmierung der Lösungsverfahren
 
-Verwenden Sie das Notebook zu diesem Aufgabenblatt (Download in der ersten Aufgabe). Implementieren Sie in der Datei `src/odesolve.py` die Funktionen
+Implementieren Sie die Funktionen
 
 ```{.python}
 euler(F, I, h, y0)
@@ -21,7 +21,7 @@ $$
 $$
 
 ::: {.callout-tip title="Tipps für Python"}
-- Beginnen Sie mit dem Euler-Verfahren und testen Sie Ihren Code, zum Beispiel mit dem Anfangswertproblem aus der vorigen Aufgabe.
+- Beginnen Sie mit dem Euler-Verfahren und testen Sie Ihren Code, zum Beispiel mit dem Anfangswertproblem aus der Aufgabe "Ein Schritt mit drei Verfahren", deren Ergebnisse Sie von Hand kennen.
 - Die Anzahl der Schritte ist $N = (x_e - x_0) / h$, gerundet mit `round`. Die Stellen erhalten Sie mit `x0 + h * np.arange(N + 1)`.
 - Legen Sie für die Näherungen ein Array `y = np.zeros(N + 1)` an und berechnen Sie in einer Schleife `y[i + 1]` aus `y[i]`.
 - Eine Funktion übergeben Sie wie jeden anderen Wert, zum Beispiel `F = lambda x, y: x - y` oder mit `def F(x, y): ...`.

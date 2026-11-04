@@ -4,7 +4,7 @@
 
 - [X]  Rendern mit Python testen
 - [X]  Notebook-Erzeugung mit Python prüfen (Kernel `python3` im `.ipynb`, Gerüst `# ...`)
-- [ ]  GitHub-Repo `numMat2` anlegen, Pages aktivieren
+- [X]  GitHub-Repo `numMat2` anlegen, Pages aktivieren
 - [ ]  Einführung ausbauen (Material: `../../numMat/02-folien/00-einfuehrung`), Video „NM 01 Begrüßung“
   (https://youtu.be/MbV3t8TYWRU, 16:50) einbinden
 - [X]  Lernpfad-Skript: Skript-Book in `lernpfad/skript/c/` erzeugen, `make render-skript`
