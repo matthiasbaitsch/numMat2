@@ -5,7 +5,8 @@ inhalt:
   - Kräftegleichgewicht und Systemgrößen
   - Assemblierungsmatrix
   - Berechnung von Verschiebungen und Normalkräften
-  - Darstellung der Ergebnisse und Anwendungen
+  - Postprocessing: Darstellung der Ergebnisse
+  - Anwendungen
 
 # Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
 target: scaffold

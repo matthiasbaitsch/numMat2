@@ -1,0 +1,3 @@
+# Fachwerke: Datenstrukturen und Visualisierung
+
+**TODO:** Beschreibung eines Stabtragwerks mit Matrizen (Knoten, Stäbe, Kräfte, Auflager), Anordnung der Freiheitsgrade, graphische Darstellung

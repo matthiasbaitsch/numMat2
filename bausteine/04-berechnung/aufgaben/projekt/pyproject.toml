@@ -1,0 +1,20 @@
+[project]
+name = "numerische-mathematik"
+version = "0.1.0"
+description = "Notebooks zur Vorlesung Numerische Mathematik"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel",
+    "matplotlib",
+    "numpy",
+    "scipy",
+    "objdict",
+]
+
+# Nur zum Rendern der Unterlagen mit Quarto, nicht für die Studierenden
+[dependency-groups]
+render = ["jupyter"]
+
+[tool.uv]
+package = false
+default-groups = []

@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
@@ -35,45 +34,3 @@ def truss_p_lin(EA, x1, x2, u1, u2):
     u = np.concatenate((u1, u2))
     return K @ u
 
-
-# Darstellung von Stabtragwerken
-
-
-def struct_size(s):
-    """Maß für die Abmessungen des Tragwerks: geometrisches Mittel von Breite und Höhe, bei einem flachen
-    System (Breite oder Höhe null) die größere Abmessung"""
-    width = np.max(s.nodes[0, :]) - np.min(s.nodes[0, :])
-    height = np.max(s.nodes[1, :]) - np.min(s.nodes[1, :])
-    if width * height == 0:
-        return max(width, height)
-    return np.sqrt(width * height)
-
-
-def draw_system(s):
-    """Knoten, Stäbe, Kräfte und Auflager zeichnen"""
-    size = struct_size(s)
-
-    # Stäbe
-    for e in range(s.elements.shape[1]):
-        n = s.elements[:, e]
-        plt.plot(s.nodes[0, n], s.nodes[1, n], color="black")
-
-    # Knoten
-    plt.scatter(s.nodes[0, :], s.nodes[1, :], color="black", zorder=2, s=15)
-
-    # Kräfte, die größte Kraft ist ein Fünftel so lang wie das Tragwerk groß
-    f_max = np.max(np.abs(s.forces))
-    plt.quiver(
-        s.nodes[0, :], s.nodes[1, :],
-        s.forces[0, :], s.forces[1, :],
-        color="red", angles="xy", scale_units="xy", scale=f_max / (0.2 * size), width=0.004,
-    )
-
-    # Auflager, Dreiecke in Richtung der gesperrten Verschiebung
-    sx = s.supports[0, :]
-    plt.scatter(s.nodes[0, sx], s.nodes[1, sx], marker=5, s=150, color="tab:blue")
-    sy = s.supports[1, :]
-    plt.scatter(s.nodes[0, sy], s.nodes[1, sy], marker=6, s=150, color="tab:blue")
-
-    plt.axis("equal")
-    plt.show()

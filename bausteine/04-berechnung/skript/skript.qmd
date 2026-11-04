@@ -24,7 +24,7 @@ zusammen. Der Hut über einer Variablen bezeichnet dabei eine Systemgröße (im 
 
 #### Stabendkräfte
 
-Im vorangegangenen Kapitel haben wir die Stabendkräfte ermittelt, die für einen einzelnen Fachwerkstab zu einer vorgegebenen Verschiebung gehören. Nun benötigen wir die Kräfte, die an einem freigeschnittenen Knoten angreifen. Hierzu schneiden wir die Stabenden von Stab 2 frei und sehen, dass an den beiden Schnittufern jeweils die negativen Stabendkräfte angreifen. Beachten Sie, dass die Nummer des Stabes bei den Stabendkräften mit einem hochgestellten Index angegeben ist.
+In @sec-stabendkraefte haben wir die Stabendkräfte ermittelt, die für einen einzelnen Fachwerkstab zu einer vorgegebenen Verschiebung gehören. Nun benötigen wir die Kräfte, die an einem freigeschnittenen Knoten angreifen. Hierzu schneiden wir die Stabenden von Stab 2 frei und sehen, dass an den beiden Schnittufern jeweils die negativen Stabendkräfte angreifen. Beachten Sie, dass die Nummer des Stabes bei den Stabendkräften mit einem hochgestellten Index angegeben ist.
 
 #### An Knoten angreifende Kräfte
 
@@ -79,7 +79,7 @@ Wie diese Abhängigkeit erfasst werden kann, untersuchen wir exemplarisch am hor
 
 #### Beitrag von Stab 1
 
-Entsprechend den Überlegungen im vorangegangenen Kapitel erhalten wir mit
+Entsprechend den Überlegungen in @sec-stabendkraefte erhalten wir mit
 $$
   l_0 = 4,
   \quad
@@ -433,3 +433,7 @@ Wir fassen die Schritte aus den vorangegangenen Abschnitten nochmal allgemein zu
 1. Auflagerbedingungen einbauen
 
 1. Lineares Gleichungssystem lösen
+
+## Postprocessing
+
+**TODO:** Darstellung der Ergebnisse (Verformung, Normalkräfte, Ausgabe als Tabelle)

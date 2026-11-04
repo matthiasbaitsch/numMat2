@@ -1,0 +1,10 @@
+teil: Stabtragwerke
+titel: Datenstrukturen und Visualisierung
+
+inhalt:
+  - Beschreibung eines Stabtragwerks mit Matrizen
+  - Anordnung der Freiheitsgrade
+  - Graphische Darstellung von Stabtragwerken
+
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold
