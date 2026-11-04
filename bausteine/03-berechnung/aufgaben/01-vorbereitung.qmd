@@ -1,0 +1,59 @@
+::: {#exr-vorbereitung}
+## Vorbereitung: Umsortieren, Indexvektoren und Assemblierungsmatrix
+
+In dieser Aufgabe lernen Sie ein paar nützliche Dinge für die Berechnung der Verschiebungen kennen. Laden Sie das [Notebook](${notebook}){download="${slug}-aufgaben.zip"} herunter, entpacken Sie es in den Ordner `projekt-aufgaben` und öffnen Sie es. Kopieren Sie Ihre Dateien `truss.py` und `structures.py` aus dem vorigen Aufgabenblatt in den Ordner `src`.
+
+### Vektoren und Matrizen umsortieren
+
+Gegeben sind
+$$
+  \mathbf{A} = \mmat{1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8}
+  \quad \text{und} \quad
+  \mathbf{x} = \mmat{1 & 2 & 3 & 4 & 5 & 6 & 7 & 8}\mtran.
+$$
+Sortieren Sie mit der Funktion `np.reshape` die Matrix $\mathbf{A}$ zum Vektor
+$$
+  \mmat{1 & 5 & 2 & 6 & 3 & 7 & 4 & 8}\mtran
+$$
+und den Vektor $\mathbf{x}$ zur Matrix
+$$
+  \mmat{1 & 3 & 5 & 7 \\ 2 & 4 & 6 & 8}
+$$
+um. Nach welchem Schema werden die Einträge umgeordnet?
+
+### Addition einer Untermatrix mit Indexvektor
+
+Kopieren Sie den Code und führen Sie die Anweisungen aus. Was passiert da?
+
+```{.python}
+A = np.ones([6, 6])
+I = [5, 0]
+B = np.array([[1, 2], [3, 4]])
+A[np.ix_(I, I)] += B
+A
+```
+
+### Assemblierungsmatrix
+
+Betrachten Sie den Stab 3 des Rechenbeispiels aus dem Skript.
+
+1. Stellen Sie die Elementsteifigkeitsmatrix $\mathbf{K}^3$ und die Assemblierungsmatrix $\mathbf{A}^3$ auf.
+
+1. Berechnen Sie die globale Steifigkeitsmatrix für Stab 3 mithilfe der Beziehung $\hat{\mathbf{K}}^3 = \left(\mathbf{A}^3\right)\mtran\mathbf{K}^3\mathbf{A}^3$.
+
+1. Zeigen Sie, dass Sie dasselbe Ergebnis erzielen, wenn Sie $\mathbf{K}^3$ mithilfe des Indexvektors $\mathbf{I}^3 = \mmat{5 & 6 & 3 & 4}\mtran$ auf eine $6\times{6}$-Nullmatrix addieren. Berücksichtigen Sie, dass die Indizierung in Python bei 0 beginnt.
+
+Die Berechnungen sollen in Python erfolgen.
+
+::: {.tinh-solution}
+Der Code steht im Lösungs-Notebook.
+
+**Zu Vektoren und Matrizen umsortieren**
+
+`np.reshape` mit `order="F"` liest und schreibt die Einträge spaltenweise (wie Fortran, Julia und Matlab), mit der Voreinstellung `order="C"` zeilenweise. Für die Anordnung der Freiheitsgrade $\hat{u}_1, \hat{u}_2, \dots$ (Knoten für Knoten) brauchen wir die spaltenweise Variante, weil jede Spalte der Matrix der Knotenverschiebungen zu einem Knoten gehört.
+
+**Zu Addition einer Untermatrix mit Indexvektor**
+
+`np.ix_(I, I)` wählt die Zeilen und Spalten mit den Indizes aus `I` aus, in der Reihenfolge von `I`. Der Eintrag `B[i, j]` wird also auf `A[I[i], I[j]]` addiert, hier zum Beispiel `B[0, 0] = 1` auf `A[5, 5]` und `B[0, 1] = 2` auf `A[5, 0]`.
+:::
+:::

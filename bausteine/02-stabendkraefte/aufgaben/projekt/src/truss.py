@@ -40,9 +40,12 @@ def truss_p_lin(EA, x1, x2, u1, u2):
 
 
 def struct_size(s):
-    """Maß für die Abmessungen des Tragwerks: geometrisches Mittel von Breite und Höhe"""
+    """Maß für die Abmessungen des Tragwerks: geometrisches Mittel von Breite und Höhe, bei einem flachen
+    System (Breite oder Höhe null) die größere Abmessung"""
     width = np.max(s.nodes[0, :]) - np.min(s.nodes[0, :])
     height = np.max(s.nodes[1, :]) - np.min(s.nodes[1, :])
+    if width * height == 0:
+        return max(width, height)
     return np.sqrt(width * height)
 
 

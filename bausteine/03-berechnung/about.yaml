@@ -7,6 +7,9 @@ inhalt:
   - Berechnung von Verschiebungen und Normalkräften
   - Darstellung der Ergebnisse und Anwendungen
 
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold
+
 videos:
   - titel: NM S 06 Global Equilibrium
     dauer: "25:12"

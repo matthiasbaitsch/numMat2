@@ -1,0 +1,31 @@
+# Alle Knoten im Gleichgewicht: Globales Gleichungssystem
+
+```{=typst}
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 2)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 3)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 4)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 5)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 6)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 7)
+```
+
+# Aus Verschiebungen Kräfte: Schnittgrößen
+
+```{=typst}
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 8)
+```
+
+# Vom Stab zum System: Assemblierungsmatrix
+
+```{=typst}
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 9)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 10)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 11)
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 12)
+```
+
+# Schritt für Schritt: Berechnungsprozedur
+
+```{=typst}
+#notiz("notizen/NM S 06 Kraeftegleichgewicht, Systemgroessen und Verschiebungen.pdf", 13)
+```

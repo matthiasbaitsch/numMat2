@@ -95,6 +95,7 @@ Erstellen Sie in `src/truss.py` eine Funktion `struct_size(s)`, mit der ein Maß
 $$
   s = \sqrt{(x_{\max} - x_{\min}) \cdot (y_{\max} - y_{\min})}.
 $$
+Bei einem flachen System, zum Beispiel einem einzelnen horizontalen Stab, ist das Produkt null. Verwenden Sie dann die größere der beiden Abmessungen.
 
 ### Stabtragwerk graphisch darstellen
 

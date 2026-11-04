@@ -28,7 +28,7 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 
 - [X]  01 Modellierung: ~~Skript~~ · ~~Folien~~
 - [X]  02 Stabendkräfte: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
-- [ ]  03 Berechnung: ~~Skript~~ · Folien · Aufgaben
+- [X]  03 Berechnung: ~~Skript~~ · ~~Folien~~ · ~~Aufgaben~~
 - [ ]  04 Lösungsverfahren: ~~Skript~~ · Folien · Aufgaben
 - [ ]  05 Massepunkte: ~~Skript~~ · Folien · Aufgaben
 - [ ]  06 Systeme von Differentialgleichungen: ~~Skript~~ (ohne Anwendungen) · Folien · Aufgaben

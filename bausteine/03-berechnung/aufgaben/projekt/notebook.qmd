@@ -1,0 +1,177 @@
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+## Vorbereitung: Umsortieren, Indexvektoren und Assemblierungsmatrix
+
+### Vektoren und Matrizen umsortieren
+
+```{python}
+A = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+x = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+```
+
+::: {.tinh-solution}
+```{python}
+print(np.reshape(A, 8, order="F"))
+print(np.reshape(x, (2, 4), order="F"))
+```
+:::
+
+### Addition einer Untermatrix mit Indexvektor
+
+::: {.tinh-solution}
+```{python}
+A = np.ones([6, 6])
+I = [5, 0]
+B = np.array([[1, 2], [3, 4]])
+A[np.ix_(I, I)] += B
+A
+```
+:::
+
+### Assemblierungsmatrix
+
+Stab 3 aus dem Rechenbeispiel im Skript: von Knoten 3 nach Knoten 2, $EA = 60$ MN
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+
+EA = 60
+x1 = np.array([0.0, 3.0])
+x2 = np.array([4.0, 0.0])
+```
+
+::: {.tinh-solution}
+```{python}
+K3 = truss_ke(EA, x1, x2)
+
+A3 = np.zeros((4, 6))
+A3[0, 4] = 1
+A3[1, 5] = 1
+A3[2, 2] = 1
+A3[3, 3] = 1
+
+K3_hat = A3.T @ K3 @ A3
+print(K3_hat)
+```
+
+Dasselbe mit dem Indexvektor (in Python ab 0 gezählt)
+
+```{python}
+I3 = [4, 5, 2, 3]
+K3_hat_i = np.zeros((6, 6))
+K3_hat_i[np.ix_(I3, I3)] += K3
+print(np.allclose(K3_hat, K3_hat_i))
+```
+:::
+
+## Berechnung von Verschiebungen und Normalkräften
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
+```
+
+::: {.tinh-solution}
+```{python}
+s = simple_example()
+s.u_hat = solve(s)
+s.N = member_forces(s)
+print(s.u_hat)
+print(s.N)
+```
+:::
+
+## Darstellung der Berechnungsergebnisse
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
+
+s = simple_example()
+s.u_hat = solve(s)
+s.N = member_forces(s)
+```
+
+### Verformung
+
+::: {.tinh-solution}
+```{python}
+draw_deformation(s, 15)
+```
+:::
+
+### Normalkräfte
+
+::: {.tinh-solution}
+```{python}
+draw_member_forces(s, 0.005)
+```
+:::
+
+### Ausgabe der Berechnungsergebnisse
+
+::: {.tinh-solution}
+```{python}
+print_results(s)
+```
+:::
+
+## Anwendungen
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
+```
+
+### Eigenes Tragwerk
+
+::: {.tinh-solution}
+Als Beispiel der Fachwerkträger aus `structures.py`
+
+```{python}
+s = girder(l=50, h1=1.5, h2=10, nn=13)
+s.u_hat = solve(s)
+s.N = member_forces(s)
+
+draw_system(s)
+draw_deformation(s, 20)
+draw_member_forces(s, 0.075)
+```
+:::
+
+### Wäscheleine und statisch unterbestimmte Systeme
+
+::: {.tinh-solution}
+Stahlseil mit $E = 210$ kN/mm² und $A = \pi \cdot 1.5^2$ mm², Kräfte in kN, Längen in m
+
+```{python}
+from objdict import ObjDict
+
+s = ObjDict()
+s.EA = 210 * np.pi * 1.5**2
+s.nodes = np.array([[0, 2.5, 5], [0, 0, 0]])
+s.elements = np.array([[0, 1], [1, 2]])
+s.forces = np.zeros((2, 3))
+s.forces[1, 1] = -9.81e-3
+s.supports = np.full((2, 3), False)
+s.supports[:, [0, 2]] = True
+
+draw_system(s)
+
+try:
+    s.u_hat = solve(s)
+except np.linalg.LinAlgError as e:
+    print("Fehler:", e)
+```
+:::
