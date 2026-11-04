@@ -28,13 +28,15 @@ https://matthiasbaitsch.github.io/numMat2/lernpfad/skript/index.html
 
 https://matthiasbaitsch.github.io/numMat2/lernpfad/skript/skript-numerische-mathematik.pdf
 
-## 01 Stabtragwerke: Modellierung
+## Stabtragwerke
+
+### 01 Modellierung
 
 **Folien (PDF)**
 
 https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/01-stabtragwerke-modellierung.pdf
 
-## 02 Stabtragwerke: Stabendkräfte
+### 02 Stabendkräfte
 
 **Folien (PDF)**
 
@@ -68,92 +70,120 @@ https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/02-stabtragwerke-s
 
 https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/02-stabtragwerke-stabendkraefte-aufgaben-loesung-61499167.zip
 
-## 03 Stabtragwerke: Berechnung
-
-**Folien (PDF)**
-
-https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/03-stabtragwerke-berechnung.pdf
+### 03 Datenstrukturen und Visualisierung
 
 **Aufgaben**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben.html
 
 **Aufgaben (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben.pdf
 
 **Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben.zip
 
 **Lösung**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben-loesung-abccb3a9.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben-loesung-e1dd13b7.html
 
 **Lösung (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben-loesung-abccb3a9.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben-loesung-e1dd13b7.pdf
 
 **Lösung Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-berechnung-aufgaben-loesung-abccb3a9.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/03-stabtragwerke-datenstrukturen-und-visualisierung-aufgaben-loesung-e1dd13b7.zip
 
-## 04 Anfangswertprobleme: Lösungsverfahren
+### 04 Berechnung
 
 **Folien (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/04-anfangswertprobleme-loesungsverfahren.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/04-stabtragwerke-berechnung.pdf
 
 **Aufgaben**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben.html
 
 **Aufgaben (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben.pdf
 
 **Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben.zip
 
 **Lösung**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-38f9f470.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben-loesung-bd24f68b.html
 
 **Lösung (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-38f9f470.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben-loesung-bd24f68b.pdf
 
 **Lösung Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-38f9f470.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/04-stabtragwerke-berechnung-aufgaben-loesung-bd24f68b.zip
 
-## 05 Anfangswertprobleme: Massepunkte
+## Anfangswertprobleme
+
+### 05 Lösungsverfahren
 
 **Folien (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/05-anfangswertprobleme-massepunkte.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/05-anfangswertprobleme-loesungsverfahren.pdf
 
 **Aufgaben**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben.html
 
 **Aufgaben (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben.pdf
 
 **Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben.zip
 
 **Lösung**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.html
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-1d0aaada.html
 
 **Lösung (PDF)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.pdf
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-1d0aaada.pdf
 
 **Lösung Notebook zu den Aufgaben (Zip)**
 
-https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-massepunkte-aufgaben-loesung-d024631b.zip
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/05-anfangswertprobleme-loesungsverfahren-aufgaben-loesung-1d0aaada.zip
+
+### 06 Massepunkte
+
+**Folien (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/folien/c/06-anfangswertprobleme-massepunkte.pdf
+
+**Aufgaben**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben.html
+
+**Aufgaben (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben.pdf
+
+**Notebook zu den Aufgaben (Zip)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben.zip
+
+**Lösung**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben-loesung-48b5c091.html
+
+**Lösung (PDF)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben-loesung-48b5c091.pdf
+
+**Lösung Notebook zu den Aufgaben (Zip)**
+
+https://matthiasbaitsch.github.io/numMat2/lernpfad/aufgaben/c/06-anfangswertprobleme-massepunkte-aufgaben-loesung-48b5c091.zip
