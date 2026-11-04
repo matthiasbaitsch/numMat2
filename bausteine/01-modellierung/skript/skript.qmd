@@ -1,5 +1,3 @@
-# Modellierung von Stabtragwerken
-
 ## Stabtragwerke
 
 Wir alle kennen unzählige Beispiele von Konstruktionen, die aus stabartigen Bauteilen zusammengesetzt sind, @fig-stabtragwerke zeigt eine kleine Auswahl. Der Begriff stabartig besagt dabei, dass ein Bauteil in eine Richtung lang und in die beiden anderen Richtungen vergleichsweise dünn ist. Stabartige Bauteile sind nicht notwendigerweise gerade, wie an dem Beispiel der Emscherbrücke zu sehen ist.

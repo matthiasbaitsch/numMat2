@@ -1,5 +1,3 @@
-# Bewegung von Massepunkten
-
 Dieses Kapitel ist ein kurzer Einschub, der die Grundlage für eine Reihe interessanter Anfangswertprobleme legt, die sich aus der Untersuchung der Bewegung von Punktmassen ergeben. Anwendungen sind zum Beispiel
 
 - Schwingungsvorgänge im Bauwesen,

@@ -1,5 +1,3 @@
-# Fachwerke: Stabendkräfte {#sec-stabendkraefte}
-
 Für die Herleitung numerischer Verfahren für Stabtragwerke gibt es eine Reihe verschiedener Zugänge. Die wichtigsten sind:
 
 - Stabendkräfte und Gleichgewicht an Knoten (direkte Steifigkeitsmethode).

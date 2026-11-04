@@ -1,5 +1,3 @@
-# Fachwerke: Berechnung
-
 In diesem Kapitel setzen wir die einzelnen Stäbe zu einem Tragwerk zusammen und bestimmen mithilfe der Gleichgewichtsbedingungen für jeden freigeschnittenen Knoten die Knotenverschiebungen. Dabei setzen wir voraus, dass die Verformungen klein sind, und verwenden daher die lineare Theorie aus @eq-p-lin. Die Bezeichnung $\text{lin}$ wird weggelassen, es ist klar, was gemeint ist.
 
 Die Berechnung erfolgt zunächst für ein einfaches Tragwerk, im Anschluss fassen wir die einzelnen Schritte nochmals allgemein zusammen.

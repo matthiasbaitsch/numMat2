@@ -1,5 +1,3 @@
-# Anfangswertprobleme erster Ordnung {#sec-anfangswertprobleme}
-
 In Natur und Technik gibt es viele Vorgänge, bei denen der Zustand des betrachteten Systems sich über die Zeit verändert. Häufig ist dabei der Zustand des Systems zu einem bestimmten Zeitpunkt bekannt und man fragt sich, wie sich die Dinge über die Zeit verändern werden. Beispiele hierfür sind
 
 - Erwärmung und Abkühlung von Bauteilen,

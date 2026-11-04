@@ -293,7 +293,13 @@ function make_script(blocks_folder::String, target_folder::String)
         source_folder = joinpath(bb.folder, "skript")
         if isfile(joinpath(source_folder, "skript.qmd"))
             chapter = slug(bb) * ".qmd"
-            cp(joinpath(source_folder, "skript.qmd"), joinpath(target_folder, chapter))
+            # Chapter heading from the title in about.yaml (the source starts without heading), label from the folder
+            # without number, e.g. sec-stabendkraefte
+            label = "sec-" * basename(bb.folder)[4:end]
+            write(
+                joinpath(target_folder, chapter),
+                "# $(bb.title) {#$label}\n\n" * read(joinpath(source_folder, "skript.qmd"), String)
+            )
             copy_resources(source_folder, target_folder)
             (isempty(parts) || parts[end].first != bb.part) && push!(parts, bb.part => String[])
             push!(parts[end].second, chapter)
