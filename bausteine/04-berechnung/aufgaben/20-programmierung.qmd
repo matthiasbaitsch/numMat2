@@ -1,0 +1,8 @@
+## 2. Programmierung
+
+Es sollen zwei Funktionen zur Berechnung der Verschiebungen und Normalkräfte programmiert werden, die am Schluss in `src/truss.py` stehen. Für ein gegebenes System `s` soll die Berechnung wie folgt ablaufen:
+
+```{.python}
+s.u_hat = solve(s)
+s.N = member_forces(s)
+```

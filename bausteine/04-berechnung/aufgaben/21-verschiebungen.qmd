@@ -1,0 +1,22 @@
+::: {#exr-verschiebungen}
+## Verschiebungen
+
+Implementieren Sie die Funktion
+
+```{.python}
+def solve(s):
+    u_hat = 99
+    return u_hat
+```
+
+mit der für das Tragsystem `s` die Verschiebungen $\hat{\mathbf{u}}$ berechnet werden. Dabei sollen die Verschiebungen so in einer Matrix angeordnet werden, dass jede Spalte den Verschiebungsvektor eines Knotens enthält.
+
+::: {.callout-tip title="Tipps"}
+- Gehen Sie nach der Berechnungsprozedur aus dem Skript vor.
+- Vergleichen Sie Zwischen- und Endergebnisse Ihrer Rechnung mit dem Rechenbeispiel aus dem Skript.
+:::
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::

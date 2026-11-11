@@ -1,0 +1,25 @@
+::: {#exr-umsortieren}
+## Vektoren und Matrizen umsortieren
+
+Gegeben sind
+$$
+  \mathbf{A} = \mmat{1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8}
+  \quad \text{und} \quad
+  \mathbf{x} = \mmat{1 & 2 & 3 & 4 & 5 & 6 & 7 & 8}\mtran.
+$$
+Sortieren Sie mit der Funktion `np.reshape` die Matrix $\mathbf{A}$ zum Vektor
+$$
+  \mmat{1 & 5 & 2 & 6 & 3 & 7 & 4 & 8}\mtran
+$$
+und den Vektor $\mathbf{x}$ zur Matrix
+$$
+  \mmat{1 & 3 & 5 & 7 \\ 2 & 4 & 6 & 8}
+$$
+um. Nach welchem Schema werden die Einträge umgeordnet?
+
+::: {.tinh-solution}
+Der Code steht im Lösungs-Notebook.
+
+`np.reshape` mit `order="F"` liest und schreibt die Einträge spaltenweise (wie Fortran, Julia und Matlab), mit der Voreinstellung `order="C"` zeilenweise. Für die Anordnung der Freiheitsgrade $\hat{u}_1, \hat{u}_2, \dots$ (Knoten für Knoten) brauchen wir die spaltenweise Variante, weil jede Spalte der Matrix der Knotenverschiebungen zu einem Knoten gehört.
+:::
+:::

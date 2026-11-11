@@ -1,0 +1,17 @@
+::: {#exr-indexvektor}
+## Addition einer Untermatrix mit Indexvektor
+
+Kopieren Sie den Code und führen Sie die Anweisungen aus. Was passiert da?
+
+```{.python}
+A = np.ones([6, 6])
+I = [5, 0]
+B = np.array([[1, 2], [3, 4]])
+A[np.ix_(I, I)] += B
+A
+```
+
+::: {.tinh-solution}
+`np.ix_(I, I)` wählt die Zeilen und Spalten mit den Indizes aus `I` aus, in der Reihenfolge von `I`. Der Eintrag `B[i, j]` wird also auf `A[I[i], I[j]]` addiert, hier zum Beispiel `B[0, 0] = 1` auf `A[5, 5]` und `B[0, 1] = 2` auf `A[5, 0]`.
+:::
+:::

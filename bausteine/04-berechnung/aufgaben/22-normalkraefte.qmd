@@ -1,0 +1,22 @@
+::: {#exr-normalkraefte}
+## Normalkräfte
+
+Implementieren Sie die Funktion
+
+```{.python}
+def member_forces(s):
+    N = 99
+    return N
+```
+
+die für das Tragsystem `s` mithilfe der Verschiebungen `s.u_hat` die Normalkräfte für alle Stäbe berechnet. Die Ergebnisse sollen in einem Vektor zurückgegeben werden.
+
+::: {.callout-tip title="Tipps"}
+- Verwenden Sie die Funktion `truss_n` aus dem Aufgabenblatt "Stabendkräfte", um für einen einzelnen Stab die Normalkraft zu berechnen.
+- Vergleichen Sie Ihre Ergebnisse mit dem Rechenbeispiel aus dem Skript.
+:::
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::

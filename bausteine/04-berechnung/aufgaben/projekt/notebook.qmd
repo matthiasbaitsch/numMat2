@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-## Vorbereitung: Umsortieren, Indexvektoren und Assemblierungsmatrix
+# Vorbereitung
 
-### Vektoren und Matrizen umsortieren
+## Vektoren und Matrizen umsortieren
 
 ```{python}
 A = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
@@ -19,7 +19,7 @@ print(np.reshape(x, (2, 4), order="F"))
 ```
 :::
 
-### Addition einer Untermatrix mit Indexvektor
+## Addition einer Untermatrix mit Indexvektor
 
 ::: {.tinh-solution}
 ```{python}
@@ -31,7 +31,7 @@ A
 ```
 :::
 
-### Assemblierungsmatrix
+## Assemblierungsmatrix
 
 Stab 3 aus dem Rechenbeispiel im Skript: von Knoten 3 nach Knoten 2, $EA = 60$ MN
 
@@ -69,7 +69,26 @@ print(np.allclose(K3_hat, K3_hat_i))
 ```
 :::
 
-## Berechnung von Verschiebungen und Normalkräften
+# Programmierung
+
+## Verschiebungen
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
+```
+
+::: {.tinh-solution}
+```{python}
+s = simple_example()
+s.u_hat = solve(s)
+print(s.u_hat)
+```
+:::
+
+## Normalkräfte
 
 ```{python}
 %load_ext autoreload
@@ -83,7 +102,6 @@ from src.structures import *
 s = simple_example()
 s.u_hat = solve(s)
 s.N = member_forces(s)
-print(s.u_hat)
 print(s.N)
 ```
 :::

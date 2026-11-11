@@ -1,0 +1,17 @@
+::: {#exr-assemblierungsmatrix}
+## Assemblierungsmatrix
+
+Betrachten Sie den Stab 3 des Rechenbeispiels aus dem Skript.
+
+1. Stellen Sie die Elementsteifigkeitsmatrix $\mathbf{K}^3$ und die Assemblierungsmatrix $\mathbf{A}^3$ auf.
+
+1. Berechnen Sie die globale Steifigkeitsmatrix für Stab 3 mithilfe der Beziehung $\hat{\mathbf{K}}^3 = \left(\mathbf{A}^3\right)\mtran\mathbf{K}^3\mathbf{A}^3$.
+
+1. Zeigen Sie, dass Sie dasselbe Ergebnis erzielen, wenn Sie $\mathbf{K}^3$ mithilfe des Indexvektors $\mathbf{I}^3 = \mmat{5 & 6 & 3 & 4}\mtran$ auf eine $6\times{6}$-Nullmatrix addieren. Berücksichtigen Sie, dass die Indizierung in Python bei 0 beginnt.
+
+Die Berechnungen sollen in Python erfolgen.
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::
