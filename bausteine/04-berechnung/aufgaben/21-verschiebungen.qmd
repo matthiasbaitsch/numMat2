@@ -5,7 +5,7 @@ Implementieren Sie die Funktion
 
 ```{.python}
 def solve(s):
-    u_hat = 99
+    u_hat = 99 # TODO
     return u_hat
 ```
 
