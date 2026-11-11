@@ -5,7 +5,7 @@ Implementieren Sie die Funktion
 
 ```{.python}
 def member_forces(s):
-    N = 99
+    N = 99 # TODO
     return N
 ```
 
