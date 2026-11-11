@@ -34,7 +34,7 @@ die für das Tragsystem `s` mithilfe der Verschiebungen `s.u_hat` die Normalkrä
 
 ::: {.callout-tip title="Tipps"}
 - Gehen Sie nach der Berechnungsprozedur aus dem Skript vor.
-- Verwenden Sie die Funktion `truss_n` aus dem vorigen Aufgabenblatt, um für einen einzelnen Stab die Normalkraft zu berechnen.
+- Verwenden Sie die Funktion `truss_n` aus dem Aufgabenblatt "Stabendkräfte", um für einen einzelnen Stab die Normalkraft zu berechnen.
 - Vergleichen Sie Zwischen- und Endergebnisse Ihrer Rechnung mit dem Rechenbeispiel aus dem Skript.
 :::
 

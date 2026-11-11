@@ -157,35 +157,39 @@ $$
 $$
 heißt [globale Steifigkeitsmatrix]{.neuerbegriff} zu Stab 1. Mit
 $$
-  \mmat{
-    1 & 0 & 0 & 0 \\[1ex]
-    0 & 1 & 0 & 0 \\[1ex]
-    0 & 0 & 1 & 0 \\[1ex]
-    0 & 0 & 0 & 1 \\[1ex]
-    0 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 0
-  }
-  \mmat{
-    \phantom{-}15 & 0 & -15 & 0 \\[1ex]
-    0 & 0 & 0 & 0 \\[1ex]
-    -15 & 0 & \phantom{-}15 & 0 \\[1ex]
-    0 & 0 & 0 & 0
-  }
-  \mmat{
-    1 & 0 & 0 & 0 & 0 & 0 \\[1ex]
-    0 & 1 & 0 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 1 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 1 & 0 & 0
-  }
-  =
-  \mmat{
-    \phantom{-}15 & 0 & -15 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
-    -15 & 0 & \phantom{-}15 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
-    0 & 0 & 0 & 0 & 0 & 0
-  }
+  \begin{aligned}
+    &
+    \mmat{
+      1 & 0 & 0 & 0 \\[1ex]
+      0 & 1 & 0 & 0 \\[1ex]
+      0 & 0 & 1 & 0 \\[1ex]
+      0 & 0 & 0 & 1 \\[1ex]
+      0 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 0
+    }
+    \mmat{
+      \phantom{-}15 & 0 & -15 & 0 \\[1ex]
+      0 & 0 & 0 & 0 \\[1ex]
+      -15 & 0 & \phantom{-}15 & 0 \\[1ex]
+      0 & 0 & 0 & 0
+    }
+    \mmat{
+      1 & 0 & 0 & 0 & 0 & 0 \\[1ex]
+      0 & 1 & 0 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 1 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 1 & 0 & 0
+    }
+    \\[1em]
+    & \qquad =
+    \mmat{
+      \phantom{-}15 & 0 & -15 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
+      -15 & 0 & \phantom{-}15 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
+      0 & 0 & 0 & 0 & 0 & 0
+    }
+  \end{aligned}
 $$
 erhalten wir schließlich den gesuchten Zusammenhang
 $$
@@ -208,7 +212,8 @@ $$
 
 Mit derselben Vorgehensweise bestimmen wir die globalen Steifigkeitsmatrizen
 $$
-  \hat{\mathbf{K}}^2 =
+  \begin{aligned}
+  \hat{\mathbf{K}}^2 & =
   \mmat{
     0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
     0 & \phantom{-}20 & 0 & 0 & 0 & -20 \\[1ex]
@@ -216,9 +221,9 @@ $$
     0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
     0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
     0 & -20 & 0 & 0 & 0 & \phantom{-}20
-  }
-  \quad\text{und}\quad
-  \hat{\mathbf{K}}^3 =
+  },
+  \\[1em]
+  \hat{\mathbf{K}}^3 & =
   \mmat{
     0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
     0 & 0 & 0 & 0 & 0 & 0 \\[1ex]
@@ -227,6 +232,7 @@ $$
     0 & 0 & -7.68 & \phantom{-}5.76 & \phantom{-}7.68 & -5.76 \\[1ex]
     0 & 0 & \phantom{-}5.76 & -4.32 & -5.76 & \phantom{-}4.32
   }
+  \end{aligned}
 $$
 für die beiden anderen Stäbe.
 
@@ -431,7 +437,3 @@ Wir fassen die Schritte aus den vorangegangenen Abschnitten nochmal allgemein zu
 1. Auflagerbedingungen einbauen
 
 1. Lineares Gleichungssystem lösen
-
-## Postprocessing
-
-**TODO:** Darstellung der Ergebnisse (Verformung, Normalkräfte, Ausgabe als Tabelle)

@@ -5,31 +5,6 @@ inhalt:
   - Kräftegleichgewicht und Systemgrößen
   - Assemblierungsmatrix
   - Berechnung von Verschiebungen und Normalkräften
-  - Postprocessing: Darstellung der Ergebnisse
-  - Anwendungen
 
 # Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
 target: scaffold
-
-videos:
-  - titel: NM S 06 Global Equilibrium
-    dauer: "25:12"
-    link: https://youtu.be/zSefCWgaULM
-  - titel: NM S 07 Vector of global member end forces for member 1
-    dauer: "17:28"
-    link: https://youtu.be/W6fdjmuolO8
-  - titel: NM S 08 Globale Steifigkeitsmatrizen für alle Stäbe
-    dauer: "12:44"
-    link: https://youtu.be/lsNFP5KyspA
-  - titel: NM S 09 Lineares Gleichungssystem
-    dauer: "12:18"
-    link: https://youtu.be/sZduQJgrFj4
-  - titel: NM S 10 Schnittgrößen
-    dauer: "7:11"
-    link: https://youtu.be/hlW-Z4py1Ao
-  - titel: NM S 11 Assemblierungsmatrix
-    dauer: "6:03"
-    link: https://youtu.be/GhQlmyBnW70
-  - titel: NM S 12 Ablauf der Berechnung
-    dauer: "2:40"
-    link: https://youtu.be/KTmb0dVmLKo

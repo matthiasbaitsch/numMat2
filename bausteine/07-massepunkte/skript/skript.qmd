@@ -376,10 +376,13 @@ $$
   \begin{aligned}
     \ddot{\theta}_1
     & =
-    \frac{
+    \frac{1}{l (\cos(2(\theta _1 - \theta_2)) - 3)}
+    \bigl(
       3 g \cos (\theta _1)
       -
       g \cos(\theta _1 - 2 \theta _2)
+    \\
+    & \qquad
       +
       2 l \sin(\theta _1 - \theta _2)
       (
@@ -387,10 +390,7 @@ $$
         +
         \dot\theta _2^2
       )
-    }
-    {
-      l (\cos(2(\theta _1 - \theta_2)) - 3)
-    },
+    \bigr),
     \\[1em]
     \ddot{\theta}_2
     & =

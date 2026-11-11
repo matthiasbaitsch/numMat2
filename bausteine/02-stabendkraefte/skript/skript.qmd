@@ -208,26 +208,30 @@ $$
 $$
 Die partielle Ableitung der Normalkraft nach einer Verschiebungskomponente ist
 $$
-  \frac{\partial N(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{ij}}
-  =
-  \frac{\partial}{\partial u_{ij}}
-  \left(
-    EA\frac{l(u_{11}, u_{12}, u_{21}, u_{22}) - l_0}{l_0}
-  \right)
-  =
-  \frac{EA}{l_0}
-  \cdot
-  \frac{\partial l(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{ij}},
+  \begin{aligned}
+    \frac{\partial N(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{ij}}
+    & =
+    \frac{\partial}{\partial u_{ij}}
+    \left(
+      EA\frac{l(u_{11}, u_{12}, u_{21}, u_{22}) - l_0}{l_0}
+    \right)
+    \\[1em]
+    & =
+    \frac{EA}{l_0}
+    \cdot
+    \frac{\partial l(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{ij}},
+  \end{aligned}
 $$
 wobei verwendet wurde, dass nur die Länge des verformten Stabes von den Verschiebungen abhängt. Die partielle Ableitung der Länge $l$ nach der Verschiebungskomponente $u_{11}$ lautet
 $$
   \begin{aligned}
-    \frac{\partial l(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{11}}
-    & =
+    & \frac{\partial l(u_{11}, u_{12}, u_{21}, u_{22})}{\partial u_{11}}
+    \\[1em]
+    & \qquad =
     \frac{\partial}{\partial u_{11}}
     \sqrt{(x_{21}+u_{21}-(x_{11}+u_{11}))^2 + (x_{22}+u_{22}-(x_{12}+u_{12}))^2}
     \\[1em]
-    & =
+    & \qquad =
     \frac
     {-(x_{21}+u_{21}-(x_{11}+u_{11}))}
     {\sqrt{(x_{21}+u_{21}-(x_{11}+u_{11}))^2 + (x_{22}+u_{22}-(x_{12}+u_{12}))^2}}.

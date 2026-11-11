@@ -3,7 +3,7 @@
 
 ### Eigenes Tragwerk
 
-Stellen Sie Verformung und Normalkräfte für Ihr Anwendungsbeispiel aus dem vorigen Aufgabenblatt graphisch dar.
+Stellen Sie Verformung und Normalkräfte für Ihr Anwendungsbeispiel aus dem Aufgabenblatt "Datenstrukturen und Visualisierung" graphisch dar.
 
 ### Wäscheleine und statisch unterbestimmte Systeme
 

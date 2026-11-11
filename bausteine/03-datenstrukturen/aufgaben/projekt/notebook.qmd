@@ -3,15 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-## Erzeugung und Darstellung von Stabtragwerken
+## Stabtragwerk erzeugen
 
 ```{python}
 %load_ext autoreload
 %autoreload 2
 from src.truss import *
 ```
-
-### Stabtragwerk erzeugen
 
 ::: {.tinh-solution}
 ```{python}
@@ -47,15 +45,16 @@ s = simple_example()
 print(s.nodes)
 ```
 
-### Hilfsfunktion für die Größe des Systems
+## Graphische Darstellung
 
-::: {.tinh-solution}
 ```{python}
-print(struct_size(s))
-```
-:::
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+from src.structures import *
 
-### Stabtragwerk graphisch darstellen
+s = simple_example()
+```
 
 ::: {.tinh-solution}
 ```{python}
@@ -63,7 +62,13 @@ draw_system(s)
 ```
 :::
 
-### Anwendungsbeispiel
+## Anwendungsbeispiel
+
+```{python}
+%load_ext autoreload
+%autoreload 2
+from src.truss import *
+```
 
 ::: {.tinh-solution}
 Ein Fachwerkträger mit parallelen Gurten und Diagonalen in wechselnder Richtung, erzeugt mit wenigen Anweisungen.

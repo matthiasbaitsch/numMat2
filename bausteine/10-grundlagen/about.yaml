@@ -1,0 +1,7 @@
+teil: Wärmeleitung
+titel: Grundlagen
+
+inhalt:
+  - Physikalische Grundlagen, Energieerhaltung und Wärmeleitungsgesetz
+  - Mathematische Modellbildung in 1D
+  - Finite-Volumen-Methode in 1D

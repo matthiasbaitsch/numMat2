@@ -8,17 +8,3 @@ inhalt:
 
 # Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
 target: scaffold
-
-videos:
-  - titel: NM S 02 Fachwerke
-    dauer: "8:33"
-    link: https://youtu.be/h3YV-t0RC-Y
-  - titel: NM S 03 Stabendkräfte
-    dauer: "15:05"
-    link: https://youtu.be/p1Rewcu_sqg
-  - titel: NM S 04 Geometrically exact formulation
-    dauer: "10:41"
-    link: https://youtu.be/tt0zpndnzm8
-  - titel: NM S 05 Formulierung für kleine Verformungen
-    dauer: "15:38"
-    link: https://youtu.be/leBSgK0E6-8

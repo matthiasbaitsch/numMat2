@@ -1,0 +1,13 @@
+::: {#exr-groesse-des-systems}
+## Größe des Systems
+
+Erstellen Sie eine Funktion `struct_size(s)` (später in `src/truss.py`), mit der ein Maß für die Abmessungen des Tragwerks ermittelt wird. Verwenden Sie die Funktion in `draw_system`, um die Kräfte passend zur Größe des Tragwerks zu zeichnen. Eine gute Möglichkeit besteht darin, das geometrische Mittel von Breite und Höhe des Systems zu verwenden, also
+$$
+  s = \sqrt{(x_{\max} - x_{\min}) \cdot (y_{\max} - y_{\min})}.
+$$
+Bei einem flachen System, zum Beispiel einem einzelnen horizontalen Stab, ist das Produkt null. Verwenden Sie dann die größere der beiden Abmessungen.
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::

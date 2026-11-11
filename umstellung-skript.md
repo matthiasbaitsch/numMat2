@@ -10,9 +10,9 @@ unter `bausteine/`, das Lernpfad-Skript setzt sie zum Book in `lernpfad/skript/c
 | `__s-01-modellbildung` | `01-modellierung` |
 | `__s-02-fachwerkstab` bis Abschnitt Stabendkräfte | `02-stabendkraefte` |
 | `__s-02-fachwerkstab` ab Abschnitt Kräftegleichgewicht | `04-berechnung` |
-| `__a-01-eine-unbekannte-funktion` | `05-loesungsverfahren` |
-| `__a-02-dynamik-massepunkt` | `06-massepunkte` |
-| `__a-03-mehrere-unbekannte-funktionen` | `07-systeme-von-differentialgleichungen` |
+| `__a-01-eine-unbekannte-funktion` | `06-loesungsverfahren` |
+| `__a-02-dynamik-massepunkt` | `07-massepunkte` |
+| `__a-03-mehrere-unbekannte-funktionen` | `08-systeme-von-differentialgleichungen` |
 
 ## Allgemeine Entscheidungen
 

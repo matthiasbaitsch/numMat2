@@ -1,0 +1,13 @@
+::: {#exr-anwendungsbeispiel}
+## Anwendungsbeispiel
+
+Erstellen Sie das Modell einer interessanten ebenen Fachwerkstruktur, für die Sie später Verformungen und Schnittgrößen berechnen möchten. Beachten Sie, dass es mit einer Programmiersprache möglich ist, regelmäßige Tragwerke mit nur wenigen Anweisungen zu erzeugen, selbst wenn diese viele Knoten und Stäbe besitzen. Hier ein paar Bilder zur Anregung:
+
+![](bilder/anregung-kran.png){width="30%"} ![](bilder/anregung-polonceau.png){width="60%"}
+
+![](bilder/anregung-fachwerk.jpg){width="60%"}
+
+::: {.tinh-solution}
+Lösung im Lösungs-Notebook.
+:::
+:::

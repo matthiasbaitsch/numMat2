@@ -1,0 +1,12 @@
+teil: Stabtragwerke
+titel: Postprocessing
+
+inhalt:
+  - Maß für die Größe des Tragwerks
+  - Darstellung der Verformung
+  - Darstellung der Normalkräfte
+  - Ausgabe der Ergebnisse als Tabelle
+  - Anwendungen: eigenes Tragwerk, Wäscheleine, statisch unterbestimmte Systeme
+
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold

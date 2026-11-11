@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from matplotlib.patches import Polygon
-from matplotlib.collections import PatchCollection
-
 
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
 
@@ -42,20 +39,8 @@ def truss_p_lin(EA, x1, x2, u1, u2):
 # Darstellung von Stabtragwerken
 
 
-def struct_size(s):
-    """Maß für die Abmessungen des Tragwerks: geometrisches Mittel von Breite und Höhe, bei einem flachen
-    System (Breite oder Höhe null) die größere Abmessung"""
-    width = np.max(s.nodes[0, :]) - np.min(s.nodes[0, :])
-    height = np.max(s.nodes[1, :]) - np.min(s.nodes[1, :])
-    if width * height == 0:
-        return max(width, height)
-    return np.sqrt(width * height)
-
-
 def draw_system(s):
     """Knoten, Stäbe, Kräfte und Auflager zeichnen"""
-    size = struct_size(s)
-
     # Stäbe
     for e in range(s.elements.shape[1]):
         n = s.elements[:, e]
@@ -64,12 +49,11 @@ def draw_system(s):
     # Knoten
     plt.scatter(s.nodes[0, :], s.nodes[1, :], color="black", zorder=2, s=15)
 
-    # Kräfte, die größte Kraft ist ein Fünftel so lang wie das Tragwerk groß
-    f_max = np.max(np.abs(s.forces))
+    # Kräfte
     plt.quiver(
         s.nodes[0, :], s.nodes[1, :],
         s.forces[0, :], s.forces[1, :],
-        color="red", angles="xy", scale_units="xy", scale=f_max / (0.2 * size), width=0.004,
+        color="red", angles="xy", width=0.004,
     )
 
     # Auflager, Dreiecke in Richtung der gesperrten Verschiebung
@@ -120,59 +104,3 @@ def member_forces(s):
         n1, n2 = s.elements[:, e]
         N[e] = truss_n(s.EA, s.nodes[:, n1], s.nodes[:, n2], s.u_hat[:, n1], s.u_hat[:, n2])
     return N
-
-
-# Darstellung der Ergebnisse
-
-
-def draw_deformation(s, scale):
-    """Verformtes System (schwarz) über dem unverformten (grau), Verschiebungen mit scale vergrößert"""
-    nu = s.nodes + scale * s.u_hat
-
-    for e in range(s.elements.shape[1]):
-        n = s.elements[:, e]
-        plt.plot(s.nodes[0, n], s.nodes[1, n], color="gray", zorder=-5)
-        plt.plot(nu[0, n], nu[1, n], color="black")
-    plt.scatter(nu[0, :], nu[1, :], color="black", zorder=2, s=15)
-
-    plt.axis("equal")
-    plt.show()
-
-
-def draw_member_forces(s, scale):
-    """Normalkräfte als Flächen senkrecht zum Stab, Zug rot, Druck blau"""
-    patches = []
-    for e in range(s.elements.shape[1]):
-        n1, n2 = s.elements[:, e]
-        x1 = s.nodes[:, n1]
-        x2 = s.nodes[:, n2]
-
-        # d0 um 90° gedreht, mit der Normalkraft skaliert
-        d0 = (x2 - x1) / np.linalg.norm(x2 - x1)
-        o = scale * s.N[e] * np.array([d0[1], -d0[0]])
-        patches.append(Polygon(np.vstack((x1, x2, x2 + o, x1 + o))))
-
-        plt.plot([x1[0], x2[0]], [x1[1], x2[1]], color="black")
-
-    n_max = np.max(np.abs(s.N))
-    pc = PatchCollection(patches, edgecolor="black", alpha=0.6, cmap="bwr")
-    pc.set_array(s.N)
-    pc.set_clim(-n_max, n_max)
-    plt.gca().add_collection(pc)
-    plt.colorbar(pc, label="N")
-
-    plt.axis("equal")
-    plt.show()
-
-
-def print_results(s):
-    """Verschiebungen und Normalkräfte als Tabellen (Knoten und Stäbe ab 1 gezählt)"""
-    print("Verschiebungen")
-    print(f"{'Knoten':>8}{'u1':>14}{'u2':>14}")
-    for n in range(s.nodes.shape[1]):
-        print(f"{n + 1:>8}{s.u_hat[0, n]:>14.6f}{s.u_hat[1, n]:>14.6f}")
-    print()
-    print("Normalkräfte")
-    print(f"{'Stab':>8}{'N':>14}")
-    for e in range(s.elements.shape[1]):
-        print(f"{e + 1:>8}{s.N[e]:>14.3f}")

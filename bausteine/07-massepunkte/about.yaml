@@ -1,0 +1,11 @@
+teil: Anfangswertprobleme
+titel: Massepunkte
+
+inhalt:
+  - Kinematik des Massepunkts
+  - Kinetik
+  - Einmassenschwinger
+  - Doppelpendel
+
+# Notebook für die Studierenden zu den Aufgaben: scaffold oder blank (ohne Angabe nur Musterlösung)
+target: scaffold

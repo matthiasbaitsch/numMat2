@@ -1,0 +1,7 @@
+teil: Wärmeleitung
+titel: Stabilität
+
+inhalt:
+  - Stabilität numerischer Verfahren
+  - Stabilität für eine unbekannte Funktion (Testgleichung)
+  - Implizites Euler-Verfahren
