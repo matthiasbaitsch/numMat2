@@ -8,6 +8,13 @@ import matplotlib.pyplot as plt
 from src.truss_lm_step02 import *
 ```
 
+::: {.lm-solution}
+```{python}
+#| eval: false
+from src.truss import *
+```
+:::
+
 ::: {#exr-programmierung}
 ## Programmierung der Stabendkräfte
 
