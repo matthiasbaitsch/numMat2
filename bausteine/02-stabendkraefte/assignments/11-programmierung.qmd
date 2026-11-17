@@ -1,0 +1,82 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+import matplotlib.pyplot as plt
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step02 import *
+```
+
+::: {#exr-programmierung}
+## Programmierung der Stabendkräfte
+
+Implementieren Sie die folgenden Funktionen und verschieben Sie sie anschließend in die Datei `src/truss.py`:
+
+1. Vektor der Stabendkräfte nach der geometrisch exakten Formulierung:
+
+    ```{.python}
+    truss_p(EA, x1, x2, u1, u2)
+    ```
+
+1. Elementsteifigkeitsmatrix:
+
+    ```{.python}
+    truss_ke(EA, x1, x2)
+    ```
+
+1. Normalkraft nach der Formulierung für kleine Verformungen:
+
+    ```{.python}
+    truss_n(EA, x1, x2, u1, u2)
+    ```
+
+1. Vektor der Stabendkräfte nach der Formulierung für kleine Verformungen:
+
+    ```{.python}
+    truss_p_lin(EA, x1, x2, u1, u2)
+    ```
+
+Vergleichen Sie die Ergebnisse für die Verschiebungen $\mathbf{u}$ und $\mathbf{v}$ mit Ihrer Handrechnung aus der vorigen Aufgabe. Die Daten des Fachwerkstabs sind im Notebook bereits eingegeben (Kräfte in kN, Längen in m).
+
+```{python}
+EA = 42000
+x1 = np.array([1.0, 0.0])
+x2 = np.array([4.0, 4.0])
+
+u1 = np.array([0.1, 0.05])
+u2 = np.array([0.14, 0.09])
+v1 = np.array([-1.0, 0.0])
+v2 = np.array([1.0, -4.0])
+```
+
+::: {.callout-tip title="Tipps für Python"}
+- Den Betrag eines Vektors berechnen Sie mit `np.linalg.norm`.
+- Zwei Vektoren hängen Sie mit `np.concatenate((a, b))` aneinander.
+- Das Produkt $\mathbf{a}\mathbf{b}\mtran$ zweier Spaltenvektoren berechnen Sie mit `np.outer(a, b)`, das Skalarprodukt mit `np.dot(a, b)`, Matrix mal Vektor mit `K @ u`.
+- Alle Funktionen lassen sich mit ein paar Zeilen Code umsetzen.
+- Sie brauchen keine trigonometrischen Funktionen!
+:::
+
+::: {.lm-scaffold}
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, u1, u2))
+# ...
+```
+:::
+
+::: {.lm-solution}
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, u1, u2))
+print("K =\n", truss_ke(EA, x1, x2))
+print("N lin =", truss_n(EA, x1, x2, u1, u2))
+print("P lin =", truss_p_lin(EA, x1, x2, u1, u2))
+```
+
+```{python}
+print("P exakt =", truss_p(EA, x1, x2, v1, v2))
+print("N lin =", truss_n(EA, x1, x2, v1, v2))
+print("P lin =", truss_p_lin(EA, x1, x2, v1, v2))
+```
+:::
+:::

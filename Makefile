@@ -24,7 +24,7 @@ update-extension:
 	quarto update matthiasbaitsch/quarto-tinh --no-prompt
 	quarto use brand matthiasbaitsch/hsbo-brand --force
 
-# Copy pyproject.toml, uv.lock and workspace file from bausteine/00-templates to all project folders, including the
+# Copy pyproject.toml, uv.lock and workspace file from bausteine/_templates to all project folders, including the
 # folder structure for the students (lernpfad/veranstaltung/*/zip/*/projekt-*), and pyproject.toml and uv.lock to
 # the root folder. Workspace name in bausteine from folder and block without number (aufgaben-grundlagen), in the
 # folder structure like the folder.
@@ -33,7 +33,7 @@ copy-templates:
 
 # At the start of the semester: update package versions in the template lock file and distribute
 update-packages:
-	cd bausteine/00-templates && uv lock --upgrade
+	cd bausteine/_templates && uv lock --upgrade
 	julia skripte/copy-templates.jl
 
 clean:

@@ -1,8 +1,8 @@
 # Input, use functions to be able to have input on top
 SOURCE_CONTENT() = [
-    "bausteine/00-templates/pyproject.toml" => keep_name,
-    "bausteine/00-templates/uv.lock" => keep_name,
-    "bausteine/00-templates/projekt.code-workspace" => workspace_name
+    "bausteine/_templates/pyproject.toml" => keep_name,
+    "bausteine/_templates/uv.lock" => keep_name,
+    "bausteine/_templates/projekt.code-workspace" => workspace_name
 ]
 
 TARGET_ROOTS() = ["bausteine", "lernpfad/veranstaltung"]
@@ -36,5 +36,5 @@ end
 # Python environment for executed {python} cells in the project root, used by make with uv run (not checked in)
 for f = ("pyproject.toml", "uv.lock")
     println(f)
-    cp(joinpath("bausteine/00-templates", f), f, force=true)
+    cp(joinpath("bausteine/_templates", f), f, force=true)
 end
