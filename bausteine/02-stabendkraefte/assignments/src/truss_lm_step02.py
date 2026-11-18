@@ -1,9 +1,10 @@
 import numpy as np
 
 
+# -----------------------------------------------------------------------------
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
-
-
+# -----------------------------------------------------------------------------
+#
 def truss_p(EA, x1, x2, u1, u2):
     """Vektor der Stabendkräfte nach der geometrisch exakten Formulierung"""
     l0 = np.linalg.norm(x2 - x1)
@@ -33,4 +34,3 @@ def truss_p_lin(EA, x1, x2, u1, u2):
     K = truss_ke(EA, x1, x2)
     u = np.concatenate((u1, u2))
     return K @ u
-

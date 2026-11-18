@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+# -----------------------------------------------------------------------------
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
-
-
+# -----------------------------------------------------------------------------
+#
 def truss_p(EA, x1, x2, u1, u2):
     """Vektor der Stabendkräfte nach der geometrisch exakten Formulierung"""
     l0 = np.linalg.norm(x2 - x1)
@@ -36,9 +37,10 @@ def truss_p_lin(EA, x1, x2, u1, u2):
     return K @ u
 
 
+# -----------------------------------------------------------------------------
 # Darstellung von Stabtragwerken
-
-
+# -----------------------------------------------------------------------------
+#
 def draw_system(s):
     """Knoten, Stäbe, Kräfte und Auflager zeichnen"""
     # Stäbe
@@ -51,9 +53,13 @@ def draw_system(s):
 
     # Kräfte
     plt.quiver(
-        s.nodes[0, :], s.nodes[1, :],
-        s.forces[0, :], s.forces[1, :],
-        color="red", angles="xy", width=0.004,
+        s.nodes[0, :],
+        s.nodes[1, :],
+        s.forces[0, :],
+        s.forces[1, :],
+        color="red",
+        angles="xy",
+        width=0.004,
     )
 
     # Auflager, Dreiecke in Richtung der gesperrten Verschiebung
@@ -66,9 +72,10 @@ def draw_system(s):
     plt.show()
 
 
+# -----------------------------------------------------------------------------
 # Berechnung
-
-
+# -----------------------------------------------------------------------------
+#
 def solve(s):
     """Verschiebungen, je Spalte der Verschiebungsvektor eines Knotens"""
     Nn = s.nodes.shape[1]
@@ -102,5 +109,7 @@ def member_forces(s):
     N = np.zeros(Ne)
     for e in range(Ne):
         n1, n2 = s.elements[:, e]
-        N[e] = truss_n(s.EA, s.nodes[:, n1], s.nodes[:, n2], s.u_hat[:, n1], s.u_hat[:, n2])
+        N[e] = truss_n(
+            s.EA, s.nodes[:, n1], s.nodes[:, n2], s.u_hat[:, n1], s.u_hat[:, n2]
+        )
     return N

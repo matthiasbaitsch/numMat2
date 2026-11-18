@@ -14,9 +14,9 @@ const OUTPUT_FOLDER = joinpath(PROJECT_FOLDER, "__output")
 
 # The work is done by make_learning_path, called at the end of this file
 
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Building block
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 struct BuildingBlock
     folder::String
@@ -61,9 +61,9 @@ building_blocks(source_folder::String) = [
 ]
 
 
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Helpers
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 # Source files of drawing programs (Affinity, OmniGraffle), lock files and .DS_Store
 is_auxiliary(f::String) = occursin(r"\.(afdesign|af|graffle)$|~lock~$|^\.DS_Store$", f)
@@ -212,9 +212,9 @@ function zip_project_notebooks(
 end
 
 
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Make things
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 function make_slides(bb::BuildingBlock, slides_folder::String, target_folder::String)
 
@@ -308,9 +308,9 @@ function make_script(blocks_folder::String, target_folder::String)
 
     chapters = join(
         [
-            "    - part: \"$part\"\n      chapters:\n" * join(["        - $c\n" for c = cs])
-            for (part, cs) = parts
-        ]
+        "    - part: \"$part\"\n      chapters:\n" * join(["        - $c\n" for c = cs])
+        for (part, cs) = parts
+    ]
     )
     template = read(joinpath(script_folder, "quarto-template.yml"), String)
     write(joinpath(target_folder, "_quarto.yml"), substitute_text(template, Dict("chapters" => rstrip(chapters))))
@@ -350,7 +350,7 @@ function make_learning_path(source::String, target::String)
     end
 end
 
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 # Do the work
-# -------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 make_learning_path("bausteine", "lernpfad")

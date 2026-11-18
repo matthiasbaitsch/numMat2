@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+# -----------------------------------------------------------------------------
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
-
-
+# -----------------------------------------------------------------------------
+#
 def truss_p(EA, x1, x2, u1, u2):
     """Vektor der Stabendkräfte nach der geometrisch exakten Formulierung"""
     l0 = np.linalg.norm(x2 - x1)
@@ -36,9 +37,10 @@ def truss_p_lin(EA, x1, x2, u1, u2):
     return K @ u
 
 
+# -----------------------------------------------------------------------------
 # Darstellung von Stabtragwerken
-
-
+# -----------------------------------------------------------------------------
+#
 def draw_system(s):
     """Knoten, Stäbe, Kräfte und Auflager zeichnen"""
     # Stäbe
@@ -51,9 +53,13 @@ def draw_system(s):
 
     # Kräfte
     plt.quiver(
-        s.nodes[0, :], s.nodes[1, :],
-        s.forces[0, :], s.forces[1, :],
-        color="red", angles="xy", width=0.004,
+        s.nodes[0, :],
+        s.nodes[1, :],
+        s.forces[0, :],
+        s.forces[1, :],
+        color="red",
+        angles="xy",
+        width=0.004,
     )
 
     # Auflager, Dreiecke in Richtung der gesperrten Verschiebung

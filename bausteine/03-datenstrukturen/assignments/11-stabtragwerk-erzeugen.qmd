@@ -2,20 +2,10 @@
 #| label: setup
 #| include: false
 import numpy as np
-import matplotlib.pyplot as plt
 %load_ext autoreload
 %autoreload 2
-from src.truss_lm_step03 import *
 from src.structures_lm_step03 import *
 ```
-
-::: {.lm-solution}
-```{python}
-#| eval: false
-from src.truss import *
-from src.structures import *
-```
-:::
 
 ::: {#exr-stabtragwerk-erzeugen}
 ## Stabtragwerk erzeugen
@@ -68,4 +58,8 @@ def simple_example():
 s = simple_example()
 print(s.nodes)
 ```
+
+::: {.lm-solution}
+Code für `simple_example` im Anhang.
+:::
 :::

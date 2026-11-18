@@ -13,7 +13,6 @@ engine: jupyter
 jupyter: python3
 
 execute:
-  echo: false
   daemon: 3600
   freeze: auto
 

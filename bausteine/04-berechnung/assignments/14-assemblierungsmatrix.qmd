@@ -1,15 +1,16 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step04 import *
+```
+
 ::: {#exr-assemblierungsmatrix}
 ## Assemblierungsmatrix
 
-Betrachten Sie den Stab 3 des Rechenbeispiels aus dem Skript. Er verläuft von Knoten 3 nach Knoten 2 und hat die Dehnsteifigkeit $EA = 60$ MN; die Daten sind im Notebook bereits eingegeben.
-
-1. Stellen Sie die Elementsteifigkeitsmatrix $\mathbf{K}^3$ und die Assemblierungsmatrix $\mathbf{A}^3$ auf.
-
-1. Berechnen Sie die globale Steifigkeitsmatrix für Stab 3 mithilfe der Beziehung $\hat{\mathbf{K}}^3 = \left(\mathbf{A}^3\right)\mtran\mathbf{K}^3\mathbf{A}^3$.
-
-1. Zeigen Sie, dass Sie dasselbe Ergebnis erzielen, wenn Sie $\mathbf{K}^3$ mithilfe des Indexvektors $\mathbf{I}^3 = \mmat{5 & 6 & 3 & 4}\mtran$ auf eine $6\times{6}$-Nullmatrix addieren. Berücksichtigen Sie, dass die Indizierung in Python bei 0 beginnt.
-
-Die Berechnungen sollen in Python erfolgen.
+Betrachten Sie den Stab 3 des Rechenbeispiels aus dem Skript. Er verläuft von Knoten 3 nach Knoten 2 und hat die Dehnsteifigkeit $EA = 60$ MN; die Daten sind im Notebook bereits eingegeben. Die Berechnungen sollen in Python erfolgen.
 
 ```{python}
 EA = 60
@@ -17,8 +18,13 @@ x1 = np.array([0.0, 3.0])
 x2 = np.array([4.0, 0.0])
 ```
 
+### Element- und Assemblierungsmatrix
+
+Stellen Sie die Elementsteifigkeitsmatrix $\mathbf{K}^3$ und die Assemblierungsmatrix $\mathbf{A}^3$ auf.
+
 ::: {.lm-scaffold}
 ```{python}
+# TODO
 ```
 :::
 
@@ -32,17 +38,44 @@ A3[1, 5] = 1
 A3[2, 2] = 1
 A3[3, 3] = 1
 
+print(K3)
+print(A3)
+```
+:::
+
+### Globale Steifigkeitsmatrix
+
+Berechnen Sie die globale Steifigkeitsmatrix für Stab 3 mithilfe der Beziehung $\hat{\mathbf{K}}^3 = \left(\mathbf{A}^3\right)\mtran\mathbf{K}^3\mathbf{A}^3$.
+
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
+```{python}
 K3_hat = A3.T @ K3 @ A3
 print(K3_hat)
 ```
+:::
 
-Dasselbe mit dem Indexvektor (in Python ab 0 gezählt):
+### Indexvektor
 
+Zeigen Sie, dass Sie dasselbe Ergebnis erzielen, wenn Sie $\mathbf{K}^3$ mithilfe des Indexvektors $\mathbf{I}^3 = \mmat{5 & 6 & 3 & 4}\mtran$ auf eine $6\times{6}$-Nullmatrix addieren. Berücksichtigen Sie, dass die Indizierung in Python bei 0 beginnt.
+
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
 ```{python}
 I3 = [4, 5, 2, 3]
-K3_hat_i = np.zeros((6, 6))
-K3_hat_i[np.ix_(I3, I3)] += K3
-print(np.allclose(K3_hat, K3_hat_i))
+K3_hat = np.zeros((6, 6))
+K3_hat[np.ix_(I3, I3)] += K3
+print(K3_hat)
 ```
 :::
 :::

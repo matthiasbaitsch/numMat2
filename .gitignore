@@ -24,3 +24,6 @@ __pycache__/
 
 # Local Claude Code settings
 .claude/
+
+# Lokale Links zu den gerenderten Aufgaben (enthalten die Hashes der Lösungen)
+/aufgaben-links.html

@@ -1,3 +1,13 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step05 import *
+from src.structures_lm_step03 import *
+```
+
 ::: {#exr-anwendungen}
 ## Anwendungen
 
@@ -7,11 +17,12 @@ Stellen Sie Verformung und Normalkräfte für Ihr Anwendungsbeispiel aus dem Auf
 
 ::: {.lm-scaffold}
 ```{python}
+# TODO
 ```
 :::
 
 ::: {.lm-solution}
-Als Beispiel der Fachwerkträger aus `structures.py`
+Als Beispiel der Fachwerkträger aus `structures.py`.
 
 ```{python}
 s = girder(l=50, h1=1.5, h2=10, nn=13)
@@ -19,21 +30,18 @@ s.u_hat = solve(s)
 s.N = member_forces(s)
 
 draw_system(s)
-draw_deformation(s, 20)
-draw_member_forces(s, 0.075)
+draw_deformation(s)
+draw_member_forces(s)
 ```
 :::
 
-### Wäscheleine und statisch unterbestimmte Systeme
+### Wäscheleine
 
 Berechnen Sie mit Ihrem Programm die Verformung einer Wäscheleine von $\SI{5}{\metre}$ Länge (Stahlseil, $\SI{3}{\milli\metre}$ Durchmesser) mit einem Wäschestück (Masse $\SI{1}{\kilo\gram}$ als Einzellast in der Mitte).
 
-Verallgemeinerung: Was passiert, wenn Sie ein statisch unterbestimmtes System berechnen? Was hat das mit der Theorie der linearen Gleichungssysteme aus Mathematik 1 zu tun?
-
-Tipp: Für eine gegebene Verschiebung $\hat{\mathbf{u}}$ liefert das Produkt $\hat{\mathbf{K}}\hat{\mathbf{u}}$ die äußeren Kräfte, mit denen ein Gleichgewichtszustand erreicht wird. Was bedeutet es in diesem Zusammenhang, wenn das lineare Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen $\hat{\mathbf{u}} \neq \mathbf{0}$ besitzt?
-
 ::: {.lm-scaffold}
 ```{python}
+# TODO
 ```
 :::
 
@@ -61,7 +69,15 @@ except np.linalg.LinAlgError as e:
 ```
 
 Die Wäscheleine besteht aus zwei horizontalen Stäben. Nach der Formulierung für kleine Verformungen haben sie quer zur Stabachse keine Steifigkeit, die Zeile von $\hat{\mathbf{K}}$ für die vertikale Verschiebung des mittleren Knotens ist null. Die Matrix ist singulär, `np.linalg.solve` bricht mit der Meldung `Singular matrix` ab. In Wirklichkeit hängt die Leine durch, und erst im verformten Zustand kann sie die Last über Normalkräfte abtragen. Das lässt sich nur mit der geometrisch exakten Formulierung berechnen.
+:::
 
-Allgemein besitzt bei einem statisch unterbestimmten System (kinematisch verschieblich) das homogene System $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen: Es gibt Verschiebungen, die keine Kräfte erfordern, das sind die Bewegungen des Mechanismus. Dann ist $\hat{\mathbf{K}}$ singulär (Rang kleiner als die Anzahl der Unbekannten), und das Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \hat{\mathbf{F}}$ hat entweder keine oder unendlich viele Lösungen.
+### Statisch unterbestimmte Systeme
+
+Was passiert, wenn Sie ein statisch unterbestimmtes System berechnen? Was hat das mit der Theorie der linearen Gleichungssysteme aus Mathematik 1 zu tun?
+
+Tipp: Für eine gegebene Verschiebung $\hat{\mathbf{u}}$ liefert das Produkt $\hat{\mathbf{K}}\hat{\mathbf{u}}$ die äußeren Kräfte, mit denen ein Gleichgewichtszustand erreicht wird. Was bedeutet es in diesem Zusammenhang, wenn das lineare Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen $\hat{\mathbf{u}} \neq \mathbf{0}$ besitzt?
+
+::: {.lm-solution}
+Bei einem statisch unterbestimmten System (kinematisch verschieblich) besitzt das homogene System $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen: Es gibt Verschiebungen, die keine Kräfte erfordern, das sind die Bewegungen des Mechanismus. Dann ist $\hat{\mathbf{K}}$ singulär (Rang kleiner als die Anzahl der Unbekannten), und das Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \hat{\mathbf{F}}$ hat entweder keine oder unendlich viele Lösungen.
 :::
 :::

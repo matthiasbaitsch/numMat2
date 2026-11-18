@@ -5,9 +5,10 @@ from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 
 
+# -----------------------------------------------------------------------------
 # Stabendkräfte und Elementsteifigkeitsmatrix eines Fachwerkstabs
-
-
+# -----------------------------------------------------------------------------
+#
 def truss_p(EA, x1, x2, u1, u2):
     """Vektor der Stabendkräfte nach der geometrisch exakten Formulierung"""
     l0 = np.linalg.norm(x2 - x1)
@@ -39,12 +40,104 @@ def truss_p_lin(EA, x1, x2, u1, u2):
     return K @ u
 
 
+# -----------------------------------------------------------------------------
 # Darstellung von Stabtragwerken
+# -----------------------------------------------------------------------------
+#
+def draw_system(s):
+    """System zeichnen"""
+    plt.quiver(
+        s.nodes[0, :], s.nodes[1, :], s.forces[0, :], s.forces[1, :], color="red"
+    )
+
+    for i in range(0, s.elements.shape[1]):
+        n = s.elements[:, i]
+        plt.plot(s.nodes[0, n], s.nodes[1, n], color="black")
+
+    plt.scatter(
+        s.nodes[0, s.supports[0, :]],
+        s.nodes[1, s.supports[0, :]],
+        marker=5,
+        s=200,
+        c="hotpink",
+    )
+    plt.scatter(
+        s.nodes[0, s.supports[1, :]],
+        s.nodes[1, s.supports[1, :]],
+        marker=6,
+        s=200,
+        c="hotpink",
+    )
+    plt.scatter(s.nodes[0, :], s.nodes[1, :], color="black")
+
+    plt.axis("equal")
+    plt.show()
 
 
+# -----------------------------------------------------------------------------
+# Berechnung
+# -----------------------------------------------------------------------------
+#
+def solve(s):
+    """Verschiebungen, je Spalte der Verschiebungsvektor eines Knotens"""
+    Ne = s.elements.shape[1]
+    Nn = s.nodes.shape[1]
+    N = 2 * Nn
+
+    # Systemsteifigkeitsmatrix
+    K_hat = np.zeros((N, N))
+    for e in range(Ne):
+        n1 = s.elements[0, e]
+        n2 = s.elements[1, e]
+        x1 = s.nodes[:, n1]
+        x2 = s.nodes[:, n2]
+        Ke = truss_ke(s.EA, x1, x2)
+        Ie = [2 * n1, 2 * n1 + 1, 2 * n2, 2 * n2 + 1]
+        K_hat[np.ix_(Ie, Ie)] += Ke
+
+    # System-Lastvektor
+    F_hat = np.reshape(s.forces, -1, order="F")
+
+    # Randbedingungen
+    S_hat = np.reshape(s.supports, -1, order="F")
+    for i in range(N):
+        if S_hat[i]:
+            K_hat[i, :] = 0
+            K_hat[i, i] = 1
+            F_hat[i] = 0
+
+    # LGS lösen
+    u_hat = np.linalg.solve(K_hat, F_hat)
+
+    # Als umsortierte Matrix zurückgeben
+    return np.reshape(u_hat, (2, -1), order="F")
+
+
+"""Normalkräfte aller Stäbe aus den Verschiebungen s.u_hat"""
+
+
+def member_forces(s):
+    Ne = s.elements.shape[1]
+    N = np.zeros(Ne)
+
+    for e in range(0, Ne):
+        n1 = s.elements[0, e]
+        n2 = s.elements[1, e]
+        x1 = s.nodes[:, n1]
+        x2 = s.nodes[:, n2]
+        u1 = s.u_hat[:, n1]
+        u2 = s.u_hat[:, n2]
+        N[e] = truss_n(s.EA, x1, x2, u1, u2)
+
+    return N
+
+
+# -----------------------------------------------------------------------------
+# Darstellung der Ergebnisse
+# -----------------------------------------------------------------------------
+#
 def struct_size(s):
-    """Maß für die Abmessungen des Tragwerks: geometrisches Mittel von Breite und Höhe, bei einem flachen
-    System (Breite oder Höhe null) die größere Abmessung"""
+    """Maß für die Abmessungen des Tragwerks"""
     width = np.max(s.nodes[0, :]) - np.min(s.nodes[0, :])
     height = np.max(s.nodes[1, :]) - np.min(s.nodes[1, :])
     if width * height == 0:
@@ -52,81 +145,9 @@ def struct_size(s):
     return np.sqrt(width * height)
 
 
-def draw_system(s):
-    """Knoten, Stäbe, Kräfte und Auflager zeichnen"""
-    size = struct_size(s)
-
-    # Stäbe
-    for e in range(s.elements.shape[1]):
-        n = s.elements[:, e]
-        plt.plot(s.nodes[0, n], s.nodes[1, n], color="black")
-
-    # Knoten
-    plt.scatter(s.nodes[0, :], s.nodes[1, :], color="black", zorder=2, s=15)
-
-    # Kräfte, die größte Kraft ist ein Fünftel so lang wie das Tragwerk groß
-    f_max = np.max(np.abs(s.forces))
-    plt.quiver(
-        s.nodes[0, :], s.nodes[1, :],
-        s.forces[0, :], s.forces[1, :],
-        color="red", angles="xy", scale_units="xy", scale=f_max / (0.2 * size), width=0.004,
-    )
-
-    # Auflager, Dreiecke in Richtung der gesperrten Verschiebung
-    sx = s.supports[0, :]
-    plt.scatter(s.nodes[0, sx], s.nodes[1, sx], marker=5, s=150, color="tab:blue")
-    sy = s.supports[1, :]
-    plt.scatter(s.nodes[0, sy], s.nodes[1, sy], marker=6, s=150, color="tab:blue")
-
-    plt.axis("equal")
-    plt.show()
-
-
-# Berechnung
-
-
-def solve(s):
-    """Verschiebungen, je Spalte der Verschiebungsvektor eines Knotens"""
-    Nn = s.nodes.shape[1]
-    Ne = s.elements.shape[1]
-    N = 2 * Nn
-
-    # Globale Steifigkeitsmatrix
-    K = np.zeros((N, N))
-    for e in range(Ne):
-        n1, n2 = s.elements[:, e]
-        Ke = truss_ke(s.EA, s.nodes[:, n1], s.nodes[:, n2])
-        I = [2 * n1, 2 * n1 + 1, 2 * n2, 2 * n2 + 1]
-        K[np.ix_(I, I)] += Ke
-
-    # Lastvektor, spaltenweise aus der Matrix der Kräfte
-    F = np.reshape(s.forces, N, order="F").astype(float)
-
-    # Auflager: Zeile gleich null, eins auf der Diagonalen
-    fixed = np.reshape(s.supports, N, order="F")
-    F[fixed] = 0
-    K[fixed, :] = 0
-    K[fixed, fixed] = 1
-
-    u = np.linalg.solve(K, F)
-    return np.reshape(u, (2, Nn), order="F")
-
-
-def member_forces(s):
-    """Normalkräfte aller Stäbe aus den Verschiebungen s.u_hat"""
-    Ne = s.elements.shape[1]
-    N = np.zeros(Ne)
-    for e in range(Ne):
-        n1, n2 = s.elements[:, e]
-        N[e] = truss_n(s.EA, s.nodes[:, n1], s.nodes[:, n2], s.u_hat[:, n1], s.u_hat[:, n2])
-    return N
-
-
-# Darstellung der Ergebnisse
-
-
-def draw_deformation(s, scale):
-    """Verformtes System (schwarz) über dem unverformten (grau), Verschiebungen mit scale vergrößert"""
+def draw_deformation(s):
+    """Verformtes System (schwarz) über dem unverformten (grau)"""
+    scale = 0.15 * struct_size(s) / np.max(np.abs(s.u_hat))
     nu = s.nodes + scale * s.u_hat
 
     for e in range(s.elements.shape[1]):
@@ -139,9 +160,10 @@ def draw_deformation(s, scale):
     plt.show()
 
 
-def draw_member_forces(s, scale):
+def draw_member_forces(s):
     """Normalkräfte als Flächen senkrecht zum Stab, Zug rot, Druck blau"""
     patches = []
+    scale = 0.15 * struct_size(s) / np.max(np.abs(s.N))
     for e in range(s.elements.shape[1]):
         n1, n2 = s.elements[:, e]
         x1 = s.nodes[:, n1]
