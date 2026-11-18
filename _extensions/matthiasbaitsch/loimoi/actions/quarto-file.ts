@@ -1,4 +1,4 @@
-import { copySync, ensureDirSync, existsSync } from "jsr:@std/fs@1";
+import { ensureDirSync, existsSync } from "jsr:@std/fs@1";
 import { basename, dirname, join, relative } from "jsr:@std/path@1";
 import { unzipSync, zipSync } from "npm:fflate@0.8";
 import { Basket } from "../basket.ts";
@@ -7,7 +7,7 @@ import { MergeSetupCells } from "../processing-steps/merge-setup-cells.ts";
 import { Pipeline } from "../processing-steps/pipeline.ts";
 import { ReplacePlaceholders } from "../processing-steps/replace-placeholders.ts";
 import { QmdDocument } from "../qmd-document.ts";
-import { replacePlaceholders, studentFiles, Yaml } from "../utilities.ts";
+import { removeLmCopy, replacePlaceholders, studentFiles, Yaml } from "../utilities.ts";
 import { Action, Placeholders } from "./action.ts";
 
 export class QuartoFile extends Action {
@@ -67,8 +67,11 @@ function copyFolders(basket: Basket, folder: string, workFiles: boolean): void {
     if (top === "zip") {
       zips[name] ??= {};
       zips[name][relative("zip", path)] = Deno.readFileSync(source);
-    } else if (!(top === "src" && workFiles)) {
+    } else if (top !== "src") {
       copyChecked(source, folder, path);
+    } else if (!workFiles) {
+      const code = removeLmCopy(Deno.readTextFileSync(source));
+      writeChecked(new TextEncoder().encode(code), folder, path);
     }
   }
   if (!workFiles) {
@@ -100,14 +103,18 @@ function folderFiles(basket: Basket): [string, string][] {
   });
 }
 
-// `path` relative to `folder`; error if a different file with the same name is already there
 function copyChecked(source: string, folder: string, path: string): void {
+  writeChecked(Deno.readFileSync(source), folder, path);
+}
+
+// `path` relative to `folder`; error if a different file with the same name is already there
+function writeChecked(content: Uint8Array, folder: string, path: string): void {
   const target = join(folder, path);
-  if (existsSync(target) && !sameBytes(Deno.readFileSync(source), Deno.readFileSync(target))) {
+  if (existsSync(target) && !sameBytes(content, Deno.readFileSync(target))) {
     throw new Error(`Different files with the same name: ${path}`);
   }
   ensureDirSync(dirname(target));
-  copySync(source, target, { overwrite: true });
+  Deno.writeFileSync(target, content);
 }
 
 // Written only once; an existing zip is compared by its content, the bytes of a zip contain timestamps

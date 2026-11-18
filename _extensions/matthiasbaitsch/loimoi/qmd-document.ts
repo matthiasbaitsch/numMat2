@@ -28,9 +28,10 @@ export class QmdDocument {
         if (clash) throw new Error(`Header value ${key} in ${file} clashes with a previous file`);
         header[key] = value;
       }
-      bodies.push(parts.body.replace(/\n$/, ""));
+      bodies.push(parts.body.replace(/\n+$/, ""));
     }
-    return new QmdDocument(header, parseBody(bodies.join("\n") + "\n"));
+    // A blank line between the files: a fence right after a paragraph would belong to the paragraph
+    return new QmdDocument(header, parseBody(bodies.join("\n\n") + "\n"));
   }
 
   body(): string {
@@ -39,7 +40,7 @@ export class QmdDocument {
 
   text(): string {
     if (Object.keys(this.header).length === 0) return this.body();
-    return `---\n${stringifyYaml(this.header)}---\n${this.body()}`;
+    return `---\n${stringifyYaml(this.header)}---\n\n${this.body()}`;
   }
 
   ipynb(): string {

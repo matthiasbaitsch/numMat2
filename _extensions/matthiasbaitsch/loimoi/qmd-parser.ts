@@ -11,10 +11,11 @@ interface PandocBlock {
   c: [PandocAttr, PandocBlock[]]; // for divs and code blocks, attributes come first
 }
 
+// The body without leading blank lines
 export function splitHeader(text: string): { header: Yaml; body: string } {
   const match = text.match(/^---\n([\s\S]*?)\n---\n/);
-  if (match === null) return { header: {}, body: text };
-  return { header: (parseYaml(match[1]) ?? {}) as Yaml, body: text.slice(match[0].length) };
+  if (match === null) return { header: {}, body: text.replace(/^\n+/, "") };
+  return { header: (parseYaml(match[1]) ?? {}) as Yaml, body: text.slice(match[0].length).replace(/^\n+/, "") };
 }
 
 export function parseBody(body: string): QmdNode[] {
