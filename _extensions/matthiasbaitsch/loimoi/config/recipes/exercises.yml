@@ -1,0 +1,40 @@
+options:
+  work-files:
+    values: [notebook, folder]
+    default: notebook
+
+quarto-files:
+  - name: "${nn-name}-${exercises}"
+    title: "${exercise-sheet} ${n}"
+    subtitle: "${group-title}: ${product-title}"
+    process: [exercise-sheet]
+
+  - name: "${nn-name}-${exercises}-${solution}-${hash}"
+    title: "${solutions-to-exercise-sheet} ${n}"
+    process: [exercise-solution, attach-src]
+
+  - name: "${nn-name}-${exercises}-${preview}-${hash}" 
+    title: "${exercise-sheet} ${n}"
+    subtitle: "${group-title}: ${product-title}"
+    process: [attach-src]
+
+  - when: { work-files: notebook }
+    name: "${nn-name}-${exercises}"
+    title: "${exercise-sheet} ${n}"
+    process: [exercise-scaffold, remove-lm-step]
+    format: ipynb
+    zip: true
+    provides: work-files
+
+  - when: { work-files: folder }
+    name: "${nn-name}-${exercises}/${name}-${exercises}"
+    title: "${exercise-sheet} ${n}"
+    process: [exercise-scaffold, remove-lm-step]
+
+archives:
+  - when: { work-files: folder }
+    name: "${nn-name}-${exercises}"
+    provides: work-files
+    add:
+      - /_templates/exercises/_quarto.yml
+      - /_templates/exercises/exercises.code-workspace: "${name}-${exercises}.code-workspace"

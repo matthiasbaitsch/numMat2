@@ -6,8 +6,9 @@ QUARTO = uv run --group render quarto
 prepare-render:
 	cd skripte && julia -t1 --project make-learning-path.jl || exit 1
 
-render-aufgaben: prepare-render
-	$(QUARTO) render lernpfad/aufgaben/c
+# Own project, loi-moi prepares c/ from bausteine/*/assignments as pre-render
+render-aufgaben:
+	$(QUARTO) render lernpfad/aufgaben
 
 render-folien: prepare-render
 	$(QUARTO) render lernpfad/folien/c
@@ -19,9 +20,10 @@ render-veranstaltung: prepare-render
 render-skript: prepare-render
 	$(QUARTO) render lernpfad/skript/c
 
-# Update extension tinh (_extensions/) and brand of Hochschule Bochum (_brand/)
+# Update extensions tinh and loi-moi (_extensions/) and brand of Hochschule Bochum (_brand/)
 update-extension:
 	quarto update matthiasbaitsch/quarto-tinh --no-prompt
+	quarto update matthiasbaitsch/quarto-loi-moi --no-prompt
 	quarto use brand matthiasbaitsch/hsbo-brand --force
 
 # Copy pyproject.toml, uv.lock and workspace file from bausteine/_templates to all project folders, including the
