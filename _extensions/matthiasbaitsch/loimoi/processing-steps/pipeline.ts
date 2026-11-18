@@ -4,6 +4,7 @@ import { ExerciseSheet } from "./exercise-sheet.ts";
 import { ExerciseSolution } from "./exercise-solution.ts";
 import { ProcessingStep } from "./processing-step.ts";
 import { RemoveLmStep } from "./remove-lm-step.ts";
+import { ShowMarkers } from "./show-markers.ts";
 
 // Steps that can be added by their name in `process`
 const steps: Record<string, () => ProcessingStep> = {
@@ -11,6 +12,7 @@ const steps: Record<string, () => ProcessingStep> = {
   "exercise-scaffold": () => new ExerciseScaffold(),
   "exercise-solution": () => new ExerciseSolution(),
   "remove-lm-step": () => new RemoveLmStep(),
+  "show-markers": () => new ShowMarkers(),
 };
 
 export class Pipeline {

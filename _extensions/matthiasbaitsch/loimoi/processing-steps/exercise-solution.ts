@@ -1,5 +1,5 @@
 import { QmdDocument } from "../qmd-document.ts";
-import { QmdNode, QmdText } from "../qmd-node.ts";
+import { QmdCodeCell, QmdNode, QmdText } from "../qmd-node.ts";
 import {
   blankLines,
   checkStructure,
@@ -22,7 +22,8 @@ export class ExerciseSolution implements ProcessingStep {
 function solution(nodes: QmdNode[]): QmdNode[] {
   return nodes.flatMap((node): QmdNode[] => {
     if (isExercise(node)) return [withChildren(node, inExercise(node.children))];
-    if (isExecutable(node) || hasClass(node, "lm-solution")) return [node];
+    if (isExecutable(node)) return [hidden(node)];
+    if (hasClass(node, "lm-solution")) return [node];
     if (node instanceof QmdText) return [blankLines(node)];
     return [];
   });
@@ -31,7 +32,16 @@ function solution(nodes: QmdNode[]): QmdNode[] {
 function inExercise(nodes: QmdNode[]): QmdNode[] {
   return nodes.flatMap((node): QmdNode[] => {
     if (node instanceof QmdText) return [headings(node)];
-    if (isExecutable(node) || hasClass(node, "lm-solution")) return [node];
+    if (isExecutable(node)) return [hidden(node)];
+    if (hasClass(node, "lm-solution")) return [node];
     return [];
   });
+}
+
+// Given code: the students have it, the solution needs it to run
+function hidden(cell: QmdCodeCell): QmdCodeCell {
+  if ("include" in cell.options) return cell;
+  const [fence, ...rest] = cell.lines;
+  const lines = [fence, "#| include: false", ...rest];
+  return new QmdCodeCell(lines, cell.language, cell.executable, { ...cell.options, include: false });
 }

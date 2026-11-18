@@ -16,7 +16,7 @@ quarto-files:
   - name: "${nn-name}-${exercises}-${preview}-${hash}" 
     title: "${exercise-sheet} ${n}"
     subtitle: "${group-title}: ${product-title}"
-    process: [attach-src]
+    process: [attach-src, show-markers]
 
   - when: { work-files: notebook }
     name: "${nn-name}-${exercises}"
