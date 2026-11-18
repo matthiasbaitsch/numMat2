@@ -1,3 +1,13 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step03 import *
+from src.structures_lm_step03 import *
+```
+
 ::: {#exr-anwendungsbeispiel}
 ## Anwendungsbeispiel
 
@@ -7,7 +17,20 @@ Erstellen Sie das Modell einer interessanten ebenen Fachwerkstruktur, für die S
 
 ![](bilder/anregung-fachwerk.jpg){width="60%"}
 
-::: {.tinh-solution}
-Lösung im Lösungs-Notebook.
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
+Ein Fachwerkträger mit parabelförmigem Obergurt, erzeugt mit wenigen Anweisungen.
+
+```{python}
+s = girder()
+draw_system(s)
+```
+
+Code für `girder` im Anhang.
 :::
 :::

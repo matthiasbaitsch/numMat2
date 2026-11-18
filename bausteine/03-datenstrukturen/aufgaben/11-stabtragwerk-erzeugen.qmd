@@ -1,3 +1,12 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+%load_ext autoreload
+%autoreload 2
+from src.structures_lm_step03 import *
+```
+
 ::: {#exr-stabtragwerk-erzeugen}
 ## Stabtragwerk erzeugen
 
@@ -21,7 +30,36 @@ Im Notebook ist die Funktion `simple_example()` vorgegeben, die das dargestellte
 
 1. Verschieben Sie die Funktion in die Datei `src/structures.py` und importieren Sie sie von dort. Weitere Tragwerke legen Sie später ebenfalls als Funktion in dieser Datei ab.
 
-::: {.tinh-solution}
-Lösung im Lösungs-Notebook.
+::: {.lm-scaffold}
+```{python}
+from objdict import ObjDict
+
+
+def simple_example():
+    """Fachwerk aus drei Stäben (Rechenbeispiel im Skript)"""
+    s = ObjDict()
+    s.EA = 60000
+    s.nodes = np.array(
+        [[0, 4, 0],
+         [0, 0, 3]])
+    s.elements = np.array(
+        [[0, 0, 2],
+         [1, 2, 1]])
+    s.forces = np.zeros((2, 3))
+    s.forces[0, 2] = 120
+    s.supports = np.full((2, 3), False)
+    s.supports[:, 0] = True
+    s.supports[1, 1] = True
+    return s
+```
+:::
+
+```{python}
+s = simple_example()
+print(s.nodes)
+```
+
+::: {.lm-solution}
+Code für `simple_example` im Anhang.
 :::
 :::

@@ -1,3 +1,14 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+import matplotlib.pyplot as plt
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step03 import *
+from src.structures_lm_step03 import *
+```
+
 ::: {#exr-darstellung}
 ## Graphische Darstellung
 
@@ -5,17 +16,30 @@ Zeichnen Sie das Stabtragwerk, zum Beispiel so:
 
 ![](bilder/fachwerk-darstellung.svg){width="40%"}
 
-Es bietet sich an, den Code zunächst einfach in das Notebook zu schreiben und am Schluss in eine Funktion `draw_system(s)` in `src/truss.py` zu verschieben. Gehen Sie in den folgenden Schritten vor:
+Es bietet sich an, den Code zunächst einfach in das Notebook zu schreiben und am Schluss in eine Funktion `draw_system(s)` in `src/truss.py` zu verschieben. Gehen Sie schrittweise vor: Zeichnen Sie zuerst nur die Knoten. Wenn das funktioniert, ergänzen Sie die Stäbe, danach die Kräfte und zuletzt die Auflager. Führen Sie die Zelle nach jedem Schritt aus und prüfen Sie das Bild.
 
-1. Knoten
+```{python}
+s = simple_example()
+```
 
-1. Stäbe
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
 
-1. Kräfte
+::: {.lm-solution}
+```{python}
+draw_system(s)
+```
 
-1. Auflager
+Code für `draw_system` im Anhang.
+:::
 
-::: {.tinh-solution}
-Lösung im Lösungs-Notebook.
+::: {.callout-tip title="Tipps für Python"}
+- Stäbe als Linien mit `plt.plot`, Knoten als Punkte mit `plt.scatter`.
+- Kräfte als Pfeile mit `plt.quiver`.
+- Auflager als Dreiecke mit `plt.scatter` und `marker=5` (horizontal) bzw. `marker=6` (vertikal).
+- Mit `plt.axis("equal")` werden beide Achsen gleich skaliert.
 :::
 :::

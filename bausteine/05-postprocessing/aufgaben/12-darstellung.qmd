@@ -1,3 +1,14 @@
+```{python}
+#| label: setup
+#| include: false
+import numpy as np
+import matplotlib.pyplot as plt
+%load_ext autoreload
+%autoreload 2
+from src.truss_lm_step05 import *
+from src.structures_lm_step03 import *
+```
+
 ::: {#exr-darstellung}
 ## Darstellung der Berechnungsergebnisse
 
@@ -5,21 +16,65 @@ Die folgenden Abbildungen zeigen verschiedene Möglichkeiten, die berechneten Er
 
 ![](bilder/darstellung-verformung.png){width="34%"} ![](bilder/darstellung-normalkraefte.png){width="34%"} ![](bilder/darstellung-ausgabe.png){width="25%"}
 
+```{python}
+s = simple_example()
+s.u_hat = solve(s)
+s.N = member_forces(s)
+```
+
 ### Verformung
 
-Erstellen Sie eine Funktion `draw_deformation(s, scale)` zum Plotten des verformten Systems. Mit `scale` werden die Verschiebungen vergrößert, damit sie sichtbar sind.
+Erstellen Sie eine Funktion `draw_deformation(s)` zum Plotten des verformten Systems.
+
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
+```{python}
+draw_deformation(s)
+```
+
+Code für `draw_deformation` im Anhang.
+:::
 
 ### Normalkräfte
 
-Implementieren Sie eine Funktion `draw_member_forces(s, scale)`, mit der die Normalkräfte dargestellt werden können.
+Implementieren Sie eine Funktion `draw_member_forces(s)`, mit der die Normalkräfte dargestellt werden können.
 
 Tipp: Sie können den Vektor $\mathbf{d}_0$ um 90° drehen, mit der Normalkraft und einem geeigneten Faktor skalieren und zu den Knotenkoordinaten eines Stabes addieren. Flächen zeichnen Sie mit `Polygon` aus `matplotlib.patches`, man könnte aber auch Linien verwenden wie in RSTAB.
+
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
+```{python}
+draw_member_forces(s)
+```
+
+Code für `draw_member_forces` im Anhang.
+:::
 
 ### Ausgabe der Berechnungsergebnisse
 
 Geben Sie die berechneten Verschiebungen und Normalkräfte in einer Funktion `print_results(s)` als Tabellen aus.
 
-::: {.tinh-solution}
-Lösung im Lösungs-Notebook.
+::: {.lm-scaffold}
+```{python}
+# TODO
+```
+:::
+
+::: {.lm-solution}
+```{python}
+print_results(s)
+```
+
+Code für `print_results` im Anhang.
 :::
 :::
