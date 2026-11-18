@@ -7,6 +7,11 @@ Erstellen Sie das Modell einer interessanten ebenen Fachwerkstruktur, für die S
 
 ![](bilder/anregung-fachwerk.jpg){width="60%"}
 
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
 ::: {.lm-solution}
 Ein Fachwerkträger mit parallelen Gurten und Diagonalen in wechselnder Richtung, erzeugt mit wenigen Anweisungen.
 

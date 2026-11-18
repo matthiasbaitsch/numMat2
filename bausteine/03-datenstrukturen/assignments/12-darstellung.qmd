@@ -19,6 +19,11 @@ Es bietet sich an, den Code zunächst einfach in das Notebook zu schreiben und a
 s = simple_example()
 ```
 
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
 ::: {.lm-solution}
 ```{python}
 draw_system(s)

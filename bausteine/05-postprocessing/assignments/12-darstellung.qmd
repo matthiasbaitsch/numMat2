@@ -1,0 +1,60 @@
+::: {#exr-darstellung}
+## Darstellung der Berechnungsergebnisse
+
+Die folgenden Abbildungen zeigen verschiedene Möglichkeiten, die berechneten Ergebnisse darzustellen. Sie sollen als Anregung dienen, Ihre eigenen Ergebnisse können (müssen aber nicht) auch anders dargestellt werden.
+
+![](bilder/darstellung-verformung.png){width="34%"} ![](bilder/darstellung-normalkraefte.png){width="34%"} ![](bilder/darstellung-ausgabe.png){width="25%"}
+
+```{python}
+s = simple_example()
+s.u_hat = solve(s)
+s.N = member_forces(s)
+```
+
+### Verformung
+
+Erstellen Sie eine Funktion `draw_deformation(s, scale)` zum Plotten des verformten Systems. Mit `scale` werden die Verschiebungen vergrößert, damit sie sichtbar sind.
+
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
+::: {.lm-solution}
+```{python}
+draw_deformation(s, 15)
+```
+:::
+
+### Normalkräfte
+
+Implementieren Sie eine Funktion `draw_member_forces(s, scale)`, mit der die Normalkräfte dargestellt werden können.
+
+Tipp: Sie können den Vektor $\mathbf{d}_0$ um 90° drehen, mit der Normalkraft und einem geeigneten Faktor skalieren und zu den Knotenkoordinaten eines Stabes addieren. Flächen zeichnen Sie mit `Polygon` aus `matplotlib.patches`, man könnte aber auch Linien verwenden wie in RSTAB.
+
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
+::: {.lm-solution}
+```{python}
+draw_member_forces(s, 0.005)
+```
+:::
+
+### Ausgabe der Berechnungsergebnisse
+
+Geben Sie die berechneten Verschiebungen und Normalkräfte in einer Funktion `print_results(s)` als Tabellen aus.
+
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
+::: {.lm-solution}
+```{python}
+print_results(s)
+```
+:::
+:::

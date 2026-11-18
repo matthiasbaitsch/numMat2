@@ -1,0 +1,67 @@
+::: {#exr-anwendungen}
+## Anwendungen
+
+### Eigenes Tragwerk
+
+Stellen Sie Verformung und Normalkräfte für Ihr Anwendungsbeispiel aus dem Aufgabenblatt "Datenstrukturen und Visualisierung" graphisch dar.
+
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
+::: {.lm-solution}
+Als Beispiel der Fachwerkträger aus `structures.py`
+
+```{python}
+s = girder(l=50, h1=1.5, h2=10, nn=13)
+s.u_hat = solve(s)
+s.N = member_forces(s)
+
+draw_system(s)
+draw_deformation(s, 20)
+draw_member_forces(s, 0.075)
+```
+:::
+
+### Wäscheleine und statisch unterbestimmte Systeme
+
+Berechnen Sie mit Ihrem Programm die Verformung einer Wäscheleine von $\SI{5}{\metre}$ Länge (Stahlseil, $\SI{3}{\milli\metre}$ Durchmesser) mit einem Wäschestück (Masse $\SI{1}{\kilo\gram}$ als Einzellast in der Mitte).
+
+Verallgemeinerung: Was passiert, wenn Sie ein statisch unterbestimmtes System berechnen? Was hat das mit der Theorie der linearen Gleichungssysteme aus Mathematik 1 zu tun?
+
+Tipp: Für eine gegebene Verschiebung $\hat{\mathbf{u}}$ liefert das Produkt $\hat{\mathbf{K}}\hat{\mathbf{u}}$ die äußeren Kräfte, mit denen ein Gleichgewichtszustand erreicht wird. Was bedeutet es in diesem Zusammenhang, wenn das lineare Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen $\hat{\mathbf{u}} \neq \mathbf{0}$ besitzt?
+
+::: {.lm-scaffold}
+```{python}
+```
+:::
+
+::: {.lm-solution}
+Stahlseil mit $E = 210$ kN/mm² und $A = \pi \cdot 1.5^2$ mm², Kräfte in kN, Längen in m
+
+```{python}
+from objdict import ObjDict
+
+s = ObjDict()
+s.EA = 210 * np.pi * 1.5**2
+s.nodes = np.array([[0, 2.5, 5], [0, 0, 0]])
+s.elements = np.array([[0, 1], [1, 2]])
+s.forces = np.zeros((2, 3))
+s.forces[1, 1] = -9.81e-3
+s.supports = np.full((2, 3), False)
+s.supports[:, [0, 2]] = True
+
+draw_system(s)
+
+try:
+    s.u_hat = solve(s)
+except np.linalg.LinAlgError as e:
+    print("Fehler:", e)
+```
+
+Die Wäscheleine besteht aus zwei horizontalen Stäben. Nach der Formulierung für kleine Verformungen haben sie quer zur Stabachse keine Steifigkeit, die Zeile von $\hat{\mathbf{K}}$ für die vertikale Verschiebung des mittleren Knotens ist null. Die Matrix ist singulär, `np.linalg.solve` bricht mit der Meldung `Singular matrix` ab. In Wirklichkeit hängt die Leine durch, und erst im verformten Zustand kann sie die Last über Normalkräfte abtragen. Das lässt sich nur mit der geometrisch exakten Formulierung berechnen.
+
+Allgemein besitzt bei einem statisch unterbestimmten System (kinematisch verschieblich) das homogene System $\hat{\mathbf{K}}\hat{\mathbf{u}} = \mathbf{0}$ nichttriviale Lösungen: Es gibt Verschiebungen, die keine Kräfte erfordern, das sind die Bewegungen des Mechanismus. Dann ist $\hat{\mathbf{K}}$ singulär (Rang kleiner als die Anzahl der Unbekannten), und das Gleichungssystem $\hat{\mathbf{K}}\hat{\mathbf{u}} = \hat{\mathbf{F}}$ hat entweder keine oder unendlich viele Lösungen.
+:::
+:::
