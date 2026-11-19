@@ -1,10 +1,11 @@
 ```{python}
 #| label: setup
 #| include: false
-import numpy as np
-import matplotlib.pyplot as plt
 %load_ext autoreload
 %autoreload 2
+
+import numpy as np
+import matplotlib.pyplot as plt
 from src.truss import *
 from src.structures import *
 ```
