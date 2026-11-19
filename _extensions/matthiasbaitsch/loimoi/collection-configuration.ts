@@ -79,6 +79,15 @@ export class CollectionConfiguration {
     return basename(this.collectionFolder);
   }
 
+  // Where Quarto writes the rendered collection: `output-dir` from `_quarto.yml`
+  renderFolder(): string {
+    const file = join(this.collectionFolder, "_quarto.yml");
+    const project = (readYaml(file).project ?? {}) as Yaml;
+    const outputDir = project["output-dir"] as string | undefined;
+    if (outputDir === undefined) throw new Error(`No output-dir in ${file}`);
+    return join(this.collectionFolder, outputDir);
+  }
+
   private learningMaterialFolder(): string {
     return dirname(this.collectionFolder);
   }

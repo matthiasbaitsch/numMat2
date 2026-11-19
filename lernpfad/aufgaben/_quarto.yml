@@ -1,9 +1,9 @@
-# Eigenes Projekt: loi-moi (pre-render) erzeugt c/ aus bausteine/*/assignments, Einstellungen aus loimoi.yml.
+# Eigenes Projekt: loi-moi (pre-render) erzeugt c/ aus bausteine/*/aufgaben, Einstellungen aus loimoi.yml.
 # Extension und Brand über Symlinks auf den Wurzelordner. Einstellungen der _quarto.yml im Wurzelordner gelten hier
 # nicht, die nötigen stehen deshalb unten
 project:
   type: default
-  output-dir: ../../__output/lernpfad/aufgaben
+  output-dir: ../../__output/aufgaben
   pre-render: _extensions/matthiasbaitsch/loimoi/pre-render.ts
   render:
     - c/**/*.qmd

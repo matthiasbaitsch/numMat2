@@ -7,7 +7,7 @@ import { MergeSetupCells } from "../processing-steps/merge-setup-cells.ts";
 import { Pipeline } from "../processing-steps/pipeline.ts";
 import { ReplacePlaceholders } from "../processing-steps/replace-placeholders.ts";
 import { QmdDocument } from "../qmd-document.ts";
-import { removeLmCopy, replacePlaceholders, studentFiles, Yaml } from "../utilities.ts";
+import { replacePlaceholders, studentFiles, Yaml } from "../utilities.ts";
 import { Action, Placeholders } from "./action.ts";
 
 export class QuartoFile extends Action {
@@ -16,6 +16,7 @@ export class QuartoFile extends Action {
   readonly process: string[];
   readonly format: string; // `qmd` or `ipynb`
   readonly zip: boolean; // the file zipped and deleted
+  readonly link?: string; // label on the link pages, with placeholders
 
   constructor(settings: Yaml) {
     super(settings);
@@ -24,6 +25,7 @@ export class QuartoFile extends Action {
     this.process = (settings.process ?? []) as string[];
     this.format = (settings.format ?? "qmd") as string;
     this.zip = (settings.zip ?? false) as boolean;
+    this.link = settings.link as string | undefined;
   }
 
   file(placeholders: Placeholders): string {
@@ -70,8 +72,7 @@ function copyFolders(basket: Basket, folder: string, workFiles: boolean): void {
     } else if (top !== "src") {
       copyChecked(source, folder, path);
     } else if (!workFiles) {
-      const code = removeLmCopy(Deno.readTextFileSync(source));
-      writeChecked(new TextEncoder().encode(code), folder, path);
+      copyChecked(source, folder, path);
     }
   }
   if (!workFiles) {

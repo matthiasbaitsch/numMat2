@@ -26,20 +26,6 @@ export function studentFiles(folder: string): string[] {
   return [...walkSync(folder, { includeDirs: false, skip: [excluded] })].map((entry) => entry.path);
 }
 
-// `truss_lm_step04` becomes `truss`: versioned files of the solution, one file for the students
-export function removeLmStep(text: string): string {
-  return text.replace(/_lm_step\d+/g, "");
-}
-
-// A copy of an earlier version in `src/`, marked by `lm-copy` in its first line, e.g. `# lm-copy`
-export function isLmCopy(text: string): boolean {
-  return text.split("\n", 1)[0].includes("lm-copy");
-}
-
-export function removeLmCopy(text: string): string {
-  return isLmCopy(text) ? text.slice(text.indexOf("\n") + 1) : text;
-}
-
 const umlauts: Record<string, string> ={ "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss" };
 
 // `Stabtragwerke`, `Stabendkräfte` becomes `stabtragwerke-stabendkraefte`

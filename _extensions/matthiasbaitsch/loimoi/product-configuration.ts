@@ -10,6 +10,7 @@ export class ProductConfiguration {
   readonly name: string;
   readonly title: string;
   readonly groupTitle?: string;
+  readonly fullTitle: string;
   readonly ingredients: string[];
 
   // `entry`: an entry of `products` in `loimoi.yml`; name and titles not given come from the first building block,
@@ -27,6 +28,7 @@ export class ProductConfiguration {
     this.title = title;
     this.groupTitle = (entry["group-title"] as string | undefined) ?? basket.groupTitle();
     const titles = [this.groupTitle, this.title].filter((part) => part !== undefined);
+    this.fullTitle = titles.join(": ");
     this.name = name ?? (productNaming === "titles" ? slug(...titles) : basket.name());
   }
 
@@ -39,6 +41,7 @@ export class ProductConfiguration {
       "nn-name": nnName,
       "hash": createHash("sha1").update(`87362-${nnName}`).digest("hex").slice(0, 8),
       "product-title": this.title,
+      "full-title": this.fullTitle,
     };
     if (this.groupTitle !== undefined) values["group-title"] = this.groupTitle;
     if (site !== undefined) values["site"] = site;

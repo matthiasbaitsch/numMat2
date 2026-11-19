@@ -6,22 +6,25 @@ options:
 quarto-files:
   - name: "${nn-name}-${exercises}"
     title: "${exercise-sheet} ${n}"
-    subtitle: "${group-title}: ${product-title}"
+    subtitle: "${full-title}"
     process: [exercise-sheet]
+    link: "${exercise-sheet}"
 
   - name: "${nn-name}-${exercises}-${solution}-${hash}"
     title: "${solutions-to-exercise-sheet} ${n}"
     process: [exercise-solution, attach-src]
+    link: "${solution-label}"
 
   - name: "${nn-name}-${exercises}-${preview}-${hash}" 
     title: "${exercise-sheet} ${n}"
-    subtitle: "${group-title}: ${product-title}"
+    subtitle: "${full-title}"
     process: [attach-src, show-markers]
+    link: "${preview-label}"
 
   - when: { work-files: notebook }
     name: "${nn-name}-${exercises}"
     title: "${exercise-sheet} ${n}"
-    process: [exercise-scaffold, remove-lm-step]
+    process: [exercise-scaffold]
     format: ipynb
     zip: true
     provides: work-files
@@ -29,7 +32,7 @@ quarto-files:
   - when: { work-files: folder }
     name: "${nn-name}-${exercises}/${name}-${exercises}"
     title: "${exercise-sheet} ${n}"
-    process: [exercise-scaffold, remove-lm-step]
+    process: [exercise-scaffold]
 
 archives:
   - when: { work-files: folder }

@@ -4,7 +4,7 @@
 import numpy as np
 %load_ext autoreload
 %autoreload 2
-from src.truss_lm_step02 import *
+from src.truss import *
 ```
 
 ::: {#exr-programmierung}

@@ -3,6 +3,7 @@ import { Archive } from "./actions/archive.ts";
 import { QuartoFile } from "./actions/quarto-file.ts";
 import { Basket } from "./basket.ts";
 import { existsSync } from "jsr:@std/fs@1";
+import { join } from "jsr:@std/path@1";
 import { readYaml, Yaml } from "./utilities.ts";
 
 interface Option {
@@ -35,13 +36,15 @@ export class Recipe {
     return new Recipe(actions, folder);
   }
 
-  // The placeholders from `provides` are known before the first action runs
+  // In the folder of the product; the placeholders from `provides` are known before the first action runs
   run(basket: Basket, placeholders: Placeholders): void {
+    const folder = join(this.folder, placeholders["nn-name"]);
+    Deno.mkdirSync(folder);
     const values = { ...placeholders };
     for (const action of this.actions) {
       if (action.provides !== undefined) values[action.provides] = action.file(values);
     }
-    for (const action of this.actions) action.run(basket, values, this.folder);
+    for (const action of this.actions) action.run(basket, values, folder);
   }
 }
 
