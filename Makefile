@@ -20,6 +20,12 @@ render-veranstaltung: prepare-render
 render-skript: prepare-render
 	$(QUARTO) render lernpfad/skript/c
 
+# Check the published pages from the link page of loi-moi (written by render-aufgaben) and the links on them, with
+# lychee (brew install lychee), also run on GitHub after deploying
+check-links:
+	grep -o 'https://matthiasbaitsch\.github\.io/[^"<]*\.html' lernpfad/links-site.html | sort -u \
+		| xargs lychee --no-progress --max-retries 5 --retry-wait-time 10
+
 # Update extensions tinh and loi-moi (_extensions/) and brand of Hochschule Bochum (_brand/)
 update-extension:
 	quarto update matthiasbaitsch/quarto-tinh --no-prompt
