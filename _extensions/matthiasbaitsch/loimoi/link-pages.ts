@@ -33,37 +33,45 @@ export class LinkPages {
 
   // Links into the rendered output, relative to the learning material folder
   localPage(): string {
-    const sections = this.collections().map((collection) => {
-      const rows = collection.products.map((product) => {
-        const cells = product.files.map((file) => {
-          const href = relative(this.learningMaterialFolder, file.file);
-          return `<td><a href="${escape(href)}">${escape(file.label)}</a></td>`;
-        });
-        return `<tr><td>${escape(product.title)}</td>${cells.join("")}</tr>`;
-      });
-      return `<h2>${escape(collection.name)}</h2>\n<table>\n${rows.join("\n")}\n</table>`;
-    });
-    return page("Links", sections);
+    return this.page("Links", (_, file) => relative(this.learningMaterialFolder, file));
   }
 
-  // The published URLs, written out
+  // The published URLs
   sitePage(): string {
-    const sections = this.collections().map((collection) => {
-      const products = collection.products.map((product) => {
-        const files = product.files.map((file) => {
-          const url = siteUrl(collection, file.file);
-          return `<p><strong>${escape(file.label)}</strong><br><a href="${escape(url)}">${escape(url)}</a></p>`;
-        });
-        return `<h3>${escape(product.title)}</h3>\n${files.join("\n")}`;
-      });
-      return `<h2>${escape(collection.name)}</h2>\n${products.join("\n")}`;
-    });
-    return page("Links (site)", sections);
+    return this.page("Links (site)", siteUrl);
   }
 
   write(): void {
     Deno.writeTextFileSync(join(this.learningMaterialFolder, "links.html"), this.localPage());
     Deno.writeTextFileSync(join(this.learningMaterialFolder, "links-site.html"), this.sitePage());
+  }
+
+  // One table per collection, one row per product; `href` makes the link to a rendered file
+  private page(title: string, href: (collection: CollectionLinks, file: string) => string): string {
+    const sections = this.collections().map((collection) => {
+      const rows = collection.products.map((product) => {
+        const cells = product.files.map((file) =>
+          `<td><a href="${escape(href(collection, file.file))}">${escape(file.label)}</a></td>`
+        );
+        return `<tr><td>${escape(product.title)}</td>${cells.join("")}</tr>`;
+      });
+      return `<h2>${escape(collection.name)}</h2>\n<table>\n${rows.join("\n")}\n</table>`;
+    });
+    return `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>${title}</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; }
+  td { padding: 0.3rem 1rem 0.3rem 0; }
+</style>
+</head>
+<body>
+${sections.join("\n\n")}
+</body>
+</html>
+`;
   }
 
   // Collections: the folders with a `_quarto.yml`, in name order
@@ -103,24 +111,6 @@ function siteUrl(collection: CollectionLinks, file: string): string {
   const parts = file.split("/__output/");
   if (parts.length !== 2) throw new Error(`No folder __output in ${file}`);
   return `${collection.site}/${parts[1]}`;
-}
-
-function page(title: string, sections: string[]): string {
-  return `<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>${title}</title>
-<style>
-  body { font-family: system-ui, sans-serif; margin: 2rem; }
-  td { padding: 0.3rem 1rem 0.3rem 0; }
-</style>
-</head>
-<body>
-${sections.join("\n\n")}
-</body>
-</html>
-`;
 }
 
 function escape(text: string): string {
