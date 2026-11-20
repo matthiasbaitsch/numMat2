@@ -3,7 +3,7 @@
 # nicht, die nötigen stehen deshalb unten
 project:
   type: default
-  output-dir: ../../__output/aufgaben
+  output-dir: ../../__output/lernpfad/aufgaben
   pre-render: _extensions/matthiasbaitsch/loimoi/pre-render.ts
   render:
     - c/**/*.qmd

@@ -48,7 +48,7 @@ end
 # assignments notebook for the students, ${notebook} in the sources
 function make_dict(bb::BuildingBlock)
     dict = Dict("slug" => slug(bb), "site" => SITE_URL)
-    isnothing(bb.target) || (dict["notebook"] = "$SITE_URL/aufgaben/c/$(slug(bb))-aufgaben.zip")
+    isnothing(bb.target) || (dict["notebook"] = "$SITE_URL/aufgaben/c/$(slug(bb))/$(slug(bb))-aufgaben.zip")
     return dict
 end
 
