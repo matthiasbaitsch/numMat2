@@ -248,9 +248,9 @@ Die [Ordnung]{.neuerbegriff} einer Differentialgleichung ist die Ordnung der hö
 $$
 y'(x) = y(x)
 $$
-eine Differentialgleichung erster Ordnung, demgegenüber besitzt die Gleichung der Biegelinie eines Balkens
+eine Differentialgleichung erster Ordnung, demgegenüber besitzt die Gleichung der Biegelinie eines Balkens mit der Biegesteifigkeit $EI(x)$, die sich entlang des Balkens ändern darf,
 $$
-EI \cdot w''''(x) = q(x)
+\bigl(EI(x) \cdot w''(x)\bigr)'' = q(x)
 $$
 die Ordnung vier.
 

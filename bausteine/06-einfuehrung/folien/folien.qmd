@@ -165,7 +165,7 @@ $$
 Vierte Ordnung (Biegelinie eines Balkens)
 
 $$
-  EI \cdot w''''(x) = q(x)
+  \bigl(EI(x) \cdot w''(x)\bigr)'' = q(x)
 $$
 
 ## Lineare Differentialgleichungen

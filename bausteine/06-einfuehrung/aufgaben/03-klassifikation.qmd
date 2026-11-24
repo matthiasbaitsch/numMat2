@@ -1,34 +1,38 @@
 ::: {#exr-klassifikation}
 ## Klassifikation von Differentialgleichungen
 
-Im Skript sind uns Differentialgleichungen für das Auskühlen eines Gebäudes, das Regenrückhaltebecken, den Einmassenschwinger (einmal für die Auslenkung $u$ allein, einmal mit der Geschwindigkeit $v$ als zweiter unbekannter Funktion), das Räuber-Beute-Modell und die Wärmeleitung in einem Stab begegnet.
+Im Skript sind uns Differentialgleichungen für das Auskühlen eines Gebäudes, das Regenrückhaltebecken, den Einmassenschwinger (einmal für die Auslenkung $u$ allein, einmal mit der Geschwindigkeit $v$ als zweiter unbekannter Funktion), das Räuber-Beute-Modell, die Biegelinie eines Balkens, die Wärmeleitung in einem Stab sowie Wetter- und Klimamodelle begegnet.
 
 ### Einordnung
 
-Ordnen Sie diese Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, und handelt es sich um eine einzelne Gleichung oder um ein System?
+Ordnen Sie diese Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, hat sie (falls linear) konstante Koeffizienten, und handelt es sich um eine einzelne Gleichung oder um ein System?
 
 ::: {.lm-sheet}
-| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | einzeln/System |
-|:-------------------|:--------------------|:-------:|:-------------------|:---------------|
-| Auskühlen          |                     |         |                    |                |
-| Rückhaltebecken    |                     |         |                    |                |
-| Einmassenschwinger |                     |         |                    |                |
-| Einmassenschwinger ($u$, $v$) |          |         |                    |                |
-| Räuber-Beute       |                     |         |                    |                |
-| Wärmeleitung       |                     |         |                    |                |
+| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | konstante Koeffizienten | einzeln/System |
+|:-------------------|:--------------------|:-------:|:-------------------|:-----------------------|:---------------|
+| Auskühlen          |                     |         |                    |                        |                |
+| Rückhaltebecken    |                     |         |                    |                        |                |
+| Einmassenschwinger |                     |         |                    |                        |                |
+| Einmassenschwinger ($u$, $v$) |          |         |                    |                        |                |
+| Räuber-Beute       |                     |         |                    |                        |                |
+| Biegelinie         |                     |         |                    |                        |                |
+| Wärmeleitung       |                     |         |                    |                        |                |
+| Wetter und Klima   |                     |         |                    |                        |                |
 :::
 
 ::: {.lm-solution}
-| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | einzeln/System |
-|:-------------------|:--------------------|:-------:|:-------------------|:---------------|
-| Auskühlen          | gewöhnlich          | 1       | linear             | einzeln        |
-| Rückhaltebecken    | gewöhnlich          | 1       | nichtlinear        | einzeln        |
-| Einmassenschwinger | gewöhnlich          | 2       | linear             | einzeln        |
-| Einmassenschwinger ($u$, $v$) | gewöhnlich | 1    | linear             | System         |
-| Räuber-Beute       | gewöhnlich          | 1       | nichtlinear        | System         |
-| Wärmeleitung       | partiell            | 2       | linear             | einzeln        |
+| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | konstante Koeffizienten | einzeln/System |
+|:-------------------|:--------------------|:-------:|:-------------------|:-----------------------|:---------------|
+| Auskühlen          | gewöhnlich          | 1       | linear             | ja                     | einzeln        |
+| Rückhaltebecken    | gewöhnlich          | 1       | nichtlinear        | –                      | einzeln        |
+| Einmassenschwinger | gewöhnlich          | 2       | linear             | ja                     | einzeln        |
+| Einmassenschwinger ($u$, $v$) | gewöhnlich | 1    | linear             | ja                     | System         |
+| Räuber-Beute       | gewöhnlich          | 1       | nichtlinear        | –                      | System         |
+| Biegelinie         | gewöhnlich          | 4       | linear             | nein                   | einzeln        |
+| Wärmeleitung       | partiell            | 2       | linear             | ja                     | einzeln        |
+| Wetter und Klima   | gewöhnlich          | 1       | nichtlinear        | –                      | System         |
 
-Beim Auskühlen und beim Einmassenschwinger sind die Koeffizienten konstant. Beim Rückhaltebecken steht die gesuchte Funktion unter der Wurzel, deshalb ist die Gleichung nichtlinear. Dass der Zufluss $Q_\mathrm{zu}(t)$ von der Zeit abhängt, ändert daran nichts, er hängt nicht von $h$ ab. Der Einmassenschwinger zeigt, dass die Einordnung von der Formulierung abhängt: Dasselbe Problem ist einmal eine einzelne Gleichung zweiter Ordnung und einmal ein System von zwei Gleichungen erster Ordnung. Bei der Wärmeleitung kommt die erste Ableitung nach $t$ und die zweite Ableitung nach $x$ vor, die Ordnung ist deshalb zwei.
+Beim Rückhaltebecken steht die gesuchte Funktion unter der Wurzel, deshalb ist die Gleichung nichtlinear. Dass der Zufluss $Q_\mathrm{zu}(t)$ von der Zeit abhängt, ändert daran nichts, er hängt nicht von $h$ ab. Der Einmassenschwinger zeigt, dass die Einordnung von der Formulierung abhängt: Dasselbe Problem ist einmal eine einzelne Gleichung zweiter Ordnung und einmal ein System von zwei Gleichungen erster Ordnung. Bei der Biegelinie ist die Gleichung linear, aber die Biegesteifigkeit $EI(x)$ hängt von $x$ ab, die Koeffizienten sind deshalb nicht konstant. Bei der Wärmeleitung kommt die erste Ableitung nach $t$ und die zweite Ableitung nach $x$ vor, die Ordnung ist deshalb zwei. Bei Wetter und Klima sind die Gleichungen gewöhnlich, weil das Gitter aus den eigentlich partiellen physikalischen Gleichungen Differentialgleichungen in der Zeit macht.
 :::
 
 ### Räuber-Beute-Modell
