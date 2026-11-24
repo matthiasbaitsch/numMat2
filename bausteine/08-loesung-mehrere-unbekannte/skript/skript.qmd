@@ -123,7 +123,7 @@ und das Euler-Verfahren
 $$
   y_{i+1} = y_i + h \cdot F(x_i, y_i)
 $$
-aus @sec-loesungsverfahren. Der Vergleich beider Aufgabenstellungen und Lösungsverfahren zeigt, dass kein grundlegender Unterschied besteht, wenn man von den unterschiedlichen Bezeichnungen absieht.
+aus @sec-loesung-eine-unbekannte. Der Vergleich beider Aufgabenstellungen und Lösungsverfahren zeigt, dass kein grundlegender Unterschied besteht, wenn man von den unterschiedlichen Bezeichnungen absieht.
 
 ::: {#def-system}
 ## System von Differentialgleichungen

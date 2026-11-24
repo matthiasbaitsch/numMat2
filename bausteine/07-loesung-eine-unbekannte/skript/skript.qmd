@@ -1,31 +1,21 @@
-In Natur und Technik gibt es viele Vorgänge, bei denen der Zustand des betrachteten Systems sich über die Zeit verändert. Häufig ist dabei der Zustand des Systems zu einem bestimmten Zeitpunkt bekannt und man fragt sich, wie sich die Dinge über die Zeit verändern werden. Beispiele hierfür sind
+In diesem Kapitel beginnen wir mit dem einfachsten Fall von Anfangswertproblemen: Anfangswertprobleme erster Ordnung (es kommen nur erste Ableitungen vor) mit einer unbekannten Funktion.
 
-- Erwärmung und Abkühlung von Bauteilen,
+## Anfangswertprobleme erster Ordnung
 
-- Schwingungsvorgänge zum Beispiel bei Erdbeben,
+### Zustand und Änderung
 
-- Ausbreitung von Schadstoffen in Wasser, Boden und Luft,
+Eine Differentialgleichung erster Ordnung verknüpft den Zustand eines Systems mit seiner Änderung. Beim Gebäude aus @sec-einfuehrung ist der Zustand die Raumtemperatur $\theta(t)$, und ihre Änderung $\theta'(t)$ ist umso größer, je weiter die Raumtemperatur von der Außentemperatur entfernt ist. Beim Regenrückhaltebecken ist der Zustand die Füllhöhe $h(t)$. Ihre Änderung $h'(t)$ hängt über den Abfluss von der Füllhöhe selbst und über den Zufluss vom Zeitpunkt ab.
 
-- Flugsimulatoren,
+Allgemein beschreibt diesen Zusammenhang eine Funktion $F$, die jeder Stelle $x$ und jedem Zustand $y$ die zugehörige Änderung $F(x, y)$ zuordnet. Bei zeitabhängigen Vorgängen ist $x$ die Zeit. Die Differentialgleichung lautet dann
+$$
+  y'(x) = F(x, y(x))
+$$
+und besagt: Befindet sich das System an der Stelle $x$ im Zustand $y(x)$, dann ändert sich der Zustand dort mit der Rate $F(x, y(x))$.
 
-- Strömung von Fluiden (Luft, Wasser, Öl, …),
+::: {#def-anfangswertproblem-erster-ordnung}
+## Anfangswertproblem erster Ordnung
 
-- Ausbreitung von Wellen (akustisch, elektromagnetisch, im Wasser, …),
-
-- Wettervorhersage und Klimaprognosen,
-
-- Ausbreitung von Infektionskrankheiten (zum Beispiel Covid-19).
-
-Typisch bei solchen Aufgaben ist, dass die zeitliche Änderung des Zustandes vom aktuellen Zustand abhängt. Zum Beispiel ändert sich die Temperatur eines Metallstabes dann besonders schnell, wenn ein Ende des Stabes sehr warm und das andere Ende sehr kalt ist. Mathematisch werden solche Vorgänge durch Differentialgleichungen beschrieben. Zusammen mit den Anfangsbedingungen erhält man auf diese Weise ein Anfangswertproblem, das sich nur in seltenen Fällen auf dem Papier lösen lässt.
-
-In diesem Kapitel beginnen wir mit dem einfachsten Fall aus dieser Problemklasse: Anfangswertprobleme erster Ordnung (es kommen nur erste Ableitungen vor) mit einer unbekannten Funktion.
-
-## Grundlagen
-
-::: {#def-anfangswertproblem}
-## Anfangswertproblem
-
-In einem [Anfangswertproblem]{.neuerbegriff} ist eine Funktion gesucht, die eine Differentialgleichung erster Ordnung erfüllt und gleichzeitig an einer vorgegebenen Stelle einen bestimmten Funktionswert annimmt. Mathematisch formuliert lautet das Problem: Gesucht ist eine Funktion $y : \R \to \R$ mit
+In einem [Anfangswertproblem]{.neuerbegriff} ist eine Funktion gesucht, die eine Differentialgleichung erfüllt und gleichzeitig an einer vorgegebenen Stelle einen bestimmten Funktionswert annimmt. Mathematisch formuliert lautet das Problem: Gesucht ist eine Funktion $y : \R \to \R$ mit
 $$
   y'(x) = F(x, y(x)) \quad\text{und}\quad y(x_0) = y_0.
 $$
@@ -55,8 +45,6 @@ Wir halten fest:
 - In einem [Richtungsfeld]{.neuerbegriff} wird dieser Zusammenhang graphisch dargestellt. Dabei berechnet man für ausgewählte Punkte $(x_i, y_j)$ die Steigung $F(x_i, y_j)$ und stellt diese mit einer kurzen Strecke dar.
 
 - Bei zeitabhängigen Prozessen verwenden wir $t$ als unabhängige Variable und schreiben $\dot{y}(t)$ statt $y'(x)$.
-
-In bestimmten Fällen lassen sich Lösungen von Anfangswertproblemen analytisch bestimmen. Allgemeiner anwendbar sind jedoch numerische Lösungsverfahren.
 
 ## Numerische Lösungsverfahren
 

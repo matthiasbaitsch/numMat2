@@ -1,8 +1,8 @@
 teil: Anfangswertprobleme
-titel: Lösungsverfahren
+titel: Lösung für eine unbekannte Funktion
 
 inhalt:
-  - Anfangswertprobleme erster Ordnung
+  - Anfangswertprobleme erster Ordnung und Richtungsfeld
   - Explizites Euler-Verfahren
   - Halbschrittverfahren
   - Runge-Kutta-Verfahren vierter Ordnung
