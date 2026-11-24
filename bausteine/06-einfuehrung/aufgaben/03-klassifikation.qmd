@@ -1,0 +1,72 @@
+::: {#exr-klassifikation}
+## Klassifikation von Differentialgleichungen
+
+Im Skript sind uns die folgenden Differentialgleichungen begegnet. Für das Auskühlen eines Gebäudes gilt
+$$
+  \theta'(t) = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr),
+$$
+für das Regenrückhaltebecken
+$$
+  h'(t) = \frac{1}{A}\left(Q_\mathrm{zu}(t) - \beta \sqrt{h(t)}\right),
+$$
+für den Einmassenschwinger
+$$
+  m \, u''(t) + c \, u'(t) + k \, u(t) = F_\mathrm{ext}(t),
+$$
+für den Einmassenschwinger mit der Geschwindigkeit $v(t) = u'(t)$ als zweiter unbekannter Funktion
+$$
+\begin{aligned}
+  u'(t) &= v(t) \\
+  v'(t) &= \frac{1}{m}\left(F_\mathrm{ext}(t) - c \, v(t) - k \, u(t) \right),
+\end{aligned}
+$$
+für das Räuber-Beute-Modell
+$$
+\begin{aligned}
+  \text{🐇}'(t) &= a \, \text{🐇}(t) - b \, \text{🐇}(t) \, \text{🦊}(t) \\
+  \text{🦊}'(t) &= -c \, \text{🦊}(t) + d \, \text{🐇}(t) \, \text{🦊}(t)
+\end{aligned}
+$$
+und für die Wärmeleitung in einem Stab
+$$
+  \frac{\partial \theta}{\partial t}(x, t) = \frac{\lambda}{\rho \, c} \, \frac{\partial^2 \theta}{\partial x^2}(x, t).
+$$
+
+### Einordnung
+
+Ordnen Sie die Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, und handelt es sich um eine einzelne Gleichung oder um ein System?
+
+::: {.lm-sheet}
+| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | einzeln/System |
+|:-------------------|:--------------------|:-------:|:-------------------|:---------------|
+| Auskühlen          |                     |         |                    |                |
+| Rückhaltebecken    |                     |         |                    |                |
+| Einmassenschwinger |                     |         |                    |                |
+| Einmassenschwinger ($u$, $v$) |          |         |                    |                |
+| Räuber-Beute       |                     |         |                    |                |
+| Wärmeleitung       |                     |         |                    |                |
+:::
+
+::: {.lm-solution}
+| Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | einzeln/System |
+|:-------------------|:--------------------|:-------:|:-------------------|:---------------|
+| Auskühlen          | gewöhnlich          | 1       | linear             | einzeln        |
+| Rückhaltebecken    | gewöhnlich          | 1       | nichtlinear        | einzeln        |
+| Einmassenschwinger | gewöhnlich          | 2       | linear             | einzeln        |
+| Einmassenschwinger ($u$, $v$) | gewöhnlich | 1    | linear             | System         |
+| Räuber-Beute       | gewöhnlich          | 1       | nichtlinear        | System         |
+| Wärmeleitung       | partiell            | 2       | linear             | einzeln        |
+
+Beim Auskühlen und beim Einmassenschwinger sind die Koeffizienten konstant. Beim Rückhaltebecken steht die gesuchte Funktion unter der Wurzel, deshalb ist die Gleichung nichtlinear. Dass der Zufluss $Q_\mathrm{zu}(t)$ von der Zeit abhängt, ändert daran nichts, er hängt nicht von $h$ ab. Der Einmassenschwinger zeigt, dass die Einordnung von der Formulierung abhängt: Dasselbe Problem ist einmal eine einzelne Gleichung zweiter Ordnung und einmal ein System von zwei Gleichungen erster Ordnung. Bei der Wärmeleitung kommt die erste Ableitung nach $t$ und die zweite Ableitung nach $x$ vor, die Ordnung ist deshalb zwei.
+:::
+
+### Räuber-Beute-Modell
+
+Welcher Term macht das Räuber-Beute-Modell nichtlinear? Was beschreibt dieser Term inhaltlich?
+
+::: {.lm-solution}
+In beiden Gleichungen kommt das Produkt $\text{🐇}(t) \, \text{🦊}(t)$ der beiden gesuchten Funktionen vor. Gesuchte Funktionen, die miteinander multipliziert werden, machen eine Differentialgleichung nichtlinear.
+
+Das Produkt beschreibt die Begegnungen zwischen Räubern und Beute. Die Zahl der Begegnungen pro Zeit ist sowohl zur Zahl der Hasen als auch zur Zahl der Füchse proportional: Gibt es doppelt so viele Hasen und doppelt so viele Füchse, kommt es viermal so oft zu einer Begegnung. Bei jeder Begegnung können Hasen gefressen werden, deshalb verringert der Term $-b \, \text{🐇}(t) \, \text{🦊}(t)$ die Beutepopulation, und die Füchse finden Nahrung, deshalb vergrößert der Term $d \, \text{🐇}(t) \, \text{🦊}(t)$ die Räuberpopulation. Die übrigen Terme sind linear: Ohne Füchse vermehren sich die Hasen mit der Rate $a$, ohne Hasen sterben die Füchse mit der Rate $c$ aus.
+:::
+:::
