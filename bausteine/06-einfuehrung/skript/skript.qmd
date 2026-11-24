@@ -46,7 +46,7 @@ mit dem Wärmetransferkoeffizienten $H$ (in W/K). In einem kurzen Zeitintervall 
 $$
   C \, \theta(t + \Delta t) - C \, \theta(t) \approx -H \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr) \, \Delta t.
 $$
-Wir teilen durch $C \, \Delta t$ und lassen $\Delta t$ gegen null gehen. Aus dem Differenzenquotienten wird die Ableitung, und wir erhalten mit der Anfangstemperatur $\theta_0$ zum Zeitpunkt $t = 0$ das Anfangswertproblem
+Wir teilen durch $C \, \Delta t$ und lassen $\Delta t$ gegen null gehen. Aus dem Differenzenquotienten wird die Ableitung, und wir erhalten die Differentialgleichung für die Temperatur zusammen mit der Anfangstemperatur $\theta_0$ zum Zeitpunkt $t = 0$,
 $$
   \boxed{
     \theta'(t) = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr)
@@ -111,7 +111,7 @@ $$
   h'(t) = \frac{1}{A}\left(Q_\mathrm{zu}(t) - \beta \sqrt{h(t)}\right).
 $$
 
-Mit einer gegebenen Funktion $Q_\mathrm{zu}$ für den Zufluss über die Zeit und der Füllhöhe $h_0$ zum Zeitpunkt $t = 0$ erhalten wir das Anfangswertproblem
+Mit einer gegebenen Funktion $Q_\mathrm{zu}$ für den Zufluss über die Zeit und der Füllhöhe $h_0$ zum Zeitpunkt $t = 0$ erhalten wir die Differentialgleichung für die Füllhöhe zusammen mit der Anfangsbedingung
 $$
   \boxed{
     h'(t) = \frac{1}{A}\left(Q_\mathrm{zu}(t) - \beta \sqrt{h(t)}\right)
@@ -131,7 +131,7 @@ Der [Einmassenschwinger]{.neuerbegriff} wird im Ingenieurwesen als Modell für e
 
 Der Massepunkt mit der Masse $m$ kann sich in horizontaler Richtung reibungslos hin- und herbewegen. Zum Zeitpunkt $t$ ist er um die Verschiebung $u(t)$ aus der Ruhelage ausgelenkt. Damit ist $u : \R_+ \to \R$ eine Funktion, die jedem Zeitpunkt eine Auslenkung des Massepunkts zuordnet. Für den Massepunkt gilt das 2. newtonsche Gesetz
 $$
-  F_{\mathrm{res}}(t) = m \, u''(t)
+  F_{\mathrm{res}}(t) = m \, u''(t).
 $$
 Es besagt: Die auf den Massepunkt einwirkende resultierende Kraft ist gleich der Masse mal der Beschleunigung.
 
@@ -173,9 +173,9 @@ $$
 $$
 Gemeint ist jeweils dasselbe, und wir verwenden im Folgenden beide Schreibweisen.
 
-#### Anfangsbedingungen und Anfangswertproblem
+#### Anfangsbedingungen
 
-Ziel bei der Berechnung eines Einmassenschwingers ist es vorherzusagen, wie sich die Auslenkung der Masse über die Zeit verändert. Dazu muss ein Ausgangszustand für einen festgelegten Zeitpunkt definiert werden. In der Regel beginnt man bei $t = 0$ zu rechnen, so dass wir die Auslenkung $u_0$ und die Geschwindigkeit $v_0$ zu Beginn vorgeben müssen. Insgesamt erhalten wir das Anfangswertproblem
+Ziel bei der Berechnung eines Einmassenschwingers ist es vorherzusagen, wie sich die Auslenkung der Masse über die Zeit verändert. Dazu muss ein Ausgangszustand für einen festgelegten Zeitpunkt definiert werden. In der Regel beginnt man bei $t = 0$ zu rechnen, so dass wir die Auslenkung $u_0$ und die Geschwindigkeit $v_0$ zu Beginn vorgeben müssen. Insgesamt erhalten wir die Bewegungsgleichung zusammen mit den Anfangsbedingungen
 $$
   \boxed{
     m \, u''(t) + c \, u'(t) + k \, u(t) = F_\mathrm{ext}(t)
@@ -217,13 +217,11 @@ Besonders große und komplexe Modelle kommen in der Wettervorhersage und bei der
 
 Das Grundprinzip der Modelle für Wetter- und Klimasimulationen ist in @fig-klimamodell dargestellt. Die Erdatmosphäre (bei Klimamodellen auch die Ozeane) wird zunächst mit einem Gitter überzogen. In den Gitterzellen werden dann Gleichungen für die Zustandsgrößen wie Luftdruck, Temperatur, Luftfeuchtigkeit und Windgeschwindigkeit formuliert, wobei die Größen mit den jeweils benachbarten Zellen zusammenhängen. Am Ende erhält man ein System von sehr vielen (bis zu mehreren Milliarden) nichtlinearen Differentialgleichungen erster Ordnung, die untereinander gekoppelt sind. Die näherungsweise Lösung ist mit extrem hohem Rechenaufwand verbunden. Wettervorhersagen und insbesondere Klimasimulationen gehören zu den schwierigsten Simulationsaufgaben, mit denen sich die wissenschaftliche Gemeinschaft heutzutage befasst.
 
-## Mathematische Formulierung
-
-### Klassifikation
+## Klassifikation
 
 Um Differentialgleichungen einzuordnen und um zu entscheiden, wie man sie lösen kann, verwendet man die folgenden Merkmale.
 
-#### Gewöhnlich und partiell
+### Gewöhnlich und partiell
 
 Hängt die gesuchte Funktion nur von einer Variablen ab, spricht man von einer [gewöhnlichen Differentialgleichung]{.neuerbegriff}. Eine Differentialgleichung, bei der die gesuchte Funktion von mehreren Variablen abhängt, wird [partielle Differentialgleichung]{.neuerbegriff} genannt.
 
@@ -233,7 +231,7 @@ $$
 $$
 mit der Wärmeleitfähigkeit $\lambda$, der Dichte $\rho$ und der spezifischen Wärmekapazität $c$. Weil Ableitungen nach $x$ und nach $t$ auftreten, handelt es sich um eine partielle Differentialgleichung. Im Folgenden befassen wir uns mit gewöhnlichen Differentialgleichungen.
 
-#### Ordnung
+### Ordnung
 
 Die [Ordnung]{.neuerbegriff} einer Differentialgleichung ist die Ordnung der höchsten Ableitung der gesuchten Funktion, die in ihr vorkommt. Beispielsweise ist 
 $$
@@ -245,7 +243,7 @@ EI \, w''''(x) = q(x)
 $$
 die Ordnung vier.
 
-#### Linear und nichtlinear
+### Linear und nichtlinear
 
 Eine Differentialgleichung, in der die gesuchten Funktionen und ihre Ableitungen nur in der ersten Potenz auftauchen, nicht miteinander multipliziert werden und nicht als Argument einer Funktion (wie $\sin$) vorkommen, heißt [lineare]{.neuerbegriff} Differentialgleichung. Demzufolge ist
 $$
@@ -257,7 +255,7 @@ y''(x) + a \cdot y'(x) + \sin(y(x)) = 0
 $$
 eine nichtlineare Differentialgleichung. Sind die Koeffizienten einer linearen Differentialgleichung unabhängig von $x$, spricht man von einer [linearen Differentialgleichung mit konstanten Koeffizienten]{.neuerbegriff}.
 
-#### Einzelne Gleichung und Systeme von Differentialgleichungen
+### Einzelne Gleichung und Systeme von Differentialgleichungen
 
 Ein weiteres Unterscheidungskriterium ist, ob man eine einzelne gesuchte Funktion bestimmen möchte oder ob es sich um mehrere Funktionen handelt, die miteinander gekoppelt sind. Ein bekanntes Beispiel ist das Räuber-Beute-Modell
 $$
@@ -268,4 +266,4 @@ $$
 $$
 für die Größe einer Beutepopulation $\text{🐇}(t)$ und einer Räuberpopulation $\text{🦊}(t)$. Es handelt sich um ein nichtlineares System von zwei Differentialgleichungen erster Ordnung. Auch der Einmassenschwinger lässt sich, wie oben gezeigt, als System von zwei Differentialgleichungen erster Ordnung schreiben.
 
-In den folgenden Kapiteln befassen wir uns zunächst mit Anfangswertproblemen erster Ordnung mit einer unbekannten Funktion und ihrer numerischen Lösung. Anschließend betrachten wir Systeme von Differentialgleichungen.
+In den folgenden Kapiteln befassen wir uns zunächst mit der numerischen Lösung von Differentialgleichungen erster Ordnung mit einer unbekannten Funktion. Anschließend betrachten wir Systeme von Differentialgleichungen.
