@@ -1,0 +1,67 @@
+::: {#exr-auskuehlen-gebaeude}
+## Auskühlen eines Einfamilienhauses
+
+Im Winter fällt bei einer Außentemperatur von $\theta_\mathrm{U} = \SI{-5}{\degreeCelsius}$ die Heizung eines Einfamilienhauses aus. Zu diesem Zeitpunkt beträgt die Raumtemperatur $\theta_0 = \SI{20}{\degreeCelsius}$. Wie im Skript beschrieben, gilt für die Raumtemperatur $\theta(t)$ die Differentialgleichung mit der Anfangsbedingung
+$$
+  \boxed{
+    \theta'(t) = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr)
+    \quad\text{mit}\quad
+    \theta(0) = \theta_0
+  }
+$$
+mit der Zeitkonstanten $\tau = C_\mathrm{wirk} / H$. Wir vergleichen einen unsanierten Altbau mit einem Neubau in Passivhausqualität. Beide Häuser haben dieselbe Geometrie mit der Nettogrundfläche $A_\mathrm{NGF} = \SI{150}{\metre\squared}$, dem Nettoraumvolumen $V = \SI{375}{\metre\cubed}$ und den folgenden Bauteilen.
+
+| Bauteil     | Fläche $A_j$ in $\si{\metre\squared}$ | $U_j$ Altbau in $\si{\watt\per\metre\squared\per\kelvin}$ | $U_j$ Neubau in $\si{\watt\per\metre\squared\per\kelvin}$ |
+|:------------|-------------------:|------------------------:|------------------------:|
+| Außenwand   | 186                | 1.4                     | 0.15                    |
+| Fenster     | 30                 | 2.8                     | 0.80                    |
+| Dach        | 80                 | 0.9                     | 0.12                    |
+| Bodenplatte | 80                 | 1.0                     | 0.15                    |
+
+Lüftung und wirksame Wärmekapazität ermitteln wir nach DIN/TS 18599-2 [@DIN185992202510]. Anders als im Skript berücksichtigen wir zusätzlich die Lüftung durch $H_\mathrm{V} = \SI{0.34}{\watt\hour\per\metre\cubed\per\kelvin} \cdot n \cdot V$ mit dem Luftwechsel $n = \SI{0.7}{\per\hour}$ im undichten Altbau und dem wirksamen Luftwechsel $n = \SI{0.15}{\per\hour}$ im Neubau mit Lüftungsanlage und Wärmerückgewinnung. Beide Häuser sind mittelschwer gebaut, die wirksame Wärmekapazität ist $C_\mathrm{wirk} = \SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$.
+
+### Lösung der Differentialgleichung
+
+Zeigen Sie durch Einsetzen, dass
+$$
+  \theta(t) = \theta_\mathrm{U} + (\theta_0 - \theta_\mathrm{U}) \, e^{-t/\tau}
+$$
+die Differentialgleichung und die Anfangsbedingung erfüllt. Bestimmen Sie daraus eine Formel für die Zeit $t^*$, nach der die Raumtemperatur auf den Wert $\theta^*$ gesunken ist.
+
+::: {.lm-solution}
+Es gilt $\theta(0) = \theta_\mathrm{U} + \theta_0 - \theta_\mathrm{U} = \theta_0$ und
+$$
+  \theta'(t) = -\frac{1}{\tau} \, (\theta_0 - \theta_\mathrm{U}) \, e^{-t/\tau} = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr).
+$$
+Aus $\theta(t^*) = \theta^*$ folgt $e^{-t^*/\tau} = (\theta^* - \theta_\mathrm{U}) / (\theta_0 - \theta_\mathrm{U})$, also
+$$
+  t^* = \tau \, \ln \frac{\theta_0 - \theta_\mathrm{U}}{\theta^* - \theta_\mathrm{U}}.
+$$
+:::
+
+### Zeitkonstanten
+
+Berechnen Sie für beide Häuser den Wärmetransferkoeffizienten $H = \sum_j U_j A_j + H_\mathrm{V}$ aus Transmission und Lüftung, die wirksame Wärmekapazität $C_\mathrm{wirk}$ und die Zeitkonstante $\tau$.
+
+::: {.lm-solution}
+Die wirksame Wärmekapazität ist für beide Häuser $C_\mathrm{wirk} = \SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot \SI{150}{\metre\squared} = \SI{13500}{\watt\hour\per\kelvin}$.
+
+Altbau: Die Transmission ergibt $186 \cdot 1.4 + 30 \cdot 2.8 + 80 \cdot 0.9 + 80 \cdot 1.0 = \SI{496.4}{\watt\per\kelvin}$, die Lüftung $H_\mathrm{V} = 0.34 \cdot 0.7 \cdot 375\,\si{\watt\per\kelvin} = \SI{89.3}{\watt\per\kelvin}$. Damit ist $H = \SI{585.7}{\watt\per\kelvin}$ und $\tau = 13500 / 585.7\,\si{\hour} = \SI{23.0}{\hour}$.
+
+Neubau: Die Transmission ergibt $186 \cdot 0.15 + 30 \cdot 0.8 + 80 \cdot 0.12 + 80 \cdot 0.15 = \SI{73.5}{\watt\per\kelvin}$, die Lüftung $H_\mathrm{V} = 0.34 \cdot 0.15 \cdot 375\,\si{\watt\per\kelvin} = \SI{19.1}{\watt\per\kelvin}$. Damit ist $H = \SI{92.6}{\watt\per\kelvin}$ und $\tau = 13500 / 92.6\,\si{\hour} = \SI{145.8}{\hour}$, also gut sechs Tage.
+:::
+
+### Auskühlzeit
+
+Nach welcher Zeit ist die Raumtemperatur in beiden Häusern auf $\SI{15}{\degreeCelsius}$ gesunken? Wie ändert sich das Ergebnis für den Neubau, wenn er in leichter Holzbauweise mit $C_\mathrm{wirk} = \SI{50}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ errichtet wird?
+
+::: {.lm-solution}
+Mit $\ln \frac{20 - (-5)}{15 - (-5)} = \ln 1.25 = 0.223$ ergibt sich
+
+- im Altbau $t^* = 0.223 \cdot \SI{23.0}{\hour} = \SI{5.1}{\hour}$,
+- im Neubau $t^* = 0.223 \cdot \SI{145.8}{\hour} = \SI{32.5}{\hour}$,
+- im Neubau in Holzbauweise mit $C_\mathrm{wirk} = \SI{7500}{\watt\hour\per\kelvin}$, $\tau = \SI{81.0}{\hour}$ und $t^* = \SI{18.1}{\hour}$.
+
+Der Altbau ist also schon am selben Abend kalt, der Neubau erst nach knapp anderthalb Tagen. Der Unterschied kommt allein vom Wärmeschutz der Hülle, bei gleichem Wärmeschutz kühlt die leichte Bauweise wegen der kleineren Speicherfähigkeit schneller aus. In Wirklichkeit dauert es länger, weil das Modell Wärmeeinträge durch Personen, Geräte und Sonne vernachlässigt.
+:::
+:::

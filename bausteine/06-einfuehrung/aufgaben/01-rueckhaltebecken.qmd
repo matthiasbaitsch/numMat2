@@ -1,0 +1,59 @@
+::: {#exr-rueckhaltebecken}
+## Füllhöhe eines Regenrückhaltebeckens
+
+Für die Füllhöhe $h(t)$ des Regenrückhaltebeckens aus dem Skript gilt die Differentialgleichung mit der Anfangsbedingung
+$$
+  \boxed{
+    h'(t) = \frac{1}{A}\left(Q_\mathrm{zu}(t) - \beta \sqrt{h(t)}\right)
+    \quad\text{mit}\quad
+    h(0) = h_0
+  }
+$$
+mit der Grundfläche $A$, dem Zufluss $Q_\mathrm{zu}(t)$ und dem Abfluss $Q_\mathrm{ab}(t) = \beta \sqrt{h(t)}$. Überlegen Sie ohne zu rechnen anhand der Differentialgleichung, wie sich die Füllhöhe mit der Zeit entwickelt, und skizzieren Sie den Verlauf von $h(t)$ für die folgenden Fälle.
+
+### Kein Zufluss
+
+Das Becken ist zu Beginn bis zur Höhe $h_0 > 0$ gefüllt, und es fließt kein Wasser zu, $Q_\mathrm{zu}(t) = 0$. Wann sinkt die Füllhöhe am schnellsten? Wird das Becken irgendwann leer? Hinweis: Betrachten Sie die Ableitung von $\sqrt{h(t)}$.
+
+::: {.lm-solution}
+Es gilt $h'(t) = -\beta\sqrt{h(t)}/A < 0$, solange noch Wasser im Becken ist. Die Füllhöhe sinkt deshalb monoton, am schnellsten zu Beginn mit $h'(0) = -\beta\sqrt{h_0}/A$, und mit abnehmender Füllhöhe immer langsamer, weil der Druck am Auslass nachlässt.
+
+Trotzdem ist das Becken nach endlicher Zeit leer. Das sieht man, wenn man die Wurzel der Füllhöhe betrachtet:
+$$
+  \frac{d}{dt}\sqrt{h(t)} = \frac{h'(t)}{2\sqrt{h(t)}} = -\frac{\beta}{2A}.
+$$
+Die Wurzel nimmt also linear ab, es gilt $\sqrt{h(t)} = \sqrt{h_0} - \frac{\beta}{2A}\,t$, und das Becken ist zum Zeitpunkt $t = 2A\sqrt{h_0}/\beta$ leer. Die Kurve $h(t)$ ist eine Parabel, die dort mit waagerechter Tangente auf null trifft.
+:::
+
+### Konstanter Zufluss
+
+Das Becken ist zu Beginn leer, $h_0 = 0$, und der Zufluss ist konstant, $Q_\mathrm{zu}(t) = Q_0$. Wie verändert sich die Steigung $h'(t)$, während sich das Becken füllt? Gibt es eine Füllhöhe, bei der sich $h$ nicht mehr ändert, und wie groß ist sie?
+
+::: {.lm-solution}
+Zu Beginn ist $h = 0$, das Becken füllt sich mit der größten Steigung $h'(0) = Q_0 / A$. Mit steigender Füllhöhe wächst der Abfluss $\beta\sqrt{h}$, die Steigung $h'(t)$ nimmt also ab. Die Füllhöhe ändert sich nicht mehr, wenn Zu- und Abfluss gleich sind:
+$$
+  Q_0 = \beta \sqrt{h_\infty}
+  \iff
+  h_\infty = \left(\frac{Q_0}{\beta}\right)^2.
+$$
+Die Füllhöhe steigt deshalb monoton und immer langsamer an und nähert sich $h_\infty$, ohne den Wert zu erreichen oder zu überschreiten.
+:::
+
+### Rechteckzufluss
+
+Das Becken ist zu Beginn leer, $h_0 = 0$. Ein Starkregen der Dauer $T$ führt auf den Zufluss
+$$
+  Q_\mathrm{zu}(t) =
+  \begin{cases}
+    Q_0 & \text{für } 0 \leq t \leq T, \\
+    0 & \text{für } t > T.
+  \end{cases}
+$$
+Skizzieren Sie neben $h(t)$ auch den Abfluss $Q_\mathrm{ab}(t)$ und vergleichen Sie ihn mit dem Zufluss. Wann ist der Abfluss am größten? Was bewirkt das Becken für die Kanalisation?
+
+::: {.lm-solution}
+Bis zum Zeitpunkt $T$ verläuft $h(t)$ wie beim konstanten Zufluss, die Füllhöhe $h(T)$ liegt unter $h_\infty$. Danach fließt nichts mehr zu, und das Becken leert sich wie im Fall ohne Zufluss mit der Anfangshöhe $h(T)$: zunächst schnell und mit abnehmender Füllhöhe immer langsamer, bis es zum Zeitpunkt $T + 2A\sqrt{h(T)}/\beta$ leer ist. Die Füllhöhe und damit auch der Abfluss $Q_\mathrm{ab}(t) = \beta\sqrt{h(t)}$ sind zum Zeitpunkt $T$ am größten.
+
+Der Abfluss steigt also zunächst steil und dann immer langsamer von null an, bleibt unter $Q_0$ und klingt nach dem Ende des Regens allmählich ab. Das Becken kappt die Abflussspitze und verteilt dieselbe Wassermenge auf einen längeren Zeitraum, so dass die Kanalisation nicht überlastet wird.
+:::
+:::

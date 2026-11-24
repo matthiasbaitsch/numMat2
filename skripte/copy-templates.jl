@@ -24,7 +24,8 @@ keep_name(_, source) = basename(source)
 cd(joinpath(@__DIR__, ".."))
 
 for bd = TARGET_ROOTS(), (path, dirs, files) = walkdir(bd)
-    if endswith(path, r"projekt|projekt\-[\w-]+")
+    # Parked building blocks (bausteine/_geparkt) are not delivered and get no templates
+    if endswith(path, r"projekt|projekt\-[\w-]+") && !occursin("/_geparkt/", path)
         for (source, transform) = SOURCE_CONTENT()
             target = joinpath(path, transform(path, source))
             println(target)

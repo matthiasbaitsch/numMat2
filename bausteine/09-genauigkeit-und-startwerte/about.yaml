@@ -4,5 +4,4 @@ titel: Genauigkeit und Startwerte
 inhalt:
   - Eigenschaften von Anfangswertproblemen und numerischen Verfahren
   - Genauigkeit und Konvergenz, doppelt logarithmische Darstellung
-  - Stabilität als Phänomen (Van der Pol)
   - Abhängigkeit von Startwerten

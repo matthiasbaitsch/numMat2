@@ -9,6 +9,9 @@
   (https://youtu.be/MbV3t8TYWRU, 16:50) einbinden
 - [X]  Lernpfad-Skript: Skript-Book in `lernpfad/skript/c/` erzeugen, `make render-skript`
 - [X]  Skript-Book rendern (HTML und PDF mit Typst)
+- [ ]  Am Schluss, wenn Skript, Veranstaltung und Aufgaben ab 07 auf loi-moi laufen: `skripte/make-learning-path.jl`
+  und `make prepare-render` entfernen, `CLAUDE.md` (Notebooks, Auslieferung, Lernpfad-Skript) anpassen
+- [ ]  Lösung überlegen, wenn Skript und Folien dieselben Bilder verwenden (bisher doppelt, z.B. in 06)
 
 ## Themen
 
@@ -22,7 +25,7 @@
 | 06 | Anfangswertprobleme | Lösungsverfahren | `a-01` | vor-corona `02-awps` | 2.0 Blatt 5 |
 | 07 | Anfangswertprobleme | Massepunkte | `a-02` | vor-corona `03-dynamik` | 1.0 Blatt 6 |
 | 08 | Anfangswertprobleme | Systeme von Differentialgleichungen | `a-03` | – | 1.0 Blatt 8 |
-| 09 | Anfangswertprobleme | Genauigkeit und Startwerte | – | NM A 5 | 2.0 Blatt 6 (Van der Pol als Phänomen) |
+| 09 | Anfangswertprobleme | Genauigkeit und Startwerte | – | NM A 5 | 2.0 Blatt 6 (ohne Van der Pol) |
 | 10 | Wärmeleitung | Grundlagen | – | NM W 01–03 | 2.0 Blatt 7 |
 | 11 | Wärmeleitung | Stabilität | – | NM W 04 | 2.0 Blatt 7 (implizites Euler) |
 
@@ -46,9 +49,9 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 - [ ]  09 Genauigkeit und Startwerte: Folien · Aufgaben
   - Folien: Notiz NM A 5 Eigenschaften (`../../numMat/03-notizen-videos/NM A 5 Eigenschaften.pdf`), Seite 16 von
     `03-dynamik-massepunkte.pdf` (Abhängigkeit von Startwerten)
-  - Aufgaben: 2.0 Blatt 6 (Genauigkeit mit Zykloide, Stabilität mit Van der Pol nur als Phänomen, Startwerte mit
-    Lorenz), 1.0 Blatt 7; Python-Lösungen in `../../numMat_2.0/01-uebungsaufgaben/musterloesungen/anfangswertprobleme-python`
-    (`01-genauigkeit.ipynb`, `02-stabilitaet.ipynb`, `03-startwerte.ipynb`)
+  - Aufgaben: 2.0 Blatt 6 (Genauigkeit mit Zykloide, Startwerte mit Lorenz), 1.0 Blatt 7; Python-Lösungen in
+    `../../numMat_2.0/01-uebungsaufgaben/musterloesungen/anfangswertprobleme-python` (`01-genauigkeit.ipynb`,
+    `03-startwerte.ipynb`)
 - [ ]  10 Wärmeleitung Grundlagen: Folien · Aufgaben
   - Folien: NM W 01–03 (`../../numMat/03-notizen-videos/`)
   - Aufgaben: 2.0 Blatt 7 ohne Stabilität, 1.0 Blatt 9; Python-Lösungen `instationaer-1.*.ipynb`,
@@ -71,6 +74,10 @@ Je Thema: Skript · Folien · Aufgaben (mit Python-Musterlösung)
 - [ ]  Zusatzthemen aus der Playlist einordnen: „NM Z 01 FVM 2D“ (https://youtu.be/ter-OxxZZqU, 4:36),
   „NM Z 02 1 Akustik FVM 1D“ (https://youtu.be/oiUoPpKUwr8, 33:39), z.B. für Studienarbeiten
 - [ ]  MATLAB-/Mathematica-Grafiken im Skript als Python-Code neu erzeugen
+- [ ]  Geparkt: Aufgabe Van der Pol (Stabilität als Phänomen bei den Anfangswertproblemen), Material 2.0 Blatt 6
+  (`../../numMat_2.0/aufgaben/06-systeme-von-dgln/06-systeme-von-dgln.qmd`), Python-Lösung
+  `../../numMat_2.0/01-uebungsaufgaben/musterloesungen/anfangswertprobleme-python/02-stabilitaet.ipynb`; ggf. als
+  Reserve oder bei der Wärmeleitung zum Vergleich
 
 ## Extension `tinh`
 

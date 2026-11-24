@@ -38,7 +38,7 @@ Wir betrachten zunächst allgemein einen Körper mit der Temperatur $\theta(t)$,
 $$
   E(t) = C \, \theta(t).
 $$
-Ist der Körper wärmer als die Umgebung, gibt er Wärme an diese ab. Nach dem newtonschen Abkühlungsgesetz ist der abgegebene Wärmestrom (Wärmemenge pro Zeit, in $\si{\watt}$) proportional zur Temperaturdifferenz,
+Ist der Körper wärmer als die Umgebung, gibt er Wärme an diese ab. Nach dem newtonschen Abkühlungsgesetz ist der Wärmeverlust, also der abgegebene Wärmestrom (Wärmemenge pro Zeit, in $\si{\watt}$), proportional zur Temperaturdifferenz,
 $$
   \Phi(t) = H \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr),
 $$
@@ -58,11 +58,22 @@ mit der Zeitkonstanten $\tau = C / H$. Eine große Wärmekapazität und ein klei
 
 #### Anwendung auf Gebäude
 
-Für ein Gebäude ist $\theta(t)$ die Raumtemperatur und $\theta_\mathrm{U}$ die Außentemperatur. Die Kenngrößen $C$ und $H$ werden bei der energetischen Bewertung von Gebäuden nach DIN/TS 18599-2 ohnehin bestimmt [@DIN185992202510, Abschnitte 5.5.2 und 6.7]. Eine Gebäudezone ist dort ein Teil des Gebäudes mit einheitlicher Nutzung, der mit einer einheitlichen Temperatur gerechnet wird. Bei Wohngebäuden ist das meist das ganze Gebäude, Nichtwohngebäude werden in mehrere Zonen aufgeteilt (zum Beispiel Büros, Flure und Serverraum). Eine Gebäudezone entspricht damit genau dem Körper mit einheitlicher Temperatur, den wir oben betrachtet haben. Die Norm bezeichnet $C = C_\mathrm{wirk}$ als wirksame Wärmekapazität der Gebäudezone. Sie kann pauschal aus der Nettogrundfläche $A_\mathrm{NGF}$ ermittelt werden, mit $C_\mathrm{wirk} = \SI{50}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für leichte, $\SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für mittelschwere und $\SI{130}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für schwere Bauweise. Der Wärmetransferkoeffizient ergibt sich aus der Transmission durch die Bauteile der Gebäudehülle,
+Für ein Gebäude ist $\theta(t)$ die Raumtemperatur und $\theta_\mathrm{U}$ die Außentemperatur. Die Kenngrößen $C$ und $H$ werden bei der energetischen Bewertung von Gebäuden nach DIN/TS 18599-2 ohnehin bestimmt [@DIN185992202510, Abschnitte 5.5.2 und 6.7]. Eine Gebäudezone ist dort ein Teil des Gebäudes mit einheitlicher Nutzung, der mit einer einheitlichen Temperatur gerechnet wird. Bei Wohngebäuden ist das meist das ganze Gebäude, Nichtwohngebäude werden in mehrere Zonen aufgeteilt (zum Beispiel Büros, Flure und Serverraum). Eine Gebäudezone entspricht damit genau dem Körper mit einheitlicher Temperatur, den wir oben betrachtet haben. Die Norm bezeichnet $C = C_\mathrm{wirk}$ als wirksame Wärmekapazität der Gebäudezone. Sie kann pauschal aus der Nettogrundfläche $A_\mathrm{NGF}$ ermittelt werden, mit $C_\mathrm{wirk} = \SI{50}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für leichte, $\SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für mittelschwere und $\SI{130}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für schwere Bauweise. ![Prinzipskizze zum Auskühlen eines Gebäudes: Die Speichermasse gibt Wärme durch Transmission über die Gebäudehülle und durch Lüftung an die Umgebung ab](bilder/prinzip-auskuehlen.svg){#fig-prinzip-auskuehlen width="60%"}
+
+Das Gebäude gibt Wärme auf zwei Wegen an die Umgebung ab (@fig-prinzip-auskuehlen): durch Transmission über die Bauteile der Gebäudehülle und durch Lüftung, bei der warme Raumluft gegen kalte Außenluft ausgetauscht wird. Der Wärmeverlust setzt sich entsprechend aus dem Transmissions- und dem Lüftungswärmeverlust zusammen,
 $$
-  H = \sum_j U_j A_j,
+  \Phi(t) = \Phi_\mathrm{T}(t) + \Phi_\mathrm{V}(t) = \bigl(H_\mathrm{T} + H_\mathrm{V}\bigr) \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr),
 $$
-mit den Wärmedurchgangskoeffizienten $U_j$ und den Flächen $A_j$ der Bauteile. Die Norm bezeichnet $\tau = C_\mathrm{wirk} / H$ als Auskühlzeitkonstante der Gebäudezone. Mit $C_\mathrm{wirk}$ in $\si{\watt\hour\per\kelvin}$ und $H$ in $\si{\watt\per\kelvin}$ ergibt sich $\tau$ direkt in Stunden.
+so dass der Wärmetransferkoeffizient
+$$
+  H = H_\mathrm{T} + H_\mathrm{V}
+  \quad\text{mit}\quad
+  H_\mathrm{T} = \sum_j U_j A_j
+  \quad\text{und}\quad
+  H_\mathrm{V} = \rho c_p \, n \, V
+$$
+ist.
+Für die Transmission sind $U_j$ die Wärmedurchgangskoeffizienten und $A_j$ die Flächen der Bauteile. Für die Lüftung ist $n$ der Luftwechsel (wie oft die Raumluft pro Stunde ausgetauscht wird, in $\si{\per\hour}$), $V$ das Nettoraumvolumen und $\rho c_p = \SI{0.34}{\watt\hour\per\metre\cubed\per\kelvin}$ die volumenbezogene Wärmekapazität der Luft. Die Norm bezeichnet $\tau = C_\mathrm{wirk} / H$ als Auskühlzeitkonstante der Gebäudezone. Mit $C_\mathrm{wirk}$ in $\si{\watt\hour\per\kelvin}$ und $H$ in $\si{\watt\per\kelvin}$ ergibt sich $\tau$ direkt in Stunden.
 
 ### Regenrückhaltebecken
 
@@ -239,7 +250,7 @@ y'(x) = y(x)
 $$
 eine Differentialgleichung erster Ordnung, demgegenüber besitzt die Gleichung der Biegelinie eines Balkens
 $$
-EI \, w''''(x) = q(x)
+EI \cdot w''''(x) = q(x)
 $$
 die Ordnung vier.
 
@@ -253,15 +264,19 @@ eine lineare und
 $$
 y''(x) + a \cdot y'(x) + \sin(y(x)) = 0
 $$
-eine nichtlineare Differentialgleichung. Sind die Koeffizienten einer linearen Differentialgleichung unabhängig von $x$, spricht man von einer [linearen Differentialgleichung mit konstanten Koeffizienten]{.neuerbegriff}.
+eine nichtlineare Differentialgleichung. Sind die Koeffizienten einer linearen Differentialgleichung unabhängig von $x$, spricht man von einer [linearen Differentialgleichung mit konstanten Koeffizienten]{.neuerbegriff}, zum Beispiel
+$$
+a \cdot y'''(x) + b \cdot y''(x) + c \cdot y'(x) + d \cdot y(x) = f(x)
+$$
+mit Konstanten $a$, $b$, $c$ und $d$. Die rechte Seite $f(x)$ darf dabei von $x$ abhängen.
 
 ### Einzelne Gleichung und Systeme von Differentialgleichungen
 
 Ein weiteres Unterscheidungskriterium ist, ob man eine einzelne gesuchte Funktion bestimmen möchte oder ob es sich um mehrere Funktionen handelt, die miteinander gekoppelt sind. Ein bekanntes Beispiel ist das Räuber-Beute-Modell
 $$
 \begin{aligned}
-  \text{🐇}'(t) &= a \, \text{🐇}(t) - b \, \text{🐇}(t) \, \text{🦊}(t) \\
-  \text{🦊}'(t) &= -c \, \text{🦊}(t) + d \, \text{🐇}(t) \, \text{🦊}(t)
+  \text{🐇}'(t) &= a \cdot \text{🐇}(t) - b \cdot \text{🐇}(t) \cdot \text{🦊}(t) \\
+  \text{🦊}'(t) &= -c \cdot \text{🦊}(t) + d \cdot \text{🐇}(t) \cdot \text{🦊}(t)
 \end{aligned}
 $$
 für die Größe einer Beutepopulation $\text{🐇}(t)$ und einer Räuberpopulation $\text{🦊}(t)$. Es handelt sich um ein nichtlineares System von zwei Differentialgleichungen erster Ordnung. Auch der Einmassenschwinger lässt sich, wie oben gezeigt, als System von zwei Differentialgleichungen erster Ordnung schreiben.
