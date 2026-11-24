@@ -1,40 +1,11 @@
 ::: {#exr-klassifikation}
 ## Klassifikation von Differentialgleichungen
 
-Im Skript sind uns die folgenden Differentialgleichungen begegnet. Für das Auskühlen eines Gebäudes gilt
-$$
-  \theta'(t) = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr),
-$$
-für das Regenrückhaltebecken
-$$
-  h'(t) = \frac{1}{A}\left(Q_\mathrm{zu}(t) - \beta \sqrt{h(t)}\right),
-$$
-für den Einmassenschwinger
-$$
-  m \, u''(t) + c \, u'(t) + k \, u(t) = F_\mathrm{ext}(t),
-$$
-für den Einmassenschwinger mit der Geschwindigkeit $v(t) = u'(t)$ als zweiter unbekannter Funktion
-$$
-\begin{aligned}
-  u'(t) &= v(t) \\
-  v'(t) &= \frac{1}{m}\left(F_\mathrm{ext}(t) - c \, v(t) - k \, u(t) \right),
-\end{aligned}
-$$
-für das Räuber-Beute-Modell
-$$
-\begin{aligned}
-  \text{🐇}'(t) &= a \, \text{🐇}(t) - b \, \text{🐇}(t) \, \text{🦊}(t) \\
-  \text{🦊}'(t) &= -c \, \text{🦊}(t) + d \, \text{🐇}(t) \, \text{🦊}(t)
-\end{aligned}
-$$
-und für die Wärmeleitung in einem Stab
-$$
-  \frac{\partial \theta}{\partial t}(x, t) = \frac{\lambda}{\rho \, c} \, \frac{\partial^2 \theta}{\partial x^2}(x, t).
-$$
+Im Skript sind uns Differentialgleichungen für das Auskühlen eines Gebäudes, das Regenrückhaltebecken, den Einmassenschwinger (einmal für die Auslenkung $u$ allein, einmal mit der Geschwindigkeit $v$ als zweiter unbekannter Funktion), das Räuber-Beute-Modell und die Wärmeleitung in einem Stab begegnet.
 
 ### Einordnung
 
-Ordnen Sie die Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, und handelt es sich um eine einzelne Gleichung oder um ein System?
+Ordnen Sie diese Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, und handelt es sich um eine einzelne Gleichung oder um ein System?
 
 ::: {.lm-sheet}
 | Gleichung          | gewöhnlich/partiell | Ordnung | linear/nichtlinear | einzeln/System |

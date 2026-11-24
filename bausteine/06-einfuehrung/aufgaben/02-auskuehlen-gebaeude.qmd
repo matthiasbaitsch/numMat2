@@ -1,15 +1,7 @@
 ::: {#exr-auskuehlen-gebaeude}
 ## Auskühlen eines Einfamilienhauses
 
-Im Winter fällt bei einer Außentemperatur von $\theta_\mathrm{U} = \SI{-5}{\degreeCelsius}$ die Heizung eines Einfamilienhauses aus. Zu diesem Zeitpunkt beträgt die Raumtemperatur $\theta_0 = \SI{20}{\degreeCelsius}$. Wie im Skript beschrieben, gilt für die Raumtemperatur $\theta(t)$ die Differentialgleichung mit der Anfangsbedingung
-$$
-  \boxed{
-    \theta'(t) = -\frac{1}{\tau} \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr)
-    \quad\text{mit}\quad
-    \theta(0) = \theta_0
-  }
-$$
-mit der Zeitkonstanten $\tau = C_\mathrm{wirk} / H$. Wir vergleichen einen unsanierten Altbau mit einem Neubau in Passivhausqualität. Beide Häuser haben dieselbe Geometrie mit der Nettogrundfläche $A_\mathrm{NGF} = \SI{150}{\metre\squared}$, dem Nettoraumvolumen $V = \SI{375}{\metre\cubed}$ und den folgenden Bauteilen.
+Im Winter fällt bei einer Außentemperatur von $\theta_\mathrm{U} = \SI{-5}{\degreeCelsius}$ die Heizung eines Einfamilienhauses aus. Zu diesem Zeitpunkt beträgt die Raumtemperatur $\theta_0 = \SI{20}{\degreeCelsius}$. Für die Raumtemperatur $\theta(t)$ gilt das newtonsche Abkühlungsgesetz aus dem Skript mit der Auskühlzeitkonstanten $\tau$. Wir vergleichen einen unsanierten Altbau mit einem Neubau in Passivhausqualität. Beide Häuser haben dieselbe Geometrie mit der Nettogrundfläche $A_\mathrm{NGF} = \SI{150}{\metre\squared}$, dem Nettoraumvolumen $V = \SI{375}{\metre\cubed}$ und den folgenden Bauteilen.
 
 | Bauteil     | Fläche $A_j$ in $\si{\metre\squared}$ | $U_j$ Altbau in $\si{\watt\per\metre\squared\per\kelvin}$ | $U_j$ Neubau in $\si{\watt\per\metre\squared\per\kelvin}$ |
 |:------------|-------------------:|------------------------:|------------------------:|
@@ -18,7 +10,7 @@ mit der Zeitkonstanten $\tau = C_\mathrm{wirk} / H$. Wir vergleichen einen unsan
 | Dach        | 80                 | 0.9                     | 0.12                    |
 | Bodenplatte | 80                 | 1.0                     | 0.15                    |
 
-Lüftung und wirksame Wärmekapazität ermitteln wir nach DIN/TS 18599-2 [@DIN185992202510]. Anders als im Skript berücksichtigen wir zusätzlich die Lüftung durch $H_\mathrm{V} = \SI{0.34}{\watt\hour\per\metre\cubed\per\kelvin} \cdot n \cdot V$ mit dem Luftwechsel $n = \SI{0.7}{\per\hour}$ im undichten Altbau und dem wirksamen Luftwechsel $n = \SI{0.15}{\per\hour}$ im Neubau mit Lüftungsanlage und Wärmerückgewinnung. Beide Häuser sind mittelschwer gebaut, die wirksame Wärmekapazität ist $C_\mathrm{wirk} = \SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$.
+Lüftung und wirksame Wärmekapazität ermitteln wir nach DIN/TS 18599-2 [@DIN185992202510]. Wie im Skript berücksichtigen wir Transmission und Lüftung, mit dem Luftwechsel $n = \SI{0.7}{\per\hour}$ im undichten Altbau und dem wirksamen Luftwechsel $n = \SI{0.15}{\per\hour}$ im Neubau mit Lüftungsanlage und Wärmerückgewinnung. Beide Häuser sind mittelschwer gebaut, die wirksame Wärmekapazität ist $C_\mathrm{wirk} = \SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$.
 
 ### Lösung der Differentialgleichung
 
@@ -41,7 +33,7 @@ $$
 
 ### Zeitkonstanten
 
-Berechnen Sie für beide Häuser den Wärmetransferkoeffizienten $H = \sum_j U_j A_j + H_\mathrm{V}$ aus Transmission und Lüftung, die wirksame Wärmekapazität $C_\mathrm{wirk}$ und die Zeitkonstante $\tau$.
+Berechnen Sie für beide Häuser den Wärmetransferkoeffizienten $H$ aus Transmission und Lüftung, die wirksame Wärmekapazität $C_\mathrm{wirk}$ und die Zeitkonstante $\tau$.
 
 ::: {.lm-solution}
 Die wirksame Wärmekapazität ist für beide Häuser $C_\mathrm{wirk} = \SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot \SI{150}{\metre\squared} = \SI{13500}{\watt\hour\per\kelvin}$.
