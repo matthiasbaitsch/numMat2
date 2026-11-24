@@ -30,19 +30,19 @@ Aus mathematischer Sicht ist bei diesen Fragestellungen ein Problem zu lösen, i
 
 ### Auskühlen eines Gebäudes bei dem Ausfall der Heizung
 
-Fällt im Winter die Heizung eines Gebäudes aus, kühlt es allmählich aus. Wie lange dauert es, bis die Raumtemperatur von 20 °C auf 15 °C gesunken ist?
+Fällt im Winter die Heizung eines Gebäudes aus, kühlt es allmählich aus. Wie lange dauert es, bis die Raumtemperatur von $\SI{20}{\degreeCelsius}$ auf $\SI{15}{\degreeCelsius}$ gesunken ist?
 
 #### Newtonsches Abkühlungsgesetz
 
-Wir betrachten zunächst allgemein einen Körper mit der Temperatur $\theta(t)$, der sich in einer Umgebung mit der konstanten Temperatur $\theta_\mathrm{U}$ befindet. Vereinfachend nehmen wir an, dass die Temperatur im ganzen Körper gleich ist. Mit der Wärmekapazität $C$ des Körpers (in J/K) ist die gespeicherte Wärmemenge, gemessen gegenüber einer beliebigen Bezugstemperatur,
+Wir betrachten zunächst allgemein einen Körper mit der Temperatur $\theta(t)$, der sich in einer Umgebung mit der konstanten Temperatur $\theta_\mathrm{U}$ befindet. Vereinfachend nehmen wir an, dass die Temperatur im ganzen Körper gleich ist. Mit der Wärmekapazität $C$ des Körpers (in $\si{\joule\per\kelvin}$) ist die gespeicherte Wärmemenge, gemessen gegenüber einer beliebigen Bezugstemperatur,
 $$
   E(t) = C \, \theta(t).
 $$
-Ist der Körper wärmer als die Umgebung, gibt er Wärme an diese ab. Nach dem newtonschen Abkühlungsgesetz ist der abgegebene Wärmestrom (Wärmemenge pro Zeit, in W) proportional zur Temperaturdifferenz,
+Ist der Körper wärmer als die Umgebung, gibt er Wärme an diese ab. Nach dem newtonschen Abkühlungsgesetz ist der abgegebene Wärmestrom (Wärmemenge pro Zeit, in $\si{\watt}$) proportional zur Temperaturdifferenz,
 $$
   \Phi(t) = H \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr),
 $$
-mit dem Wärmetransferkoeffizienten $H$ (in W/K). In einem kurzen Zeitintervall der Länge $\Delta t$ gibt der Körper näherungsweise die Wärmemenge $\Phi(t) \, \Delta t$ ab, um die seine gespeicherte Wärmemenge abnimmt:
+mit dem Wärmetransferkoeffizienten $H$ (in $\si{\watt\per\kelvin}$). In einem kurzen Zeitintervall der Länge $\Delta t$ gibt der Körper näherungsweise die Wärmemenge $\Phi(t) \, \Delta t$ ab, um die seine gespeicherte Wärmemenge abnimmt:
 $$
   C \, \theta(t + \Delta t) - C \, \theta(t) \approx -H \, \bigl(\theta(t) - \theta_\mathrm{U}\bigr) \, \Delta t.
 $$
@@ -58,11 +58,11 @@ mit der Zeitkonstanten $\tau = C / H$. Eine große Wärmekapazität und ein klei
 
 #### Anwendung auf Gebäude
 
-Für ein Gebäude ist $\theta(t)$ die Raumtemperatur und $\theta_\mathrm{U}$ die Außentemperatur. Die Kenngrößen $C$ und $H$ werden bei der energetischen Bewertung von Gebäuden ohnehin bestimmt (DIN/TS 18599-2:2025-10, Abschnitte 5.5.2 und 6.7). Eine Gebäudezone ist dort ein Teil des Gebäudes mit einheitlicher Nutzung, der mit einer einheitlichen Temperatur gerechnet wird. Bei Wohngebäuden ist das meist das ganze Gebäude, Nichtwohngebäude werden in mehrere Zonen aufgeteilt (zum Beispiel Büros, Flure und Serverraum). Eine Gebäudezone entspricht damit genau dem Körper mit einheitlicher Temperatur, den wir oben betrachtet haben. Die Norm bezeichnet $C = C_\mathrm{wirk}$ als wirksame Wärmekapazität der Gebäudezone. Sie kann pauschal aus der Nettogrundfläche $A_\mathrm{NGF}$ ermittelt werden, mit $C_\mathrm{wirk} = 50\ \mathrm{Wh/(m^2 K)} \cdot A_\mathrm{NGF}$ für leichte, $90\ \mathrm{Wh/(m^2 K)} \cdot A_\mathrm{NGF}$ für mittelschwere und $130\ \mathrm{Wh/(m^2 K)} \cdot A_\mathrm{NGF}$ für schwere Bauweise. Der Wärmetransferkoeffizient ergibt sich aus der Transmission durch die Bauteile der Gebäudehülle,
+Für ein Gebäude ist $\theta(t)$ die Raumtemperatur und $\theta_\mathrm{U}$ die Außentemperatur. Die Kenngrößen $C$ und $H$ werden bei der energetischen Bewertung von Gebäuden ohnehin bestimmt (DIN/TS 18599-2:2025-10, Abschnitte 5.5.2 und 6.7). Eine Gebäudezone ist dort ein Teil des Gebäudes mit einheitlicher Nutzung, der mit einer einheitlichen Temperatur gerechnet wird. Bei Wohngebäuden ist das meist das ganze Gebäude, Nichtwohngebäude werden in mehrere Zonen aufgeteilt (zum Beispiel Büros, Flure und Serverraum). Eine Gebäudezone entspricht damit genau dem Körper mit einheitlicher Temperatur, den wir oben betrachtet haben. Die Norm bezeichnet $C = C_\mathrm{wirk}$ als wirksame Wärmekapazität der Gebäudezone. Sie kann pauschal aus der Nettogrundfläche $A_\mathrm{NGF}$ ermittelt werden, mit $C_\mathrm{wirk} = \SI{50}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für leichte, $\SI{90}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für mittelschwere und $\SI{130}{\watt\hour\per\metre\squared\per\kelvin} \cdot A_\mathrm{NGF}$ für schwere Bauweise. Der Wärmetransferkoeffizient ergibt sich aus der Transmission durch die Bauteile der Gebäudehülle,
 $$
   H = \sum_j U_j A_j,
 $$
-mit den Wärmedurchgangskoeffizienten $U_j$ und den Flächen $A_j$ der Bauteile. Die Norm bezeichnet $\tau = C_\mathrm{wirk} / H$ als Auskühlzeitkonstante der Gebäudezone. Mit $C_\mathrm{wirk}$ in Wh/K und $H$ in W/K ergibt sich $\tau$ direkt in Stunden.
+mit den Wärmedurchgangskoeffizienten $U_j$ und den Flächen $A_j$ der Bauteile. Die Norm bezeichnet $\tau = C_\mathrm{wirk} / H$ als Auskühlzeitkonstante der Gebäudezone. Mit $C_\mathrm{wirk}$ in $\si{\watt\hour\per\kelvin}$ und $H$ in $\si{\watt\per\kelvin}$ ergibt sich $\tau$ direkt in Stunden.
 
 ### Regenrückhaltebecken
 
@@ -78,7 +78,7 @@ Das Funktionsprinzip eines einfachen Rückhaltebeckens ist in @fig-regenrueckhal
 $$
   V(t) = A \cdot h(t)
 $$
-gilt. Weiterhin sei $Q_\mathrm{zu}(t)$ der Zufluss und $Q_\mathrm{ab}(t)$ der Abfluss, jeweils als Volumen pro Zeit gemessen (zum Beispiel in m³/s). Für das Füllvolumen zum Zeitpunkt $t + \Delta t$ werden Zu- und Abfluss über das Zeitintervall integriert, so dass wir
+gilt. Weiterhin sei $Q_\mathrm{zu}(t)$ der Zufluss und $Q_\mathrm{ab}(t)$ der Abfluss, jeweils als Volumen pro Zeit gemessen (zum Beispiel in $\si{\metre\cubed\per\second}$). Für das Füllvolumen zum Zeitpunkt $t + \Delta t$ werden Zu- und Abfluss über das Zeitintervall integriert, so dass wir
 $$
   V(t + \Delta t)
   =

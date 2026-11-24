@@ -2,6 +2,16 @@ In diesem Kapitel beginnen wir mit dem einfachsten Fall von Anfangswertproblemen
 
 ## Anfangswertprobleme erster Ordnung
 
+### Exkurs: Funktion und Funktionswert
+
+Bevor wir Differentialgleichungen allgemein aufschreiben, lohnt sich ein Blick auf die Schreibweise von Funktionen. Sie wird in der Mathematik und im Ingenieurwesen unterschiedlich verwendet.
+
+In der Mathematik bezeichnet $f$ die Funktion selbst, also die Vorschrift, die jeder Zahl $x$ eine Zahl zuordnet, zum Beispiel $f : \R \to \R$ mit $f(x) = x^2$. Demgegenüber ist $f(x)$ der Funktionswert an der Stelle $x$ und damit eine Zahl, zum Beispiel $f(3) = 9$. Genauso ist die Ableitung $f'$ eine Funktion und $f'(3) = 6$ eine Zahl.
+
+Im Ingenieurwesen schreibt man dagegen $w(x)$ für die Durchbiegung eines Balkens oder $\theta(t)$ für eine Temperatur und meint damit die Funktion. Das Argument zeigt an, wovon die Größe abhängt, also etwa von der Stelle $x$ oder von der Zeit $t$. Ein einzelnes $w$ ohne Argument schreibt man kaum, es sähe aus wie eine Konstante. Diese Schreibweise ist praktisch, und wir haben sie in @sec-einfuehrung auch verwendet.
+
+Bei Differentialgleichungen kommt es aber auf den Unterschied an, wie wir gleich sehen werden.
+
 ### Zustand und Änderung
 
 Eine Differentialgleichung erster Ordnung verknüpft den Zustand eines Systems mit seiner Änderung. Beim Gebäude aus @sec-einfuehrung ist der Zustand die Raumtemperatur $\theta(t)$, und ihre Änderung $\theta'(t)$ ist umso größer, je weiter die Raumtemperatur von der Außentemperatur entfernt ist. Beim Regenrückhaltebecken ist der Zustand die Füllhöhe $h(t)$. Ihre Änderung $h'(t)$ hängt über den Abfluss von der Füllhöhe selbst und über den Zufluss vom Zeitpunkt ab.
@@ -11,6 +21,8 @@ $$
   y'(x) = F(x, y(x))
 $$
 und besagt: Befindet sich das System an der Stelle $x$ im Zustand $y(x)$, dann ändert sich der Zustand dort mit der Rate $F(x, y(x))$.
+
+Die Gleichung ist im Sinne der Mathematik zu lesen. Für eine feste Stelle $x$ ist $y(x)$ der Funktionswert der Lösung, also eine Zahl. In die Funktion $F$ werden zwei Zahlen eingesetzt, nämlich $x$ und $y(x)$, und das Ergebnis ist wieder eine Zahl. Sie muss gleich der Zahl $y'(x)$ sein, der Steigung der Lösung an dieser Stelle. Weil das für jede Stelle $x$ gelten soll, legt die Differentialgleichung trotzdem die ganze Funktion $y$ fest.
 
 ::: {#def-anfangswertproblem-erster-ordnung}
 ## Anfangswertproblem erster Ordnung
@@ -33,6 +45,8 @@ besitzt $F(x, y) = x - y$ als Funktion der Differentialgleichung und die Lösung
 $$
   y(x) = x + 2 e^{-x} - 1.
 $$
+Zur Probe betrachten wir die Stelle $x = 1$. Dort hat die Lösung den Wert $y(1) = 2 e^{-1} \approx 0.736$. Setzen wir die beiden Zahlen $1$ und $0.736$ in $F$ ein, erhalten wir $F(1, 0.736) = 1 - 0.736 = 0.264$. Das ist genau die Steigung $y'(1) = 1 - 2 e^{-1} \approx 0.264$ der Lösung an dieser Stelle.
+
 In @fig-beispiel-dgl sind das Richtungsfeld und die Lösungsfunktion des Anfangswertproblems dargestellt.
 
 ![Richtungsfeld und Lösung des Anfangswertproblems](bilder/beispiel-dgl.svg){#fig-beispiel-dgl width="45%"}
