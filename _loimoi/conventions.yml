@@ -6,14 +6,18 @@ names:
 collection-languages:
   exercises: en
   aufgaben: de
+  folien: de
 
 # Collection folder → recipe
 collection-recipes:
   exercises: exercises
   aufgaben: exercises
+  folien: slides
 
 # Recipe → collection folder → ingredient folder
 ingredient-folders:
   exercises:
     exercises: exercises
     aufgaben: aufgaben
+  slides:
+    folien: folien

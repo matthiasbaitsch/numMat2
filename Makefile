@@ -10,8 +10,9 @@ prepare-render:
 render-aufgaben:
 	$(QUARTO) render lernpfad/aufgaben
 
-render-folien: prepare-render
-	$(QUARTO) render lernpfad/folien/c
+# Own project, loi-moi prepares c/ from bausteine/*/folien as pre-render
+render-folien:
+	$(QUARTO) render lernpfad/folien
 
 render-veranstaltung: prepare-render
 	$(QUARTO) render lernpfad/veranstaltung/c

@@ -1,0 +1,14 @@
+project:
+  type: default
+  output-dir: ../../__output/lernpfad/folien
+  pre-render: _extensions/matthiasbaitsch/loimoi/pre-render.ts
+  render:
+    - c/**/*.qmd
+
+lang: de
+
+author:
+  - Matthias Baitsch
+
+bibliography: ../../bausteine/bibliographie.bib
+csl: ../../bausteine/style.csl

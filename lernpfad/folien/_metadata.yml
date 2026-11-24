@@ -1,10 +1,16 @@
-
+subtitle: Numerische Mathematik
 
 # Seiten der handschriftlichen Notizen als Folien ohne Rand: #notiz("notizen/x.pdf", 3)
+# Bilder als Folien ohne Rand: #vollbild("bilder/x.jpg")
+# Mehr Abstand zwischen den Zeilen mehrzeiliger Formeln (\\[8pt] geht bei Pandoc nach Typst verloren)
 format:
   tinh-slides-typst:
     include-in-header:
       text: |
         #let notiz(file, page) = slide(config: config-page(margin: 0pt, header: none, footer: none))[
           #align(center + horizon, image(file, page: page, height: 100%))
+        ]
+        #show math.equation.where(block: true): set par(leading: 1em)
+        #let vollbild(file) = slide(config: config-page(margin: 0pt, header: none, footer: none, fill: black))[
+          #align(center + horizon, image(file, width: 100%, height: 100%, fit: "contain"))
         ]

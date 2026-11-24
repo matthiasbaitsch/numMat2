@@ -5,9 +5,6 @@ using ZipArchives
 # Published learning path, for absolute links (relative links do not work in PDF files)
 const SITE_URL = "https://matthiasbaitsch.github.io/numMat2/lernpfad"
 
-# Title of the course, subtitle of the slides
-const COURSE_TITLE = "Numerische Mathematik"
-
 # Quarto project and its output folder (output-dir in _quarto.yml)
 const PROJECT_FOLDER = realpath(joinpath(@__DIR__, ".."))
 const OUTPUT_FOLDER = joinpath(PROJECT_FOLDER, "__output")
@@ -216,26 +213,6 @@ end
 # Make things
 # ---------------------------------------------------------------------------------------
 
-function make_slides(bb::BuildingBlock, slides_folder::String, target_folder::String)
-
-    notebook = zip_project_notebooks(bb, slides_folder, target_folder, "folien", :scaffold)
-
-    header = """
-     ---
-     title: "$(bb.part): $(bb.title)"
-     subtitle: $COURSE_TITLE
-     ---
-     """
-
-    if !isnothing(notebook)
-        header *= "\n## Material\n\n"
-        header *= "[⬇ Notebook zu den Folien]($SITE_URL/folien/c/$(notebook))\n\n"
-    end
-
-    write(joinpath(target_folder, slug(bb) * ".qmd"), assemble_qmd(header, bb, slides_folder))
-    copy_resources(slides_folder, target_folder)
-end
-
 function make_assignments(bb::BuildingBlock, assignments_folder::String, target_folder::String)
 
     zip_project_notebooks(bb, assignments_folder, target_folder, "aufgaben", bb.target)
@@ -267,13 +244,6 @@ function make_assignments(bb::BuildingBlock, assignments_folder::String, target_
     copy_resources(assignments_folder, target_folder)
 end
 
-
-function make_slides(blocks_folder::String, target_folder::String)
-    for bb = building_blocks(blocks_folder)
-        slides_folder = joinpath(bb.folder, "folien")
-        isdir(slides_folder) && make_slides(bb, slides_folder, target_folder)
-    end
-end
 
 function make_assignments(blocks_folder::String, target_folder::String)
     for bb = building_blocks(blocks_folder)
@@ -336,7 +306,6 @@ function make_learning_path(source::String, target::String)
     learning_path_folder = realpath(joinpath(@__DIR__, "..", target))
 
     components = [
-        (make_slides, building_blocks_folder, "folien"),
         (make_script, building_blocks_folder, "skript"),
         (make_course, joinpath(learning_path_folder, "veranstaltung"), "veranstaltung"),
     ]
