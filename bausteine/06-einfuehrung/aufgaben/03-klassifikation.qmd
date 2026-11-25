@@ -3,6 +3,16 @@
 
 Im Skript sind uns Differentialgleichungen für das Auskühlen eines Gebäudes, das Regenrückhaltebecken, den Einmassenschwinger (einmal für die Auslenkung $u$ allein, einmal mit der Geschwindigkeit $v$ als zweiter unbekannter Funktion), das Räuber-Beute-Modell, die Biegelinie eines Balkens, die Wärmeleitung in einem Stab sowie Wetter- und Klimamodelle begegnet.
 
+### Räuber-Beute-Modell
+
+Welcher Term macht das Räuber-Beute-Modell nichtlinear? Was beschreibt dieser Term inhaltlich?
+
+::: {.lm-solution}
+In beiden Gleichungen kommt das Produkt $\text{🐇}(t) \, \text{🦊}(t)$ der beiden gesuchten Funktionen vor. Gesuchte Funktionen, die miteinander multipliziert werden, machen eine Differentialgleichung nichtlinear.
+
+Das Produkt beschreibt die Begegnungen zwischen Räubern und Beute. Die Zahl der Begegnungen pro Zeit ist sowohl zur Zahl der Hasen als auch zur Zahl der Füchse proportional: Gibt es doppelt so viele Hasen und doppelt so viele Füchse, kommt es viermal so oft zu einer Begegnung. Bei jeder Begegnung können Hasen gefressen werden, deshalb verringert der Term $-b \, \text{🐇}(t) \, \text{🦊}(t)$ die Beutepopulation, und die Füchse finden Nahrung, deshalb vergrößert der Term $d \, \text{🐇}(t) \, \text{🦊}(t)$ die Räuberpopulation. Die übrigen Terme sind linear: Ohne Füchse vermehren sich die Hasen mit der Rate $a$, ohne Hasen sterben die Füchse mit der Rate $c$ aus.
+:::
+
 ### Einordnung
 
 Ordnen Sie diese Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder partiell, welche Ordnung hat sie, ist sie linear oder nichtlinear, hat sie (falls linear) konstante Koeffizienten, und handelt es sich um eine einzelne Gleichung oder um ein System?
@@ -35,13 +45,4 @@ Ordnen Sie diese Differentialgleichungen ein: Ist die Gleichung gewöhnlich oder
 Beim Rückhaltebecken steht die gesuchte Funktion unter der Wurzel, deshalb ist die Gleichung nichtlinear. Dass der Zufluss $Q_\mathrm{zu}(t)$ von der Zeit abhängt, ändert daran nichts, er hängt nicht von $h$ ab. Der Einmassenschwinger zeigt, dass die Einordnung von der Formulierung abhängt: Dasselbe Problem ist einmal eine einzelne Gleichung zweiter Ordnung und einmal ein System von zwei Gleichungen erster Ordnung. Bei der Biegelinie ist die Gleichung linear, aber die Biegesteifigkeit $EI(x)$ hängt von $x$ ab, die Koeffizienten sind deshalb nicht konstant. Bei der Wärmeleitung kommt die erste Ableitung nach $t$ und die zweite Ableitung nach $x$ vor, die Ordnung ist deshalb zwei. Bei Wetter und Klima sind die Gleichungen gewöhnlich, weil das Gitter aus den eigentlich partiellen physikalischen Gleichungen Differentialgleichungen in der Zeit macht.
 :::
 
-### Räuber-Beute-Modell
-
-Welcher Term macht das Räuber-Beute-Modell nichtlinear? Was beschreibt dieser Term inhaltlich?
-
-::: {.lm-solution}
-In beiden Gleichungen kommt das Produkt $\text{🐇}(t) \, \text{🦊}(t)$ der beiden gesuchten Funktionen vor. Gesuchte Funktionen, die miteinander multipliziert werden, machen eine Differentialgleichung nichtlinear.
-
-Das Produkt beschreibt die Begegnungen zwischen Räubern und Beute. Die Zahl der Begegnungen pro Zeit ist sowohl zur Zahl der Hasen als auch zur Zahl der Füchse proportional: Gibt es doppelt so viele Hasen und doppelt so viele Füchse, kommt es viermal so oft zu einer Begegnung. Bei jeder Begegnung können Hasen gefressen werden, deshalb verringert der Term $-b \, \text{🐇}(t) \, \text{🦊}(t)$ die Beutepopulation, und die Füchse finden Nahrung, deshalb vergrößert der Term $d \, \text{🐇}(t) \, \text{🦊}(t)$ die Räuberpopulation. Die übrigen Terme sind linear: Ohne Füchse vermehren sich die Hasen mit der Rate $a$, ohne Hasen sterben die Füchse mit der Rate $c$ aus.
-:::
 :::
